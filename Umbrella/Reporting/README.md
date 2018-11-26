@@ -51,4 +51,4 @@ docker-compose up -d (or to keep up: docker-compose up)
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
 * Goto Management -> Index Patterns and enter: log* -> select 'timestamp'
-* Import the dashboard json file.
+* Import the reporting example json file (Management -> Saved Objects -> Import)
