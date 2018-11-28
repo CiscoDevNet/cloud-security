@@ -43,10 +43,12 @@ In the above example the siem.json file and siem.log get written to /tmp.
 
 ```SHELL=/bin/bash
 */2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
+```
+
+b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
 
 ```
-b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
-```python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
+python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
 ```
  
 In the above example the siem.json​ file gets written to /tmp and the output is
@@ -80,10 +82,15 @@ python /home/ubuntu/pull_incidents.py --help
 ```
 
 Run the sample script
-Copy the sample script into ​c:\python27\scripts directory
+Copy the sample script into c:\python27\scripts directory
 Run the script with the following command:
-C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py ­c flat_file ­u ​https://api.cloudlock.com/api/v2​ ­t <your token> ­p c:\tmp
-The siem.json file is created in ​c:\tmp T roubleshooting
+```
+C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p c:\tmp
+```
+
+The `siem.json` file is created in `c:\tmp`
+
+### Troubleshooting
 If you encounter difficulties, check the following:
 ● Before running the Sample Script, can you make an API call?
 Replace "EnterTokenHere" with your API token:
