@@ -45,36 +45,42 @@ In the above example the siem.json file and siem.log get written to /tmp.
 */2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
 ```
 
- b. Set a polling interval, (in seconds), as an argument (the ‘­i’ argument). For example:
+ b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
  
-```python /home/ubuntu/cl_sample_incidents.py ­c flat_file ­u https://api.cloudlock.com/api/v2 ­t <​ your token> ­p /tmp ­i 120```
+```python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
+```
  
-In the above example the ​siem.json​ file gets written to ​/tmp​ and the output is
+In the above example the siem.json​ file gets written to /tmp and the output is
 written to the screen.
-● Note​: You can also send events to a local or remote syslog. To learn more about other
+
+Note: You can also send events to a local or remote syslog. To learn more about other
 output options, run:
 
 ### Running the Script (Windows systems)
-Python 2.7.6 is required to run ​samplescript.py​ on Windows server 2012R2. Follow the steps below to run the script.
-Install Python 2.7.6
-1. Download Python for Windows from this location:
-https://www.python.org/download/releases/2.7.6/
-2. Download and install ​https://www.python.org/ftp/python/2.7.6/python­2.7.6.amd64.msi
-from the page.
-Install Pip
-1. Install pip on windows by copying this file to your temp directory:
-https://bootstrap.pypa.io/get­pip.py
+Python 2.7.6 is required to run samplescript.py on Windows server 2012R2. Follow the steps below to run the script.
+
+#### Install Python 2.7.6
+1. Download Python for Windows from this location: https://www.python.org/download/releases/2.7.6/
+2. Download and install https://www.python.org/ftp/python/2.7.6/python-2.7.6.amd64.msi from the page.
+
+#### Install Pip
+1. Install pip on windows by copying this file to your temp directory: https://bootstrap.pypa.io/get-pip.py
 2. Run the program from the command line as an administrator.
 3. Use the following command to install the pip file (ignore the warnings during installation):
-c:\Python27\python.exe​ <directory where pip file was copied>get­pip.py
-Pip is installed in the ​c:\python27\scripts directory Install required libraries for Samplescript
-Run the following commands to install the libraries required for the sample script:
-c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python­dateutil
-   python /home/ubuntu/cl_sample_incidents.py ­c flat_file ­u https://api.cloudlock.com/api/v2 ­t <​ your token> ­p /tmp ­i 120
-    python /home/ubuntu/pull_incidents.py ­­help
-     Copyright © 2016 CloudLock, Inc. All rights reserved.
+```
+c:\Python27\python.exe <directory where pip file was copied>get-pip.py
+```
+Pip is installed in the c:\python27\scripts directory. 
 
- Run the sample script
+#### Install required libraries for Samplescript
+Run the following commands to install the libraries required for the sample script:
+```
+c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil
+python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
+python /home/ubuntu/pull_incidents.py --help
+```
+
+Run the sample script
 Copy the sample script into ​c:\python27\scripts directory
 Run the script with the following command:
 C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py ­c flat_file ­u ​https://api.cloudlock.com/api/v2​ ­t <your token> ­p c:\tmp
