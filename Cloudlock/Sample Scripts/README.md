@@ -6,10 +6,11 @@ However, please note that these samples are not covered by the CloudLock product
 
 ## Script Overview
 There are four sample scripts:
-● Incidents, for use with any domain
-● Activities, for use with any domain
-● Incidents, for use with .gov domains
-● Activities, for use with .gov domains
+* Incidents, for use with any domain
+* Activities, for use with any domain
+* Incidents, for use with .gov domains
+* Activities, for use with .gov domains
+
 The scripts function in four steps, as detailed below:
 1. The script calls the CloudLock API’s [instructions on prerequisites and configuration are provided in the official documentation]
 2. The script gets the API call results
