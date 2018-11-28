@@ -44,8 +44,7 @@ In the above example the siem.json file and siem.log get written to /tmp.
 ```SHELL=/bin/bash
 */2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
 ```
-
- b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
+b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
 ```python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
 ```
  
