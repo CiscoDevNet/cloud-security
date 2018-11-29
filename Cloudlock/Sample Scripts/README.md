@@ -92,34 +92,16 @@ The `siem.json` file is created in `c:\tmp`
 
 ### Troubleshooting
 If you encounter difficulties, check the following:
-● Before running the Sample Script, can you make an API call?
-Replace "EnterTokenHere" with your API token:
-curl ­k ­H "Authorization: Bearer EnterTokenHere"
-'https://api­platform.cloudlock.com/api/v2/incidents'
-● Has your IP address been whitelisted by CloudLock?
-If not, contact support@cloudlock.com with the IP address/es or range that needs to be whitelisted.
-Note: to check your IP address, run the following on the servers making the API calls: curl ­s checkip.dyndns.org | sed ­e 's/.*Current IP Address: //' ­e 's/<.*$//'
-● Do you need to whitelist CloudLock’s IP Address? As of 6/10/16, the CloudLock API IPs are: 52.0.185.54
-54.236.77.64
-● Did you create and/or properly copy the token generated in CloudLock?
-● Are you using the CloudLock .gov domain? If so your script must point to:
-https://api­platformusgov.cloudlock.com/api/v2
-Change History
-Most recent updates to the sample scripts:
-1. Page based on the updated_after filter (instead of the created_after).
-2. Fix for rate limit recovery issue (delay before re­polling).
-3. Fixes to LEEF output (devTimeFormat, EventID, and formatting issues).
-4. Fixed: certain entity null values could cause abnormal behavior of the script.
-5. Syslog fix: when dealing with a large number of matches, the script could terminate
-when exceeding the maximum syslog capacity. The solution: When you have over 100
- Copyright © 2016 CloudLock, Inc. All rights reserved.
+* Before running the Sample Script, can you make an API call (Replace "EnterTokenHere" with your API token):
+```
+curl -k -H "Authorization: Bearer EnterTokenHere" 'https://api­platform.cloudlock.com/api/v2/incidents'
+```
 
-matches, show the first 100 and then add a field to indicate that there were additional
-matches.
-6. Activities scripts only: The offset for the API was not applied, which caused duplicate
-calls.
-7. Activities scripts only: A one hour delay has been introduced to deal with platform
-specific limitations (events do not come in chronologically from the various platforms).
-Notes
-● It is possible to receive duplicate events when using the script; keep this in mind and de­duplicate.
- Copyright © 2016 CloudLock, Inc. All rights reserved.
+* Whitelist your external IP address/range (Settings -> API and Authentication).
+* Do you need to whitelist CloudLock’s IP Address? As of 6/10/16, the CloudLock API IPs are: `52.0.185.54`
+  `54.236.77.64`
+* Did you create and/or properly copy the token generated in CloudLock?
+* Are you using the correct url (there are a number of these so please contact support@cloudlock.com if you are unsure).
+* If you still have issues, please contact support@cloudlock.com.
+
+Copyright © 2016 CloudLock, Inc. All rights reserved.
