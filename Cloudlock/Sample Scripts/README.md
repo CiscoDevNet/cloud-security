@@ -24,7 +24,7 @@ The script can be run on­demand or via a schedule. With a scheduler, the best p
 ## Before Running the Script
 Create an API Token (in CloudLock open the Integrations tab under the Settings to generate your token):
 
-### Running the Script (OS X, Linux systems)
+## Running the Script (OS X, Linux systems)
 Note: Best run under virtualenv
 
 1. The following example is a python script.
@@ -61,14 +61,14 @@ output options, run:
 python /home/ubuntu/pull_incidents.py --help 
 ```
 
-### Running the Script (Windows systems)
+## Running the Script (Windows systems)
 Python 2.7.6 is required to run samplescript.py on Windows server 2012R2. Follow the steps below to run the script.
 
-#### Install Python 2.7.6
+### Install Python 2.7.6
 1. Download Python for Windows from this location: https://www.python.org/download/releases/2.7.6/
 2. Download and install https://www.python.org/ftp/python/2.7.6/python-2.7.6.amd64.msi from the page.
 
-#### Install Pip
+### Install Pip
 1. Install pip on windows by copying this file to your temp directory: https://bootstrap.pypa.io/get-pip.py
 2. Run the program from the command line as an administrator.
 3. Use the following command to install the pip file (ignore the warnings during installation):
@@ -77,7 +77,7 @@ c:\Python27\python.exe <directory where pip file was copied>get-pip.py
 ```
 Pip is installed in the c:\python27\scripts directory. 
 
-#### Install required libraries for Samplescript
+### Install required libraries for Samplescript
 Run the following commands to install the libraries required for the sample script:
 
 ```
@@ -93,7 +93,7 @@ C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -
 
 The `siem.json` file is created in `c:\tmp`
 
-### Troubleshooting
+## Troubleshooting
 If you encounter difficulties, check the following:
 * Before running the Sample Script, can you make an API call (Replace "EnterTokenHere" with your API token):
 ```
