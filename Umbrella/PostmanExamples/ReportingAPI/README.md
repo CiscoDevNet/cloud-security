@@ -2,8 +2,8 @@
 Postman is a REST API client that has many uses however we will focus on using it to make simple API calls.
 
 # Disclaimer
-Please see the official API documentation to learn about:
-* Authentication (you will need to create an API taken to use these examples)
+Please see the [official API documentation](https://docs.umbrella.com/umbrella-api/docs/overview) to learn about:
+* [Authentication](https://docs.umbrella.com/umbrella-api/docs/authentication-and-errors) (you will need to create an API taken to use these examples)
 * Endpoint fields and filters
 * Other endpoints and options (the collection herein contains only a number of examples)
 
