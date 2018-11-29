@@ -75,12 +75,15 @@ Pip is installed in the c:\python27\scripts directory.
 
 #### Install required libraries for Samplescript
 Run the following commands to install the libraries required for the sample script:
+
 ```
-c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil```
+c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil
+```
 
 ```
 python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
 ```
+
 ```
 python /home/ubuntu/pull_incidents.py --help 
 ```
