@@ -57,6 +57,10 @@ written to the screen.
 Note: You can also send events to a local or remote syslog. To learn more about other
 output options, run:
 
+```
+python /home/ubuntu/pull_incidents.py --help 
+```
+
 ### Running the Script (Windows systems)
 Python 2.7.6 is required to run samplescript.py on Windows server 2012R2. Follow the steps below to run the script.
 
@@ -82,10 +86,6 @@ c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install
 
 ```
 python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
-```
-
-```
-python /home/ubuntu/pull_incidents.py --help 
 ```
 
 Run the sample script
