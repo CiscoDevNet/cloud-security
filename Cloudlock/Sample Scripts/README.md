@@ -84,10 +84,6 @@ Run the following commands to install the libraries required for the sample scri
 c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil
 ```
 
-```
-python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
-```
-
 Run the sample script
 Copy the sample script into c:\python27\scripts directory
 Run the script with the following command:
