@@ -45,7 +45,7 @@ In the above example the siem.json file and siem.log get written to /tmp.
 */2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
 ```
 
-b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
+   b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
 
 ```
 python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
@@ -76,8 +76,8 @@ Pip is installed in the c:\python27\scripts directory.
 #### Install required libraries for Samplescript
 Run the following commands to install the libraries required for the sample script:
 ```
-c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil
-python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
+c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil```
+```python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120```
 python /home/ubuntu/pull_incidents.py --help
 ```
 
