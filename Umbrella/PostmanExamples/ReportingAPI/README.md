@@ -9,7 +9,23 @@ Please see the official API documentation to learn about:
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps)
-* 
+* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_collection.json) json files
+* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Reporting - External` environment. You will need to:
 
-# To use this collection in Postman please perform the following steps:
+```
+Change the `url` variable and add your org ID instead of `OrgId`
+```
 
+```
+Edit the token variable and add your token instead of `Your API Token`
+```
+
+```
+Edit the `domainName` variable and change `domainname.com` to the domain name you would like to get information for
+```
+
+# Making an API call:
+* Select the `Umbrella Reporting - External` environment from the drop down list
+* Select the `Reporting` collection
+* Choose an API call
+* Hit the `Send` button
