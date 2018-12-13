@@ -1,24 +1,25 @@
-# CloudLock® Sample Script Guide
+# Cisco CloudLock Sample Script
 
 ## Introduction
-The following is a step by step guide to get incidents or activities from the CloudLock®​ ​Security FabricTM via a Python script. CloudLock scripts are supplied to customers as samples which customers are free to use or modify for use with your CloudLock subscription under the [CloudLock Terms of Service](https://www.cloudlock.com/ToS).
-However, please note that these samples are not covered by the CloudLock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the script and customers are responsible for updating the samples as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
+The following is a step by step guide to get incidents from Cisco CloudLock via a Python script that makes API calls. This scripts is supplied to customers as a sample which customers are free to use or modify for use with your CloudLock subscription under the [CloudLock Terms of Service](https://www.cloudlock.com/ToS).
+However, please note that any samples are not covered by the CloudLock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the script and customers are responsible for updating the samples as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
 
 ## Script Overview
 The scripts function in four steps, as detailed below:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Sample%20Scripts/sampleScriptDiag.png)
 
-1. The script calls the CloudLock API’s [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
+1. The script calls the CloudLock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
 2. The script gets the API call results
 3. The script outputs the incidents/activities to either a file or to syslog (syslog is a way to
 send messages to a logging server).
 4. The SIEM picks up the incidents/activities from the file
 ­­­ OR ­­­
-The syslog sends the incidents/activities to the SIEM
-The script can be run on­demand or via a schedule. With a scheduler, the best practice is to run every 180 seconds.
+1. The syslog sends the incidents/activities to the SIEM
+2. The script can be run on demand or via a schedule. With a scheduler, the best practice is to run every 180 seconds.
  
 ## Before Running the Script
-Create an API Token (in CloudLock open the Integrations tab under the Settings to generate your token):
+* Create an API Token (in CloudLock open the Integrations tab under the Settings to generate your token - please see the documentation mentioned above for additional instructions).
+* Contact support@cloudlock.com to get your API servers address and then replace it in stead of the `YourAPIServersAddress` placeholders below.
 
 ## Running the Script (OS X, Linux systems)
 Note: Best run under virtualenv
@@ -31,20 +32,20 @@ Note: Best run under virtualenv
 * ‘configparser’: sudo pip install configparser
 * ‘dateutil’: sudo pip install python-dateutil
 
-4. The output is written to the siem.json file (the last incident gets written to cl_polling.ini).
+4. The output is written to the siem.json file (the last incidents timestamp gets written to cl_polling.ini).
 5. You have two options in running the script (remember to enter your token and path instead of the placeholders below):
 a. Schedule the script using crontab, for example you can create a file called
 clToSiem in /etc/cron.d:
 In the above example the siem.json file and siem.log get written to /tmp.
 
 ```SHELL=/bin/bash
-*/2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
+*/2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
 ```
 
 b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
 
 ```
-python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p /tmp -i 120
+python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p /tmp -i 120
 ```
  
 In the above example the siem.json​ file gets written to /tmp and the output is
@@ -84,7 +85,7 @@ Run the sample script
 Copy the sample script into c:\python27\scripts directory
 Run the script with the following command:
 ```
-C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -u https://api.cloudlock.com/api/v2 -t <your token> -p c:\tmp
+C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p c:\tmp
 ```
 
 The `siem.json` file is created in `c:\tmp`
@@ -93,7 +94,7 @@ The `siem.json` file is created in `c:\tmp`
 If you encounter difficulties, check the following:
 * Before running the Sample Script, can you make an API call (Replace "EnterTokenHere" with your API token):
 ```
-curl -k -H "Authorization: Bearer EnterTokenHere" 'https://api.cloudlock.com/api/v2/incidents'
+curl -k -H "Authorization: Bearer EnterTokenHere" 'https://YourAPIServersAddress/api/v2/incidents'
 ```
 
 * Whitelist your external IP address/range (Settings -> API and Authentication).
