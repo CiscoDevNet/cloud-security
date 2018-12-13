@@ -22,3 +22,17 @@ Please see the [official API documentation](https://docs.umbrella.com/cloudlock-
 * Choose an API call.
 * If you are making a call to a specific resource (incident/app/etc)... replace the placeholders in the url. For example: `EnterAnAppID` or `EnterIncidentID`.
 * Hit the `Send` button.
+
+# Troubleshooting
+If you encounter difficulties, check the following:
+* See if you can make an API call (Replace "EnterTokenHere" with your API token):
+```
+curl -k -H "Authorization: Bearer EnterTokenHere" 'https://YourAPIServersAddress/api/v2/incidents'
+```
+
+* Whitelist your external IP address/range (Settings -> API and Authentication).
+* Do you need to whitelist CloudLock’s IP Address? As of 6/10/16, the CloudLock API IPs are: `52.0.185.54`
+  `54.236.77.64`
+* Did you create and/or properly copy the token generated in CloudLock?
+* Are you using the correct url (there are a number of these so please contact support@cloudlock.com if you are unsure).
+* If you still have issues, please contact support@cloudlock.com.
