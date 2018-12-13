@@ -1,0 +1,397 @@
+{
+	"info": {
+		"name": "Ent.API - External",
+		"_postman_id": "b3828096-12f1-0e85-77e1-a6f0cbdf3fb8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "List Activities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/activities",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Apps",
+			"item": [
+				{
+					"name": "List of all organization's applications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/apps",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"apps"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a specific apps classification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"type\": \"unclassified\", \"reason_id\": 4,\"other_reason\" : \"Other Custom Reason\"}"
+						},
+						"url": {
+							"raw": "{{server}}/apps/EnterAnAppID/classification",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"apps",
+								"EnterAnAppID",
+								"classification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific app",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/apps?app_ids=EnterAnAppID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"apps"
+							],
+							"query": [
+								{
+									"key": "app_ids",
+									"value": "EnterAnAppID",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Incidents",
+			"item": [
+				{
+					"name": "Retrieve a specific incident",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/incidents/EnterIncidentID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"incidents",
+								"EnterIncidentID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an incidents status to NEW",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " { \"incident_status\": \"NEW\" }"
+						},
+						"url": {
+							"raw": "{{server}}/incidents/EnterIncidentID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"incidents",
+								"EnterIncidentID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Incidents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/incidents",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List latest Incidents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/incidents?order=-created_at",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"incidents"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-created_at"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policies",
+			"item": [
+				{
+					"name": "List all of organization's policies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/policies",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all of organization's active policies copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/policies?state=ACTIVE",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"policies"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACTIVE"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suspicious IP Libraries",
+			"item": [
+				{
+					"name": "List of all organization's suspicious IPs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/ip/suspicious",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"ip",
+								"suspicious"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new IP to the suspicious library",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Foo bar\",\n  \"description\": \"Lorem ipsum had a little lamb\",\n  \"ip_address\": \"3.3.3.97\",\n  \"categories\": [\n    \"foo\",\n    \"bar\"\n  ],\n  \"expires_on\": \"2017-01-17T15:52:24.677313+00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/ip/suspicious",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"ip",
+								"suspicious"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an IP from the suspicious library",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Foo bar\",\n  \"description\": \"Lorem ipsum had a little lamb\",\n  \"ip_address\": \"3.3.3.97\",\n  \"categories\": [\n    \"foo\",\n    \"bar\"\n  ],\n  \"expires_on\": \"2017-01-17T15:52:24.677313+00:00\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/ip/suspicious?ids=ZkL4dG31oj",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"ip",
+								"suspicious"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "ZkL4dG31oj",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
