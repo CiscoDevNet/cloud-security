@@ -13,7 +13,9 @@ The scripts function in four steps, as detailed below:
 3. The script outputs the incidents/activities to either a file or to syslog (syslog is a way to
 send messages to a logging server).
 4. The SIEM picks up the incidents/activities from the file
+
 ­­­ OR ­­­
+
 1. The syslog sends the incidents/activities to the SIEM
 2. The script can be run on demand or via a schedule. With a scheduler, the best practice is to run every 180 seconds.
  
