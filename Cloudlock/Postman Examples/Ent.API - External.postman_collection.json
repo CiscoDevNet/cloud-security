@@ -392,6 +392,35 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Threats",
+			"description": "",
+			"item": [
+				{
+					"name": "List Threats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/threats",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"threats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
