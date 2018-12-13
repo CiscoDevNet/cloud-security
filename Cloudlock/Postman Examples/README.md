@@ -4,19 +4,21 @@ Postman is a REST API client that has many uses however we will focus on using i
 # Disclaimer
 Please see the [official API documentation](https://docs.umbrella.com/cloudlock-documentation/docs/introduction-to-api-enterprise) to learn about:
 * Authentication (you will need to create an API taken to use these examples).
+* Pagination.
+* Rate Limits.
 * Endpoint fields and filters.
 * Other endpoints and options (the collection herein contains only a number of examples).
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blah) json files.
-* Open `Manage Environments` (top right cogwheel button) and edit the `Cloudlock` environment. You will need to:
-  * Change the `url` variable and add your org ID instead of `OrgId`.
+* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Postman%20Examples/CloudLock%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Postman%20Examples/Ent.API%20-%20External.postman_collection.json) json files.
+* Open `Manage Environments` (top right cogwheel button) and edit the `Cloudlock - External` environment. You will need to:
+  * Change the `server` variable and add your API servers url. Please contact support@cloudlock.com for this address.
   * Edit the token variable and add your token instead of `Your API Token`.
-  * Edit the `domainName` variable and change `domainname.com` to the domain name you would like to get information for.
 
 # Making an API call:
-* Select the `Cloudlock` environment from the drop down list.
-* Select the `blah` collection.
+* Select the `Cloudlock - External` environment from the drop down list.
+* Select the `Ent.API - External` collection.
 * Choose an API call.
+* If you are making a call to a specific resource (incident/app/etc)... replace the placeholders in the url. For example: `EnterAnAppID` or `EnterIncidentID`.
 * Hit the `Send` button.
