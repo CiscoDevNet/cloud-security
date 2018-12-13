@@ -1,0 +1,157 @@
+{
+	"info": {
+		"name": "Investigate - EXTERNAL",
+		"_postman_id": "c8077284-37db-fcd8-3f65-77343e0ab07f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "whois for Domain - email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"google.com\",\"api.bing.com\",\"www.google.com\",\"api.bing.com\",\"www.google.com\",\"google.com\",\"ssl.gstatic.com\",\"clients1.google.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"officeclient.microsoft.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"dns.msftncsi.com\",\"officeclient.microsoft.com\",\"shavar.prod.mozaws.net\",\"shavar.services.mozilla.com\",\"aus5.mozilla.org\",\"detectportal.firefox.com\",\"detectportal.firefox.com\",\"d6wjo2hisqfy2.cloudfront.net\",\"shield-normandy-elb-prod-2099053585.us-west-2.elb.amazonaws.com\",\"api.bing.com\",\"balrog-aus5.r53-2.services.mozilla.com\",\"self-repair.mozilla.org\",\"dcky6u1m8u6el.cloudfront.net\",\"tiles-cloudfront.cdn.mozilla.net\",\"tiles.r53-2.services.mozilla.com\",\"normandy-cloudfront.cdn.mozilla.net\",\"www.bing.com\",\"tiles.services.mozilla.com\",\"officeclient.microsoft.com\",\"a1089.d.akamai.net\"]"
+				},
+				"url": {
+					"raw": "https://investigate.api.umbrella.com/whois/emails/{{email}}",
+					"protocol": "https",
+					"host": [
+						"investigate",
+						"api",
+						"umbrella",
+						"com"
+					],
+					"path": [
+						"whois",
+						"emails",
+						"{{email}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "risk score for Domain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"google.com\",\"api.bing.com\",\"www.google.com\",\"api.bing.com\",\"www.google.com\",\"google.com\",\"ssl.gstatic.com\",\"clients1.google.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"officeclient.microsoft.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"dns.msftncsi.com\",\"officeclient.microsoft.com\",\"shavar.prod.mozaws.net\",\"shavar.services.mozilla.com\",\"aus5.mozilla.org\",\"detectportal.firefox.com\",\"detectportal.firefox.com\",\"d6wjo2hisqfy2.cloudfront.net\",\"shield-normandy-elb-prod-2099053585.us-west-2.elb.amazonaws.com\",\"api.bing.com\",\"balrog-aus5.r53-2.services.mozilla.com\",\"self-repair.mozilla.org\",\"dcky6u1m8u6el.cloudfront.net\",\"tiles-cloudfront.cdn.mozilla.net\",\"tiles.r53-2.services.mozilla.com\",\"normandy-cloudfront.cdn.mozilla.net\",\"www.bing.com\",\"tiles.services.mozilla.com\",\"officeclient.microsoft.com\",\"a1089.d.akamai.net\"]"
+				},
+				"url": {
+					"raw": "https://investigate.api.umbrella.com/domains/risk-score/{{domain}}",
+					"protocol": "https",
+					"host": [
+						"investigate",
+						"api",
+						"umbrella",
+						"com"
+					],
+					"path": [
+						"domains",
+						"risk-score",
+						"{{domain}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whois for Domain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"google.com\",\"api.bing.com\",\"www.google.com\",\"api.bing.com\",\"www.google.com\",\"google.com\",\"ssl.gstatic.com\",\"clients1.google.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"officeclient.microsoft.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"dns.msftncsi.com\",\"officeclient.microsoft.com\",\"shavar.prod.mozaws.net\",\"shavar.services.mozilla.com\",\"aus5.mozilla.org\",\"detectportal.firefox.com\",\"detectportal.firefox.com\",\"d6wjo2hisqfy2.cloudfront.net\",\"shield-normandy-elb-prod-2099053585.us-west-2.elb.amazonaws.com\",\"api.bing.com\",\"balrog-aus5.r53-2.services.mozilla.com\",\"self-repair.mozilla.org\",\"dcky6u1m8u6el.cloudfront.net\",\"tiles-cloudfront.cdn.mozilla.net\",\"tiles.r53-2.services.mozilla.com\",\"normandy-cloudfront.cdn.mozilla.net\",\"www.bing.com\",\"tiles.services.mozilla.com\",\"officeclient.microsoft.com\",\"a1089.d.akamai.net\"]"
+				},
+				"url": {
+					"raw": "https://investigate.api.umbrella.com/whois/{{domain}}",
+					"protocol": "https",
+					"host": [
+						"investigate",
+						"api",
+						"umbrella",
+						"com"
+					],
+					"path": [
+						"whois",
+						"{{domain}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "classifiers for domain (attacks)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"google.com\",\"api.bing.com\",\"www.google.com\",\"api.bing.com\",\"www.google.com\",\"google.com\",\"ssl.gstatic.com\",\"clients1.google.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"officeclient.microsoft.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"dns.msftncsi.com\",\"officeclient.microsoft.com\",\"shavar.prod.mozaws.net\",\"shavar.services.mozilla.com\",\"aus5.mozilla.org\",\"detectportal.firefox.com\",\"detectportal.firefox.com\",\"d6wjo2hisqfy2.cloudfront.net\",\"shield-normandy-elb-prod-2099053585.us-west-2.elb.amazonaws.com\",\"api.bing.com\",\"balrog-aus5.r53-2.services.mozilla.com\",\"self-repair.mozilla.org\",\"dcky6u1m8u6el.cloudfront.net\",\"tiles-cloudfront.cdn.mozilla.net\",\"tiles.r53-2.services.mozilla.com\",\"normandy-cloudfront.cdn.mozilla.net\",\"www.bing.com\",\"tiles.services.mozilla.com\",\"officeclient.microsoft.com\",\"a1089.d.akamai.net\"]"
+				},
+				"url": {
+					"raw": "https://investigate.api.umbrella.com/url/{{domain}}/classifiers",
+					"protocol": "https",
+					"host": [
+						"investigate",
+						"api",
+						"umbrella",
+						"com"
+					],
+					"path": [
+						"url",
+						"{{domain}}",
+						"classifiers"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
