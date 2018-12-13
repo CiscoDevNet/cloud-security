@@ -5,13 +5,9 @@ The following is a step by step guide to get incidents or activities from the Cl
 However, please note that these samples are not covered by the CloudLock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the script and customers are responsible for updating the samples as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
 
 ## Script Overview
-There are four sample scripts:
-* Incidents, for use with any domain
-* Activities, for use with any domain
-* Incidents, for use with .gov domains
-* Activities, for use with .gov domains
-
 The scripts function in four steps, as detailed below:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Sample%20Scripts/sampleScriptDiag.png)
+
 1. The script calls the CloudLock API’s [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
 2. The script gets the API call results
 3. The script outputs the incidents/activities to either a file or to syslog (syslog is a way to
