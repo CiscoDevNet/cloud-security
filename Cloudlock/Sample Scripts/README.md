@@ -99,5 +99,3 @@ curl -k -H "Authorization: Bearer EnterTokenHere" 'https://YourAPIServersAddress
 * Did you create and/or properly copy the token generated in CloudLock?
 * Are you using the correct url (there are a number of these so please contact support@cloudlock.com if you are unsure).
 * If you still have issues, please contact support@cloudlock.com.
-
-Copyright © 2016 CloudLock, Inc. All rights reserved.
