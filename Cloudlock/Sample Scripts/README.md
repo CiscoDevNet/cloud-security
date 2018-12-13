@@ -33,26 +33,23 @@ Note: Best run under virtualenv
    - ‘configparser’: sudo pip install configparser
    - ‘dateutil’: sudo pip install python-dateutil
 4. The output is written to the siem.json file (the last incidents timestamp gets written to cl_polling.ini).
-5. You have two options in running the script (remember to enter your token and path instead of the placeholders below):
-a. Schedule the script using crontab, for example you can create a file called
-clToSiem in /etc/cron.d:
-In the above example the siem.json file and siem.log get written to /tmp.
+5. Run the script (remember to enter your token and path instead of the placeholders below). For example:
+
+```
+python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p /tmp
+```
+In the above example the siem.json file gets written to /tmp and the output is written to the screen.
+
+### Optional: 
+Schedule the script using crontab, for example you can create a file called
+`clToSiem` in /etc/cron.d:
 
 ```SHELL=/bin/bash
 */2 * * * * root python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p /tmp >> /tmp/sim.log 2>&1
 ```
+In the above example the siem.json file and siem.log get written to /tmp. 
 
-b. Set a polling interval, (in seconds), as an argument (the ‘-i’ argument). For example:
-
-```
-python /home/ubuntu/cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p /tmp -i 120
-```
- 
-In the above example the siem.json​ file gets written to /tmp and the output is
-written to the screen.
-
-Note: You can also send events to a local or remote syslog. To learn more about other
-output options, run:
+Note: You can also send events to a local or remote syslog. To learn more about other output options, run:
 
 ```
 python /home/ubuntu/pull_incidents.py --help 
@@ -81,13 +78,12 @@ Run the following commands to install the libraries required for the sample scri
 c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install configparser c:\python27\scripts\Pip.exe install python-dateutil
 ```
 
-Run the sample script
-Copy the sample script into c:\python27\scripts directory
-Run the script with the following command:
+### Run the sample script
+1. Copy the sample script into c:\python27\scripts directory
+2. Run the script with the following command:
 ```
 C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p c:\tmp
 ```
-
 The `siem.json` file is created in `c:\tmp`
 
 ## Troubleshooting
