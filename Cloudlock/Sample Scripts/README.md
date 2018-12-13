@@ -97,7 +97,7 @@ The `siem.json` file is created in `c:\tmp`
 If you encounter difficulties, check the following:
 * Before running the Sample Script, can you make an API call (Replace "EnterTokenHere" with your API token):
 ```
-curl -k -H "Authorization: Bearer EnterTokenHere" 'https://api­platform.cloudlock.com/api/v2/incidents'
+curl -k -H "Authorization: Bearer EnterTokenHere" 'https://api.cloudlock.com/api/v2/incidents'
 ```
 
 * Whitelist your external IP address/range (Settings -> API and Authentication).
