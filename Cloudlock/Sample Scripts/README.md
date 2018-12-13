@@ -29,9 +29,9 @@ Note: Best run under virtualenv
 1. The following example is a python script.
 2. Download and copy the cl_sample_incidents.py to a server you want to run it on.
 3. Make sure that you have Python 2.7.6 installed and then install:
-  * ‘requests’: sudo pip install requests
-  * ‘configparser’: sudo pip install configparser
-  * ‘dateutil’: sudo pip install python-dateutil
+   i. ‘requests’: sudo pip install requests
+   ii. ‘configparser’: sudo pip install configparser
+   iii. ‘dateutil’: sudo pip install python-dateutil
 4. The output is written to the siem.json file (the last incidents timestamp gets written to cl_polling.ini).
 5. You have two options in running the script (remember to enter your token and path instead of the placeholders below):
 a. Schedule the script using crontab, for example you can create a file called
