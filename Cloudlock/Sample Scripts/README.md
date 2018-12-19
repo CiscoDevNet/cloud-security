@@ -1,14 +1,14 @@
-# Cisco CloudLock Sample Script
+# Cisco Cloudlock Sample Script
 
 ## Introduction
-The following is a step by step guide to get incidents from Cisco CloudLock via a Python script that makes API calls. This scripts is supplied to customers as a sample which customers are free to use or modify for use with your Cisco CloudLock subscription under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
-However, please note that any samples are not covered by the CloudLock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the script and customers are responsible for updating the samples as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
+The following is a step by step guide to get incidents from Cisco Cloudlock via a Python script that makes API calls. This scripts is supplied to customers as a sample which customers are free to use or modify for use with your Cisco Cloudlock subscription under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
+However, please note that any samples are not covered by the Cloudlock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the script and customers are responsible for updating the samples as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
 
 ## Script Overview
 The scripts function in four steps, as detailed below:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Sample%20Scripts/sampleScriptDiag.png)
 
-1. The script calls the CloudLock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
+1. The script calls the Cloudlock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
 2. The script gets the API call results
 3. The script outputs the incidents/activities to either a file or to syslog (syslog is a way to
 send messages to a logging server).
@@ -20,7 +20,7 @@ send messages to a logging server).
 2. The script can be run on demand or via a schedule. With a scheduler, the best practice is to run every 180 seconds.
  
 ## Before Running the Script
-* Create an API Token (in CloudLock open the Integrations tab under the Settings to generate your token - please see the documentation mentioned above for additional instructions).
+* Create an API Token (in Cloudlock open the Integrations tab under the Settings to generate your token - please see the documentation mentioned above for additional instructions).
 * Contact support@cloudlock.com to get your API servers address and then replace it in stead of the `YourAPIServersAddress` placeholders below.
 
 ## Running the Script (OS X, Linux systems)
@@ -94,8 +94,8 @@ curl -k -H "Authorization: Bearer EnterTokenHere" 'https://YourAPIServersAddress
 ```
 
 * Whitelist your external IP address/range (Settings -> API and Authentication).
-* Do you need to whitelist CloudLock’s IP Address? As of 6/10/16, the CloudLock API IPs are: `52.0.185.54`
+* Do you need to whitelist Cloudlock’s IP Address? As of 6/10/16, the Cloudlock API IPs are: `52.0.185.54`
   `54.236.77.64`
-* Did you create and/or properly copy the token generated in CloudLock?
+* Did you create and/or properly copy the token generated in Cloudlock?
 * Are you using the correct url (there are a number of these so please contact support@cloudlock.com if you are unsure).
 * If you still have issues, please contact support@cloudlock.com.
