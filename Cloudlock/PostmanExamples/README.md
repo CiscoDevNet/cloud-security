@@ -11,7 +11,7 @@ Please see the [official API documentation](https://docs.umbrella.com/cloudlock-
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Postman%20Examples/CloudLock%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Postman%20Examples/Ent.API%20-%20External.postman_collection.json) json files.
+* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/PostmanExamples/CloudLock%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/PostmanExamples/Ent.API%20-%20External.postman_collection.json) json files.
 * Open `Manage Environments` (top right cogwheel button) and edit the `Cloudlock - External` environment. You will need to:
   * Change the `server` variable and add your API servers url. Please contact support@cloudlock.com for this address.
   * Edit the token variable and add your token instead of `Your API Token`.
