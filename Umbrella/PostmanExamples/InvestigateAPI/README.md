@@ -3,7 +3,7 @@ Postman is a REST API client that has many uses however we will focus on using i
 
 # Disclaimer
 Please see the [official API documentation](https://docs.umbrella.com/investigate-api/docs/introduction-to-cisco-investigate) to learn about:
-* [Authentication](https://docs.umbrella.com/investigate-api/docs/about-the-api-authentication) (you will need to create an API taken to use these examples).
+* [Authentication](https://docs.umbrella.com/investigate-api/docs/about-the-api-authentication) (you will need to create an API token to use these examples).
 * Endpoint fields and filters.
 * Other endpoints and options (the collection herein contains only a number of examples).
 
