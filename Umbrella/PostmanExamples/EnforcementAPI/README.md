@@ -9,14 +9,10 @@ Please see the [official API documentation](https://docs.umbrella.com/enforcemen
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/InvestigateAPI/Investigate%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/InvestigateAPI/Investigate%20-%20EXTERNAL.postman_collection.json) json files.
-* Open `Manage Environments` (top right cogwheel button) and edit the `Investigate - External` environment. You will need to:
-  * Edit the token variable and add your token instead of `Your API Token`.
-  * Change the `domain` variable and enter a domain name you'd like to get information on.
-  * Edit the `email` variable and change it to an email address you would like to get information for (an email for a domain registrant for example).
+* Import the [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/EnforcementAPI/Enforce%20-%20External.postman_collection.json) json file.
 
 # Making an API call:
-* Select the `Investigate - External` environment from the drop down list.
-* Select the `Investigate - External` collection.
+* Select the `Enforce - External` collection.
 * Choose an API call.
+* Update the `customer key` and if needed, the `domain ID` and request body (these are needed for the POST and DELETE examples).
 * Hit the `Send` button.
