@@ -8,11 +8,11 @@ However, please note that any samples are not covered by the Cloudlock product w
 The scripts function in four steps, as detailed below:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Sample%20Scripts/sampleScriptDiag.png)
 
-1. The script calls the Cloudlock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise)
-2. The script gets the API call results
+1. The script calls the Cloudlock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise).
+2. The script gets the API call results.
 3. The script outputs the incidents/activities to either a file or to syslog (syslog is a way to
 send messages to a logging server).
-4. The SIEM picks up the incidents/activities from the file
+4. The SIEM picks up the incidents/activities from the file.
 
 ­­­ OR ­­­
 
