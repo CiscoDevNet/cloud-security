@@ -14,5 +14,5 @@ Please see the [official API documentation](https://docs.umbrella.com/enforcemen
 # Making an API call:
 * Select the `Enforce - External` collection.
 * Choose an API call.
-* Update the `customer key` and if needed, the `domain ID` and request body (these are needed for the POST and DELETE examples).
+* Update the customer key (`EnterYourCustomerKeyHere`) and if needed, the domain ID, (`EnterYourDomainIdHere` for the DELETE example), and request body (needed for the POST example).
 * Hit the `Send` button.
