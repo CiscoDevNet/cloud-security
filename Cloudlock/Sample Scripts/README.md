@@ -63,7 +63,7 @@ Python 2.7.6 is required to run samplescript.py on Windows server 2012R2. Follow
 2. Download and install https://www.python.org/ftp/python/2.7.6/python-2.7.6.amd64.msi from the page.
 
 ### Install Pip
-1. Install pip on windows by copying this file to your temp directory: https://bootstrap.pypa.io/get-pip.py
+1. Install pip on windows by copying this file to your temp directory: https://bootstrap.pypa.io/get-pip.py.
 2. Run the program from the command line as an administrator.
 3. Use the following command to install the pip file (ignore the warnings during installation):
 ```
@@ -79,7 +79,7 @@ c:\python27\scripts\Pip.exe install requests c:\python27\scripts\Pip.exe install
 ```
 
 ### Run the sample script
-1. Copy the sample script into c:\python27\scripts directory
+1. Copy the sample script into c:\python27\scripts directory.
 2. Run the script with the following command:
 ```
 C:\Python27>python.exe c:\Python27\Scripts\cl_sample_incidents.py -c flat_file -u https://YourAPIServersAddress/api/v2 -t <your token> -p c:\tmp
