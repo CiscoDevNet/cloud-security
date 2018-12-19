@@ -95,7 +95,7 @@ curl -k -H "Authorization: Bearer EnterTokenHere" 'https://YourAPIServersAddress
 
 * Whitelist your external IP address/range (Settings -> API and Authentication).
 * Do you need to whitelist Cloudlock’s IP Address? As of 6/10/16, the Cloudlock API IPs are: `52.0.185.54`
-  `54.236.77.64`
+  `54.236.77.64`.
 * Did you create and/or properly copy the token generated in Cloudlock?
 * Are you using the correct url (there are a number of these so please contact support@cloudlock.com if you are unsure).
 * If you still have issues, please contact support@cloudlock.com.
