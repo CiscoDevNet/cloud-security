@@ -3,7 +3,7 @@ Postman is a REST API client that has many uses however we will focus on using i
 
 # Disclaimer
 Please see the [official API documentation](https://docs.umbrella.com/cloudlock-documentation/docs/introduction-to-api-enterprise) to learn about:
-* Authentication (you will need to create an API taken to use these examples).
+* Authentication (you will need to create an API token to use these examples).
 * Pagination.
 * Rate Limits.
 * Endpoint fields and filters.
