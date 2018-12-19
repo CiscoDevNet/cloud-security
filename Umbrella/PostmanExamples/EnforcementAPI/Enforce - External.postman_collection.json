@@ -1,0 +1,128 @@
+{
+	"info": {
+		"name": "Enforce - External",
+		"_postman_id": "1a4fa189-a69b-50c8-c83e-938055d38241",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enforce Get List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"google.com\",\"api.bing.com\",\"www.google.com\",\"api.bing.com\",\"www.google.com\",\"google.com\",\"ssl.gstatic.com\",\"clients1.google.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"acroipm.adobe.com\",\"officeclient.microsoft.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"officeclient.microsoft.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"www.iuqerfsodp9ifjaposdfjhgosurijfaewrwergwea.com\",\"time.windows.com\",\"dns.msftncsi.com\",\"officeclient.microsoft.com\",\"shavar.prod.mozaws.net\",\"shavar.services.mozilla.com\",\"aus5.mozilla.org\",\"detectportal.firefox.com\",\"detectportal.firefox.com\",\"d6wjo2hisqfy2.cloudfront.net\",\"shield-normandy-elb-prod-2099053585.us-west-2.elb.amazonaws.com\",\"api.bing.com\",\"balrog-aus5.r53-2.services.mozilla.com\",\"self-repair.mozilla.org\",\"dcky6u1m8u6el.cloudfront.net\",\"tiles-cloudfront.cdn.mozilla.net\",\"tiles.r53-2.services.mozilla.com\",\"normandy-cloudfront.cdn.mozilla.net\",\"www.bing.com\",\"tiles.services.mozilla.com\",\"officeclient.microsoft.com\",\"a1089.d.akamai.net\"]"
+				},
+				"url": {
+					"raw": "https://s-platform.api.opendns.com/1.0/domains?customerKey=EnterYourCustomerKeyHere",
+					"protocol": "https",
+					"host": [
+						"s-platform",
+						"api",
+						"opendns",
+						"com"
+					],
+					"path": [
+						"1.0",
+						"domains"
+					],
+					"query": [
+						{
+							"key": "customerKey",
+							"value": "EnterYourCustomerKeyHere",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Enforce Delete Domains",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://s-platform.api.opendns.com/1.0/domains/EnterYourDomainIdHere?customerKey=EnterYourCustomerKeyHere",
+					"protocol": "https",
+					"host": [
+						"s-platform",
+						"api",
+						"opendns",
+						"com"
+					],
+					"path": [
+						"1.0",
+						"domains",
+						"EnterYourDomainIdHere"
+					],
+					"query": [
+						{
+							"key": "customerKey",
+							"value": "EnterYourCustomerKeyHere",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Enforce Block Domain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"alertTime\": \"2013-02-08T11:14:26.0Z\",\n    \"deviceId\": \"ba6a59f4-e692-4724-ba36-c28132c761de\",\n    \"deviceVersion\": \"13.7a\",\n    \"dstDomain\": \"internetbadguys.com\",\n    \"dstUrl\": \"http://internetbadguys.com/a-bad-url\",\n    \"eventTime\": \"2013-02-08T09:30:26.0Z\",\n    \"protocolVersion\": \"1.0a\",\n    \"providerName\": \"Security Platform\"\n}"
+				},
+				"url": {
+					"raw": "https://s-platform.api.opendns.com/1.0/events?customerKey=EnterYourCustomerKeyHere",
+					"protocol": "https",
+					"host": [
+						"s-platform",
+						"api",
+						"opendns",
+						"com"
+					],
+					"path": [
+						"1.0",
+						"events"
+					],
+					"query": [
+						{
+							"key": "customerKey",
+							"value": "EnterYourCustomerKeyHere",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
