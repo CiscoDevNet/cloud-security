@@ -1,4 +1,4 @@
-# Example of a Splunk Adaptive Response Alert Action
+# Example of a Splunk Adaptive Response Alert Action [POC Grade]
 
 ## Introduction
 The attached [Adaptive Response Alert Action](http://dev.splunk.com/view/enterprise-security/SP-CAAAFBF) is a POC grade example of how you can get additional context for a Cloudlock incident within Splunk. This example is supplied as a sample only for use with your Cisco Cloudlock subscription under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
