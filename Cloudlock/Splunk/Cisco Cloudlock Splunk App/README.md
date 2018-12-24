@@ -18,6 +18,10 @@ To install the Cloudlock Splunk App, follow these steps.
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/install_app_browse.png)
 * Choose the cloudlock.spl file, then click Upload:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/app_install.png)
+  - If you are upgrading the app please:
+    - First backup the cl_polling_incidents.ini file.
+    - Check the 'upgrade' box.
+    - Overwrite the cl_polling_incidents.ini file to maintain the polling state.
 * When prompted, restart Splunk.
 * Click on the Splunk icon in the top left part of the screen.
 * The Cloudlock App icon appears on the home screen:
