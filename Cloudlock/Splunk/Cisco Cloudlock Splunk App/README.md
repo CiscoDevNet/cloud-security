@@ -1,5 +1,5 @@
 # Prerequisites
-* Before installing, you must first do the following: 
+* Before installing, first do the following: 
   - To create an API token, open the Cloudlock Settings > Integrations panel. The token appears in the panel, where it can be selected and copied. Keep the token available, as you will use it in Step 10 of the following Installation process.
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth.png)
   - The Cloudlock Splunk App makes API calls. In order to provide access, please add your IP address to the Whitlist as shown above.
@@ -40,38 +40,45 @@ The Incident Overview dashboard begins to display data. You have finished instal
 
 # Using the Cloudlock Splunk App
 The following sections detail use of the Cloudlock Splunk app. Note that the data displays in the app refresh every 3 minutes. 
-You access the Cloudlock Splunk app from the Splunk home screen:
+You can access the Cloudlock Splunk app from the Splunk home screen:
 
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/apps.png)
 
-
-When the app opens the Cloudlock Incident Overview panel is displayed. If the panel displays no data it may indicate an installation failure; refer to the above section Installing the Cloudlock Splunk App to repeat the process. 
+When the app opens the Cloudlock Incident Overview panel is displayed.
 
 The Cloudlock Incident Overview page gives you an overview of Cloudlock Incidents. The top panels give a current daily or hourly total incidents in each status state (New, In Progress, Resolved, or Dismissed):
 
-
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/counters.png)
 
 Other data displays show the top offenders (by incident count) as well as a chart of incidents per platform:
+
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/db2.png)
 
 Managing Incidents
 To manage incidents in the Cloudlock Splunk App, follow these steps:
 
-In Splunk, select App:Cloudlock > Incidents > Incident Management
+In Splunk, select App:Cloudlock > Incidents > Incident Management:
 
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/drop_down.png)
 
+The Incidents List appears:
 
-The Incidents List appears. You can manage incidents in the list in several ways:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/IncidentsOverview.png)
 
+You can:
+* Filter the list by Severity, Status or Time by using the selectors at the top of the list.
+* Update the Status or Severity of an incident by selecting the new value, then and select Update on the right.
+* Review details of an incident by selecting it. The Incident Details panel appears. From this panel you can email the owner of the object in violation and (with appropriate credentials) view the object itself:
 
-Filter the list by Severity, Status or Time by using the selectors at the top of the list:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/incident_detail.png)
 
+# Enabling User Access to the App
+The Cloudlock Splunk app is installed by a Splunk administrator. However, you can enable a non-administrator to use it by adding the following capabilities to a new or existing role (also, make sure to give the user access to the cloudlock index):
+* cloudlock_read: access the app panels
+* cloudlock_write: update an incidents status/severity in the Incident Management
 
-Update the Status or Severity of an incident by selecting the new value, then and select Update on the right:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/user1_.png)
 
-
-Review details of an incident by selecting it. The Incident Details panel appears. From this panel you can email the owner of the object in violation and (with appropriate credentials) view the object itself:
-
-Enabling User Access to the App
-The Cloudlock Splunk app is installed and run by a Splunk administrator. However, you can enable a non-administrator to use it by adding the following capabilities to a new or existing role:
 
 # TOS
 © 2018 Cisco and/or its affiliates. All rights reserved.  Cloudlock is a registered trademark of Cisco. All other trademarks or other third party brand or product names included herein are the trademarks or registered trademarks of their respective companies or organizations and are used only for identification or explanation.
@@ -79,11 +86,3 @@ Cisco Cloudlock and related documentation are protected by contract law, intelle
 This documentation is provided “as is” and all express or implied conditions, representations and warranties, including implied warranty of merchantability, fitness for a particular purpose or non-infringement are hereby disclaimed, except to the extent that such disclaimers are held to be legally invalid.  
 The information contained in this documentation is subject to change without notice.  Cisco recommends you periodically check this site to ensure you are utilizing the most current version of this documentation.
 Add or select the user, then add the roles cloudlock_read and cloudlock_write to the inheritance list:
-
-
-The inherited capabilities will resemble this:
-
-
-Add the cloudlock index to the list of indexes and indexes searched by default:
-
-The user now has access to the Cloudlock Splunk App.
