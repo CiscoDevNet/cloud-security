@@ -21,6 +21,7 @@ To install the Cloudlock Splunk App, follow these steps.
 * When prompted, restart Splunk.
 * Click on the Splunk icon in the top left part of the screen.
 * The Cloudlock App icon appears on the home screen:
+
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/apps.png)
 * Select Cloudlock from the Splunk home screen. The following panel opens. Accept the Terms of Service (TOS) and select Submit:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth_splunk.png)
