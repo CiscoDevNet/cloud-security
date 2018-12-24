@@ -14,6 +14,7 @@ The Alert Action gets triggered by an alert in Splunk and creats a new event whi
   - event name
   - geolocation data
   - source ip
+  
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Alert%20Action/UEBA%20Context%20AR.png)
  
 ## Before Running the Script
