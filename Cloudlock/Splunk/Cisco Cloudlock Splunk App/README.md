@@ -1,17 +1,11 @@
-# TOS
-© 2018 Cisco and/or its affiliates. All rights reserved.  Cloudlock is a registered trademark of Cisco. All other trademarks or other third party brand or product names included herein are the trademarks or registered trademarks of their respective companies or organizations and are used only for identification or explanation.
-Cisco Cloudlock and related documentation are protected by contract law, intellectual property laws and international treaties, and are authorized for use only by customers for internal purposes in accordance with the applicable subscription agreement or terms of service. This documentation may not be distributed to third parties.  
-This documentation is provided “as is” and all express or implied conditions, representations and warranties, including implied warranty of merchantability, fitness for a particular purpose or non-infringement are hereby disclaimed, except to the extent that such disclaimers are held to be legally invalid.  
-The information contained in this documentation is subject to change without notice.  Cisco recommends you periodically check this site to ensure you are utilizing the most current version of this documentation.
-
 # Prerequisites
-Before installing, you must create an API token in Cisco Cloudlock. 
-To create an API token, open the Cloudlock Settings > Integrations panel. The token appears in the panel, where it can be selected and copied. Keep the token available, as you will use it in Step 10 of the following Installation process:
+* Before installing, you must first do the following: 
+  - To create an API token, open the Cloudlock Settings > Integrations panel. The token appears in the panel, where it can be selected and copied. Keep the token available, as you will use it in Step 10 of the following Installation process.
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth.png)
+  - The Cloudlock Splunk App makes API calls. In order to provide access, please contact support@cloudlock.com so that they can whitelist your IP address.
+  - You also need to get (from support@cloudlock.com) the URL to paste into the Cloudlock Authentication Manager — in step 10 below.
 
 
-The Cloudlock Splunk App makes API calls. In order to provide access, please contact support@cloudlock.com so that they can whitelist your IP address.
-You also need to get (from support@cloudlock.com) the URL to paste into the Cloudlock Authentication Manager — in step 10 below.
 
 # Installing the Cloudlock Splunk App
 To install the Cloudlock Splunk App, follow these steps.
@@ -94,6 +88,11 @@ Review details of an incident by selecting it. The Incident Details panel appear
 Enabling User Access to the App
 The Cloudlock Splunk app is installed and run by a Splunk administrator. However, you can enable a non-administrator to use it by adding the following capabilities to a new or existing role:
 
+# TOS
+© 2018 Cisco and/or its affiliates. All rights reserved.  Cloudlock is a registered trademark of Cisco. All other trademarks or other third party brand or product names included herein are the trademarks or registered trademarks of their respective companies or organizations and are used only for identification or explanation.
+Cisco Cloudlock and related documentation are protected by contract law, intellectual property laws and international treaties, and are authorized for use only by customers for internal purposes in accordance with the applicable subscription agreement or terms of service. This documentation may not be distributed to third parties.  
+This documentation is provided “as is” and all express or implied conditions, representations and warranties, including implied warranty of merchantability, fitness for a particular purpose or non-infringement are hereby disclaimed, except to the extent that such disclaimers are held to be legally invalid.  
+The information contained in this documentation is subject to change without notice.  Cisco recommends you periodically check this site to ensure you are utilizing the most current version of this documentation.
 Add or select the user, then add the roles cloudlock_read and cloudlock_write to the inheritance list:
 
 
