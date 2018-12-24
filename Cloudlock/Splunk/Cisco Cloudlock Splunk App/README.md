@@ -2,53 +2,35 @@
 * Before installing, you must first do the following: 
   - To create an API token, open the Cloudlock Settings > Integrations panel. The token appears in the panel, where it can be selected and copied. Keep the token available, as you will use it in Step 10 of the following Installation process.
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth.png)
-  - The Cloudlock Splunk App makes API calls. In order to provide access, please contact support@cloudlock.com so that they can whitelist your IP address.
-  - You also need to get (from support@cloudlock.com) the URL to paste into the Cloudlock Authentication Manager — in step 10 below.
-
+  - The Cloudlock Splunk App makes API calls. In order to provide access, please add your IP address to the Whitlist as shown above.
+  - Last but not least, please contact support@cloudlock.com to receive your organisations URL. You will need to paste this URL within the Cloudlock Authentication Manager — in step 10 below.
 
 
 # Installing the Cloudlock Splunk App
 To install the Cloudlock Splunk App, follow these steps.
 
-Download the Cloudlock Splunk App from https://splunkbase.splunk.com/.
-As a Splunk administrator, open the Splunk home page and select the Manage Apps control:
-
-Select Install app from file:
-
-
-
-Choose the cloudlock.spl file, then click Upload:
-
-
-
-When the upload completes, restart Splunk.
-
-
-Select the Splunk icon in the top left part of the screen:
-
-
-
-The Cloudlock App icon appears on the home screen:
-
-Select Cloudlock from the Splunk home screen. 
-The following panel opens. Accept the Terms of Service (TOS) and select Submit.
-
-
-
-Enter the following information
-Name: admin
-URL: the URL you received from Cloudlock Support in the Prerequisites step.
-Token: the token generated in the Prerequisites step.
-
-Note: If the URL provided is not: https://api.cloudlock.com/api/v2 then you will need to also modify the data input (Settings -> Data Input -> CloudLock Incident Extraction -> incidents and then change the url). For example:
-
-
-
-
-Note: initially the panel will look different from this example because initially it has no data to display):
-
+* [Download the Cloudlock Splunk App](https://splunkbase.splunk.com/app/3043/).
+* As a Splunk administrator, open the Splunk home page and select the Manage Apps control:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/manage_apps.png)
+* Select Install app from file:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/install_app_browse.png)
+* Choose the cloudlock.spl file, then click Upload:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/app_install.png)
+* When prompted, restart Splunk.
+* Click on the Splunk icon in the top left part of the screen.
+* The Cloudlock App icon appears on the home screen:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/apps.png)
+* Select Cloudlock from the Splunk home screen. The following panel opens. Accept the Terms of Service (TOS) and select Submit:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth_splunk.png)
+* Enter the following information
+  - Name: admin
+  - URL: the URL you received from Cloudlock Support in the Prerequisites step.
+  - Token: the token generated in the Prerequisites step.
+Note: If the URL provided is not: `https://api.cloudlock.com/api/v2` then you will need to also modify the data input (Settings -> Data Input -> CloudLock Incident Extraction -> incidents and then change the url). For example:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/app_url.png)
 
 Select App: Cloudlock > Cloudlock Incident Overview:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/db1.png)
 
 The Incident Overview dashboard begins to display data. You have finished installing the Cloudlock Splunk app.
 
