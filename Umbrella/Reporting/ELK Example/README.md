@@ -24,7 +24,7 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 
 ## Getting Started
 
-* Clone the following repo https://github.com/deviantony/docker-elk: 
+* Clone a repo that has a full ELK stack such as the one in the example below: 
 
 ```
 git clone https://github.com/deviantony/docker-elk
@@ -51,4 +51,4 @@ docker-compose up -d (or to keep up: docker-compose up)
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
 * Goto Management -> Index Patterns and enter: log* -> select 'timestamp'
-* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/VisConfig.json) in : Management -> Saved Objects -> Import
+* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
