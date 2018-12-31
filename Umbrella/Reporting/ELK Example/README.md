@@ -1,7 +1,7 @@
 # General
 
 The following is a basic example of how one could use an ELK stack running in Docker containers to pull Umbrella logs from S3 and build reports/visualisations for this data:
-![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/umbrellaELK.png)
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/umbrellaELK.png)
 
 # *** Important ***
 
