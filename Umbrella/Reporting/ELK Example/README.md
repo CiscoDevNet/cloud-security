@@ -29,8 +29,7 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 ```
 git clone https://github.com/deviantony/docker-elk
 ```
-* Replace ../logstash/pipeline/logstash.conf with:
-  https://github.com/CiscoDevNet/cloud-security/blob/master/UmbrellaReporting/logstash.conf
+* Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/logstash.conf):
 * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
 
 ```
