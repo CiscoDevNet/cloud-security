@@ -1,0 +1,153 @@
+{
+	"info": {
+		"name": "Umbrella Management APIs - External",
+		"_postman_id": "0f77c7e0-2914-0c34-2995-470766f323ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Customer",
+			"item": [
+				{
+					"name": "List all customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/serviceproviders/EnterYourOrgID/customers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"serviceproviders",
+								"EnterYourOrgID",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single customers details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/serviceproviders/EnterYourOrgID/customers/EnterYourCustomerID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"serviceproviders",
+								"EnterYourOrgID",
+								"customers",
+								"EnterYourCustomerID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"customerName\": \"EnterCustomerName\", \"seats\": EnterNumberOfLicenses, \"streetAddress\": \"EnterStreetAddress\", \"city\": \"EnterCityName\", \"state\": \"EnterStateName\", \"countryCode\": \"EnterCountryCode\", \"packageId\": \"EnterPackageID\", \"dealId\": \"EnterDealID\",  \"adminEmails\": [\"EnterAdminEmails\"]}"
+						},
+						"url": {
+							"raw": "{{server}}/serviceproviders/EnterYourOrgID/customers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"serviceproviders",
+								"EnterYourOrgID",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete customer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/serviceproviders/EnterYourOrgID/customers/EnterYourCustomerID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"serviceproviders",
+								"EnterYourOrgID",
+								"customers",
+								"EnterYourCustomerID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Network",
+			"item": [
+				{
+					"name": "List networks for a customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/networks",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"networks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
