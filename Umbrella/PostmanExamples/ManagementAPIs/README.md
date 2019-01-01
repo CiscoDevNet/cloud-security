@@ -9,14 +9,13 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_collection.json) json files.
-* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Reporting - External` environment. You will need to:
-  * Change the `url` variable and add your org ID instead of `OrgId`.
+* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20API%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20APIs%20-%20External.postman_collection.json) json files.
+* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Management API - External` environment. You will need to:
   * Edit the token variable and add your token instead of `Your API Token`.
-  * Edit the `domainName` variable and change `domainname.com` to the domain name you would like to get information for.
 
 # Making an API call:
-* Select the `Umbrella Reporting - External` environment from the drop down list.
-* Select the `Reporting` collection.
+* Select the `Umbrella Management API - External` environment from the drop down list.
+* Select the `Umbrella Management APIs - External` collection.
+* Replace the `EnterYourOrgID`, (and if needed the `EnterYourCustomerID`), placeholder/s with your orgs details. If you want to create a customer, replace the placeholders in the `body` content.
 * Choose an API call.
 * Hit the `Send` button.
