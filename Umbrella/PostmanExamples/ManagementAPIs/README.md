@@ -16,6 +16,7 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 # Making an API call:
 * Select the `Umbrella Management API - External` environment from the drop down list.
 * Select the `Umbrella Management APIs - External` collection.
+* Open the `Customer` or `Network` folders.
 * Replace the `EnterYourOrgID`, (and if needed the `EnterYourCustomerID`), placeholder/s with your orgs details. If you want to create a customer, replace the placeholders in the `body` content.
 * Choose an API call.
 * Hit the `Send` button.
