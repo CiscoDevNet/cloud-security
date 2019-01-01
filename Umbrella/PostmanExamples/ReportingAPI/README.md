@@ -17,6 +17,6 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 
 # Making an API call:
 * Select the `Umbrella Reporting - External` environment from the drop down list.
-* Select the `Reporting` folder.
+* Open the `Reporting` folder.
 * Choose an API call.
 * Hit the `Send` button.
