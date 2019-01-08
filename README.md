@@ -2,7 +2,7 @@
 
 ## Introduction and Terms of Service
 The following include examples and samples that can help you when interacting or building integrations with Cisco Umbrella, Cisco Investigate and Cisco Cloudlock. These samples, scripts, collections and guides are supplied to customers as examples which customers are free to use or modify for use with your existing subscriptions under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
-However, please note that any samples are not covered by the Cisco Umbrella, Cisco Investigate and Cisco CloudLock product warranties or support and are provided “AS IS”. Variations or changes in scripts may be needed from time to time and customers are responsible for updating the samples as needed to meet their use cases or other changes. Use of the APIs are subject to the Terms of Service referenced above.
+However, please note that any samples are not covered by the Cisco Umbrella, Cisco Investigate and Cisco CloudLock product warranties or support and are provided “AS IS”. Variations or changes in scripts may be needed from time to time and users are responsible for updating the samples as needed to meet their use cases or other changes. Use of the APIs are subject to the Terms of Service referenced above.
 
 ## Confidentiality and Rights
 ```
