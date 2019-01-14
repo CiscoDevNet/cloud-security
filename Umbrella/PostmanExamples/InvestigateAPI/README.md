@@ -1,5 +1,5 @@
 # General
-Postman is a REST API client that has many uses however we will focus on using it to make simple API calls.
+[Postman is a REST API client](https://www.getpostman.com/) that has many uses however we will focus on using it to make simple API calls.
 
 # Disclaimer
 Please see the [official API documentation](https://docs.umbrella.com/investigate-api/docs/introduction-to-cisco-investigate) to learn about:
