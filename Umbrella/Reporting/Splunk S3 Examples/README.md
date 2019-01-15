@@ -16,5 +16,5 @@ You first need to setup your Umbrella instance to export logs to S3. These logs 
 1. Copy the [attached source file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/Splunk%20S3%20Examples/umbrella_security.xml) to the `views` folder on your Splunk server. For example: `/opt/splunk/etc/apps/search/local/data/ui/views/` (if you want this dashboard in the `search` app).
 2. In the [attached source file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/Splunk%20S3%20Examples/umbrella_security.xml) replace the `EnterYourSourceTypeHere` placeholder with your defined sourcetype.
 3. If needed, change the field names mentioned in the `Assumptions` section based on your environment.
-4. Open the app and goto the dashboards view to see the new dashboard (for example: https://sYourServerName:yourPort/en-US/app/search/dashboards) and then select the dashboard.
+4. Open the app and goto the dashboards view to see the new dashboard (for example: `https://YourServerName:yourPort/en-US/app/search/dashboards`) and then select the dashboard.
 5. If you don't see data in the panels, you most likely need to change the queries in the xml (either the `field names`, the `sourcetype`/`index` or `value`).
