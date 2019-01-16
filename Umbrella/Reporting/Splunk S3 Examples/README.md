@@ -1,5 +1,5 @@
 # Example of a Splunk Dashboard [Lab Grade]
-The following is an example of how you could create a security dashboard within Splunk for Umbrella S3 log data. This is more of a descriptive example than a guide and your environment could be significantly different and require a different configuration (for example the fields mentioned in the `Assumptions` sections could be completely different).
+The following is an example of how you could create a dashboard within Splunk for Umbrella S3 log data. This is more of a descriptive example than a guide and your environment could be significantly different and require a different configuration (for example the fields mentioned in the `Assumptions` sections could be completely different).
 
 ## Prerequisits
 You first need to setup your Umbrella instance to export logs to S3. These logs can be exported to either [your own S3 bucket](https://support.umbrella.com/hc/en-us/articles/230650987-Configuring-Splunk-with-a-Self-managed-S3-Bucket) or to a [Cisco managed S3 bucket](https://support.umbrella.com/hc/en-us/articles/360001388406-Configuring-Splunk-with-a-Cisco-managed-S3-Bucket).
