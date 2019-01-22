@@ -1,7 +1,7 @@
 # Example of a Splunk AR Alert Action [Lab Grade]
 
 ## Introduction
-The attached [Adaptive Response Alert Action](http://dev.splunk.com/view/enterprise-security/SP-CAAAFBF) is a Lab Grade example of how you can get additional context for a Cloudlock incident within Splunk® Enterprise. This example is supplied as a sample only for use with your Cisco Cloudlock subscription under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
+The attached [Adaptive Response Alert Action](http://dev.splunk.com/view/enterprise-security/SP-CAAAFBF) is a Lab Grade example of how you can get additional context for a Cloudlock incident within Splunk®. This example is supplied as a sample only for use with your Cisco Cloudlock subscription under the [Universal Cloud Agreement](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/universal-cloud-agreement.pdf) and [Offer Description](http://www.cisco.com/c/dam/en_us/about/doing_business/legal/docs/omnibus-cloud-security.pdf) respectively (collectively, the “Cisco Agreement”).
 However, please note that any samples are not covered by the Cisco Cloudlock product warranty or support and are provided “AS IS”. Variations or changes in scripts can impact the effectiveness of the Alert Action and customers are responsible for updating the sample as needed to meet their use cases. Use of the APIs are subject to the Cloudlock Terms of Service referenced above.
 
 ## Alert Action Overview
