@@ -42,9 +42,9 @@ Select App: Cloudlock > Cloudlock Incident Overview:
 The Incident Overview dashboard begins to display data. You have finished installing the Cloudlock Splunk app.
 
 
-# Using the Cloudlock Splunk App
-The following sections detail use of the Cloudlock Splunk app. Note that the data displays in the app refresh every 3 minutes. 
-You can access the Cloudlock Splunk app from the Splunk home screen:
+# Using the Cloudlock for Splunk App
+The following sections detail use of the Cloudlock for Splunk app. Note that the data displays in the app refresh every 3 minutes. 
+You can access the Cloudlock for Splunk app from the Splunk home screen:
 
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/apps.png)
 
@@ -77,7 +77,7 @@ You can:
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/incident_detail.png)
 
 # Enabling User Access to the App
-The Cloudlock Splunk app is installed by a Splunk administrator. However, you can enable a non-administrator to use it by adding the following capabilities to a new or existing role (also, make sure to give the user access to the cloudlock index):
+The Cloudlock for Splunk app is installed by a Splunk administrator. However, you can enable a non-administrator to use it by adding the following capabilities to a new or existing role (also, make sure to give the user access to the cloudlock index):
 * cloudlock_read: access the app panels
 * cloudlock_write: update an incidents status/severity in the Incident Management
 
