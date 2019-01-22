@@ -7,7 +7,7 @@
 
 
 # Installing the Cloudlock Splunk App
-To install the Cloudlock Splunk App, follow these steps.
+To install the Cloudlock for Splunk App, follow these steps.
 
 * [Download the Cloudlock Splunk App](https://splunkbase.splunk.com/app/3043/).
 * As a Splunk administrator, open the Splunk home page and select the Manage Apps control:
