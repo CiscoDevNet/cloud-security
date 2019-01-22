@@ -1,5 +1,5 @@
 # Example of a Splunk Dashboard [Lab Grade]
-The following is an example of how you could create a dashboard within Splunk for Umbrella S3 log data. This is more of a descriptive example than a guide and your environment could be significantly different and require a different configuration (for example the fields mentioned in the `Assumptions` sections could be completely different):
+The following is an example of how you could create a dashboard within Splunk® Enterprise for Umbrella S3 log data. This is more of a descriptive example than a guide and your environment could be significantly different and require a different configuration (for example the fields mentioned in the `Assumptions` sections could be completely different):
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/Splunk%20S3%20Examples/UmbrellaS3SplunkSec.png)
 
 ## Prerequisits
