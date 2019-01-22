@@ -2,11 +2,11 @@
 * Before installing, first do the following: 
   - To create an API token, open the Cloudlock Settings > Integrations panel. The token appears in the panel, where it can be selected and copied. Keep the token available, as you will use it in Step 10 of the following Installation process.
 ![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App/media/auth.png)
-  - The Cloudlock for Splunk® App makes API calls. In order to provide access, please add your IP address to the Whitlist as shown above.
+  - The Cloudlock for Splunk App makes API calls. In order to provide access, please add your IP address to the Whitlist as shown above.
   - Last but not least, please contact support@cloudlock.com to receive your organisations URL. You will need to paste this URL within the Cloudlock Authentication Manager — in step 10 below.
 
 
-# Installing the Cloudlock Splunk App
+# Installing the Cloudlock for Splunk App
 To install the Cloudlock for Splunk App, follow these steps.
 
 * [Download the Cloudlock Splunk App](https://splunkbase.splunk.com/app/3043/).
