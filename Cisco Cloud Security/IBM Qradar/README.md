@@ -11,13 +11,13 @@ The Cisco Cloud Security App for IBM Qradar includes four different modules that
 [Umbrella s3 Log Management](https://support.umbrella.com/hc/en-us/articles/231248448-Cisco-Umbrella-Log-Management-in-Amazon-S3)
  
 ## For Cisco Umbrella Enforcement API
-[Enforcement API](https://docs.umbrella.com/enforcement-api/reference/)
+[Enforcement API Documentation](https://docs.umbrella.com/enforcement-api/reference/)
  
 ## For Cisco Investigate API
-[Investigate API](https://docs.umbrella.com/investigate-api/docs)
+[Investigate API Documentation](https://docs.umbrella.com/investigate-api/docs)
  
 ## For Cisco Cloudlock API
-Please see the [authentication section](https://docs.cloudlock.info/docs/introduction-to-api-enterprise) for instructions on how to generate your API token.
+Please see the [authentication section in the documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise) for instructions on how to generate your API token.
 Also - in order for the Cisco Cloud Security App for IBM Qradar to access Cisco Cloudlock's API, we will need to whitelist your Qradars servers external IP address/es or range (if this has not already been done). You can whitelist these within the Cisco Cloudlock User Interface under the Authentication & API tab in the Settings page (which is also where you will generate your API token).
  
 # Installation Instructions
