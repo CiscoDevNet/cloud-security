@@ -148,6 +148,115 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Destination Lists",
+			"description": "",
+			"item": [
+				{
+					"name": "Get All Destination Lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Destination List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								"EnterYourDestListID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Destination List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"access\": \"SeeDocForOptions\", \"isGlobal\": SeeDocForOptions, \"name\": \"SetTheDestListName\", \"destinations\":[{\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}, {\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}]}"
+						},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Destinations for Specific Destination List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								"EnterYourDestListID",
+								"destinations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
