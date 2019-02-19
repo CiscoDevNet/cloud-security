@@ -201,6 +201,31 @@
 					"response": []
 				},
 				{
+					"name": "Get Destinations for Specific Destination List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								"EnterYourDestListID",
+								"destinations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Destination List",
 					"request": {
 						"method": "POST",
@@ -232,25 +257,31 @@
 					"response": []
 				},
 				{
-					"name": "Get Destinations for Specific Destination List",
+					"name": "Update Destination List",
 					"request": {
-						"method": "GET",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Authorization",
 								"value": "Basic {{token}}"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": "[\n{\n\"op\": \"SeeDocForOptions\",\n\"key\": \"SeeDocForOptions\",\n\"value\": {\n\"comment\": \"EnterAComment\",\n\"destination\": \"SeeDocForOptions\"\n}\n}\n]"
+						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
 								"{{server}}EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
-								"EnterYourDestListID",
-								"destinations"
+								"EnterYourDestListID"
 							]
 						}
 					},
