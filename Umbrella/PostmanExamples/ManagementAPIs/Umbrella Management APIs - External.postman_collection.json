@@ -177,6 +177,96 @@
 					"response": []
 				},
 				{
+					"name": "Create Destination List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"access\": \"SeeDocForOptions\", \"isGlobal\": SeeDocForOptions, \"name\": \"SetTheDestListName\", \"destinations\":[{\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}, {\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}]}"
+						},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Destination List Name",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"EnterTheNewNameForTheDestList\"}"
+						},
+						"url": {
+							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"host": [
+								"{{server}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								"EnterYourDestListID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Destination List",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Host",
+								"value": "management.api.umbrella.com"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"host": [
+								"{{url}}EnterYourOrgID"
+							],
+							"path": [
+								"destinationlists",
+								"EnterYourDestListID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Specific Destination List",
 					"request": {
 						"method": "GET",
@@ -226,7 +316,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Destination List",
+					"name": "Add Destinations to Destination List",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -241,47 +331,54 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"access\": \"SeeDocForOptions\", \"isGlobal\": SeeDocForOptions, \"name\": \"SetTheDestListName\", \"destinations\":[{\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}, {\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}]}"
+							"raw": "[{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"},{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"}]"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/",
+							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{url}}EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
-								""
+								"EnterYourDestListID",
+								"destinations"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update Destination List",
+					"name": "Remove Destinations from Destination List",
 					"request": {
-						"method": "PATCH",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
 								"value": "Basic {{token}}"
 							},
 							{
-								"key": "content-type",
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
 								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n{\n\"op\": \"SeeDocForOptions\",\n\"key\": \"SeeDocForOptions\",\n\"value\": {\n\"comment\": \"EnterAComment\",\n\"destination\": \"SeeDocForOptions\"\n}\n}\n]"
+							"raw": "[DestinationID1,DestinationID2]"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations/remove",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{url}}EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
-								"EnterYourDestListID"
+								"EnterYourDestListID",
+								"destinations",
+								"remove"
 							]
 						}
 					},
