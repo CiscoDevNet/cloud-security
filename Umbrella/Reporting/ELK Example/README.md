@@ -5,7 +5,7 @@ The following is a basic example of how one could use an ELK stack running in Do
 
 # *** Important ***
 
-This guide is intended as an example only. For convenience, we are demonstrating this example with a stack built by deviantony. You should consider putting together your own deployment which will most likely need to include other elements, be appropriately scaled and take into account things like:
+This guide is intended as an example only. For convenience, this guide assumes a simple ELK stack. You should consider putting together your own deployment which will most likely need to include other elements, be appropriately scaled and take into account things like:
 * The needed storage.
 * The amount of data and how you should deploy/scale the stack elements.
 * Bandwidth considerations.
