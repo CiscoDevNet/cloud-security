@@ -24,10 +24,10 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 
 ## Getting Started
 
-* Clone a repo that has a full ELK stack such as the one in the example below: 
+* Clone a repo that has a full ELK stack, for example: 
 
 ```
-git clone https://github.com/deviantony/docker-elk
+git clone https://github.com/<user>/<repo>
 ```
 * Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/logstash.conf):
 * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
