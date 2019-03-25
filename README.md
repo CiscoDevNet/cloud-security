@@ -12,8 +12,7 @@ The following include examples and samples that can help you when interacting or
   * [**4 - Reporting API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPI)
   * [**5 - Umbrella S3 -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Reporting/ELK%20Example)
 
-[**Cloudlock**](#features)
-  * [**Glyph/Icon sets**](#glyph-sets)
-  * [**Patched Fonts**](#patched-fonts)
-  * [**Combinations**](#combinations)
-  * [**Font Patcher**](#font-patcher)
+[**Cloudlock**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock)
+  * [**1 - Enterprise API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/PostmanExamples)
+  * [**2 - Sample Script**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/Sample%20Scripts)
+  * [**3 - Cisco Cloudlock for Splunk App**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App)
