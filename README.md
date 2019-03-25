@@ -5,8 +5,8 @@ The following include examples and samples that can help you when interacting or
 
 ## Table of Contents
 
-[**Umbrella**](#font-installation)
-  * [**1 - Manual**](#option-1-download-and-install-manually)
+[**Umbrella**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella)
+  * [**1 - Enforcement API Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)
   * [**2 - Release Archive Download**](#option-2-release-archive-download)
   * [**3 - Install Script**](#option-3-install-script)
   * [**4 - Homebrew Fonts (macOS (OS X))**](#option-4-homebrew-fonts)
