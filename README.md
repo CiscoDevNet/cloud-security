@@ -6,14 +6,11 @@ The following include examples and samples that can help you when interacting or
 ## Table of Contents
 
 [**Umbrella**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella)
-  * [**1 - Enforcement API Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)
-  * [**2 - Release Archive Download**](#option-2-release-archive-download)
-  * [**3 - Install Script**](#option-3-install-script)
-  * [**4 - Homebrew Fonts (macOS (OS X))**](#option-4-homebrew-fonts)
-  * [**5 - Clone Repo**](#option-5-clone-the-repo)
-  * [**6 - Ad Hoc Curl Download**](#option-6-ad-hoc-curl-download)
-  * [**7 - Arch User Repository (AUR) (Arch Linux)**](#option-7-unofficial-arch-user-repository-aur)
-  * [**8 - Patch Your Own Font**](#option-8-patch-your-own-font)
+  * [**1 - Enforcement API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)
+  * [**2 - Investigate API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/InvestigateAPI)
+  * [**3 - Management API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ManagementAPIs)
+  * [**4 - Reporting API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPI)
+  * [**5 - Umbrella S3 -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Reporting/ELK%20Example)
 
 [**Cloudlock**](#features)
   * [**Glyph/Icon sets**](#glyph-sets)
