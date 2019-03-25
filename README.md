@@ -5,8 +5,9 @@ The following include examples and samples that can help you when interacting or
 
 ## TOC
 
-| Product       | Examples      ---|
-| ------------- |:----------------:|
-| Umbrella      | Postman Examples |
-|               | centered         |
-| zebra stripes | are neat         |
+| Product       | Topic            | Example          |
+| ------------- |:----------------:|:----------------:|
+| Umbrella      | Postman Examples |                  |
+|               |                  | [Enfoce API](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)                 |
+|               | centered         |                  |
+| zebra stripes | are neat         |                  |
