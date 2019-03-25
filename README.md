@@ -5,8 +5,8 @@ The following include examples and samples that can help you when interacting or
 
 ## TOC
 
-| Product       | Examples      |
-| ------------- |:-------------:|
-| col 3 is      | right-aligned |
-|               | centered      |
-| zebra stripes | are neat      |
+| Product       | Examples      ---|
+| ------------- |:----------------:|
+| Umbrella      | Postman Examples |
+|               | centered         |
+| zebra stripes | are neat         |
