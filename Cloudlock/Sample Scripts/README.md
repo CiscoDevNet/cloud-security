@@ -9,7 +9,7 @@ The scripts function in four steps, as detailed below:
 
 1. The script calls the Cloudlock API [instructions on prerequisites and configuration are provided in the official documentation](https://docs.cloudlock.info/docs/introduction-to-api-enterprise).
 2. The script gets the API call results.
-3. The script outputs the incident to either a file or to syslog (syslog is a way to
+3. The script outputs the incidents to either a file or to syslog (syslog is a way to
 send messages to a logging server).
 4. The SIEM picks up the incidents from the file.
 
