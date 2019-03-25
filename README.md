@@ -8,6 +8,7 @@ The following include examples and samples that can help you when interacting or
 | Product       | Topic            | Example          |
 | ------------- |:----------------:|:----------------:|
 | Umbrella      | Postman Examples |                  |
-|               |                  | [Enfoce API](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)                 |
+|               |                  | [Enforcement API](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)                 |
+|               |                  | [Investigate API](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/InvestigateAPI)                 |
 |               | centered         |                  |
 | zebra stripes | are neat         |                  |
