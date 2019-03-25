@@ -14,5 +14,5 @@ The following include examples and samples that can help you when interacting or
 
 [**Cloudlock**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock)
   * [**1 - Enterprise API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/PostmanExamples)
-  * [**2 - Sample Script**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/Sample%20Scripts)
+  * [**2 - API Sample Script**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/Sample%20Scripts)
   * [**3 - Cisco Cloudlock for Splunk App**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/Splunk/Cisco%20Cloudlock%20Splunk%20App)
