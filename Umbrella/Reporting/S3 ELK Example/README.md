@@ -1,7 +1,7 @@
 # General
 
 The following is a basic example of how one could use an ELK stack running in Docker containers to pull Umbrella logs from S3 and build reports/visualisations for this data:
-![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/umbrellaELK.png)
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/umbrellaELK.png)
 
 # *** Important ***
 
@@ -29,7 +29,7 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 ```
 git clone https://github.com/deviantony/docker-elk
 ```
-* Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/logstash.conf):
+* Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf):
 * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
 
 ```
@@ -51,4 +51,4 @@ docker-compose up -d (or to keep up: docker-compose up)
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
 * Goto Management -> Index Patterns and enter: log* -> select 'timestamp'
-* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
+* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
