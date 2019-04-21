@@ -20,31 +20,36 @@ This guide is intended as an example only. For convenience, this guide assumes a
 
 ## Getting Started
 
-* Clone a repo that has a full ELK stack. You should search for one that suits your needs. The following is just an example built by [deviantony](https://github.com/deviantony/docker-elk): 
+* Download this sample: 
 
 ```
-git clone https://github.com/deviantony/docker-elk
+svn export https://github.com/CiscoDevNet/cloud-security/trunk/Umbrella/Reporting/Reporting%20and%20Investigate%20APIs%20in%20ELK
 ```
-* Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf):
-* Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
+* Decompress it:
 
 ```
-s3 {
-     access_key_id => "XXX"
-     secret_access_key => "XXX"
-     bucket => "XXX"
-     prefix => "dnslogs/XXX"
-     additional_settings => {
-       force_path_style => true
-       follow_redirects => false
-     }
+cd Reporting\ and\ Investigate\ APIs\ in\ ELK/
+unzip Reporting_Investigate_ELK.zip
+cd Reporting_Investigate_ELK
 ```
-* Make sure that you are in the root folder: ../docker-elk and then run:
+* Edit the configuration and environment file:
+```
+vim .env
+```
+Inside you will need to change the placeholders based on your environment:
+```
+UMBRELLA_ORG_ID=EnterYourOrgID (you can see this in your dashboard)
+UMBRELLA_REPORTING_START_TS=EnterStartTimeStamp [the start parameter](https://docs.umbrella.com/umbrella-api/docs/security-activity-report)
+INVESTIGATE_TOKEN=EnterInvestigateAPIToken (please see the Preperations section above)
+UMBRELLA_REPORTING_API_TOKEN=EnterReportingAPIToken (please see the Preperations section above)
+```
+
+* Start the containers:
 ```
 docker-compose up -d (or to keep up: docker-compose up)
 ```
 
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
-* Goto Management -> Index Patterns and enter: log* -> select 'timestamp'
-* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
+* Import the [dashboard example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/Reporting%20and%20Investigate%20APIs%20in%20ELK/Umbrella_Dashboard.json) in : Management -> Saved Objects -> Import
+* Open the Dashboard -> Cisco Umbrella Security Dashboard
