@@ -1,7 +1,7 @@
 # General
 
-The following is a basic example of how one could use an ELK stack running in Docker containers to pull Umbrella logs from S3 and build reports/visualisations for this data:
-![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/umbrellaELK.png)
+The following is a basic example of how one could use an ELK stack running in Docker containers to pull Umbrella security activity, enrich it with the Investigate API and build reports/visualisations for this data:
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/Reporting%20and%20Investigate%20APIs%20in%20ELK/dash1.png)
 
 # *** Important ***
 
@@ -15,12 +15,8 @@ This guide is intended as an example only. For convenience, this guide assumes a
 ## Preparations and Prerequisites
 
 * You'll need to be able to run Docker containers.
-* You'll need to setup S3 logging in Umbrella and have the key/secret/bucket name available.
-* Make sure that you have traffic in your environment and that this traffic is reaching your bucket:
-
-```
-aws s3 ls s3://<YourBucketName>/ --recursive
-```
+* You'll need to generate your [Reporting API](https://docs.umbrella.com/umbrella-api/docs/authentication-and-errors) and [Investigate API](https://docs.umbrella.com/investigate-api/docs/about-the-api-authentication) tokens in Umbrella and have these available.
+* Make sure that you have traffic in your environment (security related traffic).
 
 ## Getting Started
 
