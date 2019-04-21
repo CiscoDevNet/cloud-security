@@ -39,10 +39,11 @@ vim .env
 Inside you will need to change the placeholders based on your environment:
 ```
 UMBRELLA_ORG_ID=EnterYourOrgID (you can see this in your dashboard)
-UMBRELLA_REPORTING_START_TS=EnterStartTimeStamp [the start parameter](https://docs.umbrella.com/umbrella-api/docs/security-activity-report)
+UMBRELLA_REPORTING_START_TS=EnterStartTimeStamp - please see the note below 
 INVESTIGATE_TOKEN=EnterInvestigateAPIToken (please see the Preperations section above)
 UMBRELLA_REPORTING_API_TOKEN=EnterReportingAPIToken (please see the Preperations section above)
 ```
+* Note: The reporting API requires a [start time parameter](https://docs.umbrella.com/umbrella-api/docs/security-activity-report).
 
 * Start the containers:
 ```
