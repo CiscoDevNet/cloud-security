@@ -47,7 +47,7 @@ UMBRELLA_REPORTING_API_TOKEN=EnterReportingAPIToken (please see the Preperations
 
 * Start the containers:
 ```
-docker-compose up -d (or to keep up: docker-compose up)
+sudo -E docker-compose up
 ```
 
 ## Importing the example reports:
