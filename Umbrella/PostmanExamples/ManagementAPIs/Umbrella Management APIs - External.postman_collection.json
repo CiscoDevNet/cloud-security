@@ -385,6 +385,148 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "4. User",
+			"item": [
+				{
+					"name": "List all Roles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/roles",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Specific User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/users/EnterYourUserID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"users",
+								"EnterYourUserID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"firstname\":\"EnterFirstName\",\"lastname\":\"EnterLastName\",\"email\":\"EnterEmail\",\"password\":\"EnterAPassword\",\"roleId\":\"EnterRoleID\",\"timezone\":\"EnterTimeZone\"}"
+						},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/users",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/users/EnterYourUserID",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"users",
+								"EnterYourUserID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
