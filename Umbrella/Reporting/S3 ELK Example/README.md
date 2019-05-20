@@ -14,12 +14,13 @@ This guide is intended as an example only. For convenience, this guide assumes a
 
 ## Preparations and Prerequisites
 
-* You'll need to be able to run Docker containers.
+* You'll need to be able to run [Docker](https://www.docker.com/) containers.
 * You'll need to setup S3 logging in Umbrella and have the key/secret/bucket name available.
 * Make sure that you have traffic in your environment and that this traffic is reaching your bucket:
 
+Example using [AWS cli](https://docs.aws.amazon.com/cli/latest/reference/s3/index.html):
 ```
-aws s3 ls s3://<YourBucketName>/ --recursive
+AWS_ACCESS_KEY_ID=EnterAccessKey AWS_SECRET_ACCESS_KEY=EnterSecretKey aws s3 ls s3://BucketName/FolderOrPrefixName/dnslogs --recursive
 ```
 
 ## Getting Started
