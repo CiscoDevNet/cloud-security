@@ -33,15 +33,17 @@ Either clone a repo that has an ELK stack, build your own or download the [examp
   * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
 
 ```
-s3 {
-     access_key_id => "XXX"
-     secret_access_key => "XXX"
-     bucket => "XXX"
-     prefix => "dnslogs/XXX"
+   s3 {
+     access_key_id => "EnteryourAccessKey"
+     secret_access_key => "EnterYourSecretAccessKey"
+     region => "EnterYourRegion"
+     bucket => "EnterYourBucketName"
+     prefix => "EnterYourFolderName/dnslogs/"
      additional_settings => {
        force_path_style => true
        follow_redirects => false
      }
+   }
 ```
 * Make sure that you are in the faker folder: ../faker and then run:
 ```
