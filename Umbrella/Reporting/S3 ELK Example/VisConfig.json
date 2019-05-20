@@ -1,47 +1,17 @@
 [
   {
-    "_id": "bbfaac10-ec01-11e8-9c2b-7d05384f65bf",
-    "_type": "dashboard",
-    "_source": {
-      "title": "Umbrella SP Example",
-      "hits": 0,
-      "description": "This is an example of reporting you could accomplish with Umbrella S3 logs. ",
-      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":16,\"h\":11,\"i\":\"1\"},\"id\":\"e1095580-e8da-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"1\",\"title\":\"Total Requests\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":0,\"w\":15,\"h\":11,\"i\":\"2\"},\"id\":\"6b2f57a0-ec00-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"2\",\"title\":\"Total Blocks\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":0,\"w\":15,\"h\":11,\"i\":\"3\"},\"id\":\"4d68db00-ec01-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"3\",\"title\":\"Security Blocks\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":0,\"y\":11,\"w\":16,\"h\":10,\"i\":\"4\"},\"version\":\"6.4.2\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"ca6ab5b0-ec06-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":16,\"y\":11,\"w\":15,\"h\":10,\"i\":\"5\"},\"version\":\"6.4.2\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"id\":\"e5ff1aa0-ec06-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":31,\"y\":11,\"w\":15,\"h\":10,\"i\":\"6\"},\"version\":\"6.4.2\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"id\":\"308f3d20-ec07-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":21,\"w\":24,\"h\":14,\"i\":\"7\"},\"version\":\"6.4.2\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"id\":\"4b6098d0-ec0a-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{},\"title\":\"Blocks by Identity [Top 5]\"},{\"gridData\":{\"x\":24,\"y\":21,\"w\":22,\"h\":14,\"i\":\"8\"},\"version\":\"6.4.2\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"id\":\"a74ae960-ec0b-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{},\"title\":\"Blocks by Domain [Top 5]\"}]",
-      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "4afaa1d0-e82a-11e8-9c2b-7d05384f65bf",
     "_type": "index-pattern",
     "_source": {
       "title": "log*",
       "timeFieldName": "@timestamp",
       "fields": "[{\"name\":\"@timestamp\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"@version\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"action\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"action.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"categories\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"categories.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"domain\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"domain.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"external_ip\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"external_ip.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"geoip.ip\",\"type\":\"ip\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"geoip.latitude\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"geoip.location\",\"type\":\"geo_point\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"geoip.longitude\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"identities\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"identities.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"internal_ip\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"internal_ip.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"main_identity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"main_identity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"message\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"query_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"query_type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"response_code\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"response_code.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"timestamp\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"timestamp.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
-    }
-  },
-  {
-    "_id": "c837fb60-ebff-11e8-9c2b-7d05384f65bf",
-    "_type": "search",
-    "_source": {
-      "title": "Action=blocked",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "_source"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"type\":\"phrase\",\"key\":\"action\",\"value\":\"Blocked\",\"params\":{\"query\":\"Blocked\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"action\":{\"query\":\"Blocked\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
-      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    },
+    "_migrationVersion": {
+      "index-pattern": "6.5.0"
     }
   },
   {
@@ -62,6 +32,51 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"key\":\"action\",\"negate\":false,\"params\":{\"query\":\"Blocked\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Blocked\"},\"query\":{\"match\":{\"action\":{\"query\":\"Blocked\",\"type\":\"phrase\"}}}}]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "c837fb60-ebff-11e8-9c2b-7d05384f65bf",
+    "_type": "search",
+    "_source": {
+      "title": "Action=blocked",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"4afaa1d0-e82a-11e8-9c2b-7d05384f65bf\",\"type\":\"phrase\",\"key\":\"action\",\"value\":\"Blocked\",\"params\":{\"query\":\"Blocked\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"action\":{\"query\":\"Blocked\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "bbfaac10-ec01-11e8-9c2b-7d05384f65bf",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Umbrella SP Example",
+      "hits": 0,
+      "description": "This is an example of reporting you could accomplish with Umbrella S3 logs. ",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":16,\"h\":11,\"i\":\"1\"},\"id\":\"e1095580-e8da-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"1\",\"title\":\"Total Requests\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":16,\"y\":0,\"w\":15,\"h\":11,\"i\":\"2\"},\"id\":\"6b2f57a0-ec00-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"2\",\"title\":\"Total Blocks\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":0,\"w\":15,\"h\":11,\"i\":\"3\"},\"id\":\"4d68db00-ec01-11e8-9c2b-7d05384f65bf\",\"panelIndex\":\"3\",\"title\":\"Security Blocks\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":0,\"y\":11,\"w\":16,\"h\":10,\"i\":\"4\"},\"version\":\"6.4.2\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"ca6ab5b0-ec06-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":16,\"y\":11,\"w\":15,\"h\":10,\"i\":\"5\"},\"version\":\"6.4.2\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"id\":\"e5ff1aa0-ec06-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":31,\"y\":11,\"w\":15,\"h\":10,\"i\":\"6\"},\"version\":\"6.4.2\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"id\":\"308f3d20-ec07-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":21,\"w\":24,\"h\":14,\"i\":\"7\"},\"version\":\"6.4.2\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"id\":\"4b6098d0-ec0a-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{},\"title\":\"Blocks by Identity [Top 5]\"},{\"gridData\":{\"x\":24,\"y\":21,\"w\":22,\"h\":14,\"i\":\"8\"},\"version\":\"6.4.2\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"id\":\"a74ae960-ec0b-11e8-9c2b-7d05384f65bf\",\"embeddableConfig\":{},\"title\":\"Blocks by Domain [Top 5]\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -76,6 +91,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -90,6 +108,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -104,6 +125,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -118,6 +142,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -132,6 +159,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -146,21 +176,9 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
       }
-    }
-  },
-  {
-    "_id": "4b6098d0-ec0a-11e8-9c2b-7d05384f65bf",
-    "_type": "visualization",
-    "_source": {
-      "title": "Blocks by Identity",
-      "visState": "{\"title\":\"Blocks by Identity\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"significant_terms\",\"schema\":\"segment\",\"params\":{\"field\":\"identities.keyword\",\"size\":5}}]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "20d19c90-e8db-11e8-9c2b-7d05384f65bf",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
-      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   },
   {
@@ -176,6 +194,27 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
       }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4b6098d0-ec0a-11e8-9c2b-7d05384f65bf",
+    "_type": "visualization",
+    "_source": {
+      "title": "Blocks by Identity",
+      "visState": "{\"title\":\"Blocks by Identity\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"identities.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "20d19c90-e8db-11e8-9c2b-7d05384f65bf",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
     }
   }
 ]
