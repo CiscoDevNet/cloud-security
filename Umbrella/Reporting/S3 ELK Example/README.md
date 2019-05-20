@@ -26,9 +26,8 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 
 * Either clone a repo that has an ELK stack, build your own or download the example (the following is just an example - please see the `important` section above for further information): 
 
-```
 [Example](https://github.com/CiscoDevNet/cloudsecurity/raw/master/Umbrella/Reporting/S3%20ELK%20Example/example_stack.tar.gz)
-```
+
 * If you are using your own stack, replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf):
 * Otherwise, if you are using the example:
   * Extract the files in the folder of your choice (```tar -xzvf example_stack.tar.gz```)
