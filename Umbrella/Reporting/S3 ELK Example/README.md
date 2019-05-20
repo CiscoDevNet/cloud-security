@@ -24,13 +24,15 @@ aws s3 ls s3://<YourBucketName>/ --recursive
 
 ## Getting Started
 
-* Clone a repo that has a full ELK stack. You should search for one that suits your needs. The following is just an example built by [deviantony](https://github.com/deviantony/docker-elk): 
+* Either clone a repo that has an ELK stack, build your own or download the example (the following is just an example - please see the `important` section above for further information): 
 
 ```
-git clone https://github.com/deviantony/docker-elk
+[Example](https://github.com/CiscoDevNet/cloudsecurity/raw/master/Umbrella/Reporting/S3%20ELK%20Example/example_stack.tar.gz)
 ```
-* Replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf):
-* Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
+* If you are using your own stack, replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf):
+* Otherwise, if you are using the example:
+  * Extract the files in the folder of your choice (```tar -xzvf example_stack.tar.gz```)
+  * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
 
 ```
 s3 {
@@ -43,12 +45,12 @@ s3 {
        follow_redirects => false
      }
 ```
-* Make sure that you are in the root folder: ../docker-elk and then run:
+* Make sure that you are in the faker folder: ../faker and then run:
 ```
 docker-compose up -d (or to keep up: docker-compose up)
 ```
 
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
-* Goto Management -> Index Patterns and enter: log* -> select 'timestamp'
+* Goto Management -> Saved Objects
 * Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
