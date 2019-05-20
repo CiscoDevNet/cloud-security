@@ -45,7 +45,7 @@ Either clone a repo that has an ELK stack, build your own or download the [examp
      }
    }
 ```
-* Make sure that you are in the faker folder: ../faker and then run:
+* Make sure that you are in the root folder and then run:
 ```
 docker-compose up -d (or to keep up: docker-compose up)
 ```
