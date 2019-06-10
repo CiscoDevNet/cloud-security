@@ -1,15 +1,11 @@
 #! /usr/bin/python
 """
 This is a simple demo of connecting and working with the CloudLock API.
-
 Copyright (c) 2019 Cisco and/or its affiliates.
-
 This software is licensed to you under the terms of the Cisco Sample
 Code License, Version 1.1 (the "License"). You may obtain a copy of the
 License at
-
                https://developer.cisco.com/docs/licenses
-
 All use of the material herein must be in accordance with the terms of
 the License. All rights not expressly granted by the License are
 reserved. Unless required by applicable law or agreed to separately in
@@ -32,7 +28,8 @@ import json
 import requests
 from configparser import ConfigParser, NoOptionError
 from requests.packages.urllib3.util import Retry
-
+import dateutil.parser
+import pytz
 
 # Requests 2.7.0 has a problem with SSL certificate validation (it's integration with urllib3).
 KEY_AND_VALUE_CHANGE = 3
@@ -65,10 +62,12 @@ class CLAPIClient(object):
 
     @staticmethod
     def to_datetime(value):
-        try:
-            return datetime.strptime(value[:-6], '%Y-%m-%dT%H:%M:%S.%f')
-        except ValueError:
-            return datetime.strptime(value, '%Y-%m-%d %H:%M:%S.%f')
+        ts_tz_aware = dateutil.parser.parse(value)
+        if '+' in value:
+            return ts_tz_aware.astimezone(pytz.timezone('UTC')).replace(tzinfo=None)
+        else:
+            return ts_tz_aware
+
 
     @staticmethod
     def get_latest_incident(results, order='created_at'):
