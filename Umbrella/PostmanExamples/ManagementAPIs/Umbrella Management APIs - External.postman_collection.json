@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "1. Customer",
+			"name": "1. Customer [SP,MSP Only]",
 			"item": [
 				{
 					"name": "List all customers",
@@ -521,6 +521,68 @@
 								"EnterYourOrgID",
 								"users",
 								"EnterYourUserID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. Virtual Appliances",
+			"description": "",
+			"item": [
+				{
+					"name": "List all Virtual Appliances",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/virtualappliances",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"virtualappliances"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "6. Roaming Computers",
+			"description": "",
+			"item": [
+				{
+					"name": "List all Roaming Computers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgID/roamingcomputers",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgID",
+								"roamingcomputers"
 							]
 						}
 					},
