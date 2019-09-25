@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "1. Customer [SP,MSP Only]",
+			"name": "1. Customer [*SP Only]",
 			"item": [
 				{
 					"name": "List all customers",
