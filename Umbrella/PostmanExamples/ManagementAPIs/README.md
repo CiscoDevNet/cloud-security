@@ -3,7 +3,7 @@
 
 # Disclaimer
 Please see the [official API documentation](https://docs.umbrella.com/umbrella-api/reference) to learn about:
-* [Authentication](https://docs.umbrella.com/umbrella-api/reference#rateauthentication-and-key-management-for-the-umbrella-api) (you will need to create an API token to use these examples).
+* [Authentication](https://docs.umbrella.com/umbrella-api/docs/rateauthentication-and-key-management-for-the-umbrella-api) (you will need to create an API token to use these examples).
 * Endpoint fields and filters.
 * Other endpoints and options (the collection herein contains only a number of examples).
 
