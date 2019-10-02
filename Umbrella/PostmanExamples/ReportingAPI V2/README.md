@@ -9,7 +9,7 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI/Umbrella%20Reporting%20-%20External.postman_collection.json) json files.
+* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI%20V2/Umbrella%20Reporting%20V2%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI%20V2/Umbrella%20ReportingV2%20-%20External.postman_collection.json) json files.
 
 # Authentication
 * Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Reporting V2 - External` environment. You will need to:
