@@ -10,7 +10,7 @@ The following include examples and samples that can help you when interacting or
   * [**2 - Investigate API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/InvestigateAPI)
   * [**3 - Management API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ManagementAPIs)
   * [**4 - Reporting API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPI)
-  * [**5 - Umbrella S3 -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Reporting/ELK%20Example)
+  * [**5 - Umbrella S3 -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Reporting/S3%20ELK%20Example)
 
 [**Cloudlock**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock)
   * [**1 - Enterprise API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock/PostmanExamples)
