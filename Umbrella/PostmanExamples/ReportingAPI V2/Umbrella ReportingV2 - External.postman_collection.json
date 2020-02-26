@@ -504,12 +504,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{APIurl}}{{org_id}}/threats?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+							"raw": "{{APIurl}}{{org_id}}/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 							"host": [
 								"{{APIurl}}{{org_id}}"
 							],
 							"path": [
-								"threats"
+								"total-requests"
 							],
 							"query": [
 								{
