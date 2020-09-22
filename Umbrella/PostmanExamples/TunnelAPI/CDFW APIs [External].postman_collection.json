@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "3ee43512-6768-43e7-9f9c-679a69f3fb72",
+		"name": "CDFW APIs [External]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Datacenters",
+			"item": [
+				{
+					"name": "List all Datacenters",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/service/tunnel/datacenters",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"service",
+								"tunnel",
+								"datacenters"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "2. Tunnels",
+			"item": [
+				{
+					"name": "List Organization Tunnels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific tunnel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels/EnterYourTunnelId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels",
+								"EnterYourTunnelId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tunnel PSK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"EnterTunnelName\",\"deviceType\":\"other\",\"authentication\":{\"type\":\"PSK\",\"parameters\":{\"idPrefix\":\"EnterPrefix\", \"secret\": \"EnterSecret\"}}}"
+						},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Tunnel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels/EnterYourTunnelId",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels",
+								"EnterYourTunnelId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific tunnels policies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels/EnterYourTunnelId/policies",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels",
+								"EnterYourTunnelId",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "3. Credentials",
+			"item": [
+				{
+					"name": "Update/Rotate Creds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"deprecateCurrentKeys\":false,\"autoRotate\":true}"
+						},
+						"url": {
+							"raw": "{{server}}/organizations/EnterYourOrgId/tunnels/EnterYourTunnelId/keys",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"organizations",
+								"EnterYourOrgId",
+								"tunnels",
+								"EnterYourTunnelId",
+								"keys"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
