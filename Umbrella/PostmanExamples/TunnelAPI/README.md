@@ -10,11 +10,11 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 # Prerequisites
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
 * Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/TunnelAPI/Umbrella%20CDFW%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/TunnelAPI/CDFW%20APIs%20%5BExternal%5D.postman_collection.json) json files.
-* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella CDFW Early Adopters` environment. You will need to:
+* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella CDFW External` environment. You will need to:
   * Edit the token variable and add your token instead of `EnterYourManagementAPIToken`.
 
 # Making an API call:
-* Select the `Umbrella CDFW [External]` environment from the drop down list.
+* Select the `Umbrella CDFW External` environment from the drop down list.
 * Select the `CDFW APIs - External` collection.
 * Open the desired folder/s.
 * Replace the `EnterYourOrgId`, (and if needed the `EnterYourTunnelId`), placeholder/s with your environment details. If you want to create a tunnel or update/rotate credentials, replace the placeholders in the `body` content.
