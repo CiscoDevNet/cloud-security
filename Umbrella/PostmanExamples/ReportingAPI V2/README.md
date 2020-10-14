@@ -16,7 +16,7 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
   * Get your API Access Token by making a call to the `oauth2/token` endpoint. To do this:
     * First generate your key:secret using the [following instructions](https://docs.umbrella.com/umbrella-api/docs/authentication-and-errors#section-authentication-and-key-management-for-umbrella-ap-is ).
     * Encode your key:secret pair. For example: `echo "yourKey:yourSecret"|openssl base64 -A`
-    * Change the `AuthAPIToken` variable (replace the variable with your API token from the previous step).
+    * Change the `AuthAPIToken` variable (replace the variable with the output from the previous step).
     * Select the `Umbrella Reporting V2 - External` environment from the drop down list.
     * Select the `Umbrella ReportingV2 - External` collection and select the `Get Access Token` under the `1. Auth` folder.
     * Hit the `Send` button.
