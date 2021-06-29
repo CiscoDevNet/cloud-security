@@ -161,9 +161,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists"
@@ -191,9 +191,9 @@
 							"raw": "{\"access\": \"SeeDocForOptions\", \"isGlobal\": SeeDocForOptions, \"name\": \"SetTheDestListName\", \"destinations\":[{\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}, {\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}]}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -222,9 +222,9 @@
 							"raw": "{\"name\":\"EnterTheNewNameForTheDestList\"}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -253,9 +253,9 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -276,9 +276,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -299,9 +299,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -331,9 +331,9 @@
 							"raw": "[{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"},{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"}]"
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -367,9 +367,9 @@
 							"raw": "[DestinationID1,DestinationID2]"
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations/remove",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations/remove",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -598,9 +598,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/internaldomains",
+							"raw": "{{server}}/organizations/EnterYourOrgID/internaldomains",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"internaldomains"
@@ -628,9 +628,9 @@
 							"raw": "{\n  \"domain\": \"example.com\",\n  \"description\": \"Enter a description for this domain\",\n  \"includeAllVAs\": true,\n  \"includeAllMobileDevices\": true\n}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/internaldomains/",
+							"raw": "{{server}}/organizations/EnterYourOrgID/internaldomains/",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"internaldomains",
