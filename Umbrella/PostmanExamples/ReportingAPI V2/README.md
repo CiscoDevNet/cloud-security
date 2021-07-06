@@ -15,13 +15,18 @@ Please see the [official API documentation](https://docs.umbrella.com/umbrella-a
 * Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Reporting V2 - External` environment. You will need to:
   * Get your API Access Token by making a call to the `oauth2/token` endpoint. To do this:
     * First generate your key:secret using the [following instructions](https://docs.umbrella.com/umbrella-api/docs/authentication-and-errors#section-authentication-and-key-management-for-umbrella-ap-is ).
-    * Encode your key:secret pair. For example: `echo "yourKey:yourSecret"|openssl base64 -A`
-    * Change the `AuthAPIToken` variable (replace the variable with the output from the previous step).
-    * Select the `Umbrella Reporting V2 - External` environment from the drop down list.
     * Select the `Umbrella ReportingV2 - External` collection and select the `Get Access Token` under the `1. Auth` folder.
+    * In the `Authorization` tab, select `Basic Auth` and enter the `API Key`as the `Username` and `API Secret` as the `Password`.
+    * In the `Headers` tab, *De-Select* the `Authorization` checkbox.
+    * In the `Body` tab, select `RAW` and enter the following string:
+        * `grant_type=Client_credentials`
     * Hit the `Send` button.
+    * This should return the `Bearer Access Token`
+
+
   * Now you can return to `Manage Environments`, edit the `Umbrella Reporting V2 - External` environment again and replace the `AccessToken` variable with your access token.
   * Please also change the `org_id` variables value (`EnterYourOrgID`) to your org's ID.
+  * Click `Save` for it to apply.
 
 # Making an API call:
 * Open the `ReportingV2 - External` collection and select the `Reporting` folder.
