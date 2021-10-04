@@ -12,5 +12,5 @@ With the Cloud Security sample clients, you can programmatically create and mana
 
 * [**Go**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/golang/README.md)
 * [**Java**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/java/README.md)
-* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/php/README.md)
-* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/python/README.md)
+* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/php/README.md)
+* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/python/README.md)
