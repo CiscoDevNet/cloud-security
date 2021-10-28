@@ -41,7 +41,7 @@ class UmbrellaAPI():
 			return None
 		else:
 			clock_skew = 300
-			self.access_token_expiration = int(time.time()) + rsp.expires_in - clock_skew
+			self.access_token_expiration = int(time.time()) + rsp.json()['expires_in'] - clock_skew
 			return rsp.json()['access_token']
 
 	def __str__(self):
