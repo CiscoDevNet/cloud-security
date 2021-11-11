@@ -24,5 +24,5 @@ The Cisco Cloud Security development client samples, scripts, applications, Post
 [**Client Code Samples**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/README.md)
 * [**Go**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/golang/)
 * [**Java**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/java/)
-* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/php/)
-* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/python/)
+* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/php/)
+* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/client-samples/python/)
