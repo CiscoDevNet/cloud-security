@@ -50,7 +50,7 @@ class UmbrellaAPI():
 def refreshToken(decorated):
 	def wrapper(api, *args, **kwargs):
 		if int(time.time()) > api.access_token_expiration:
-			api.getAccessToken()
+			api.access_token = api.getAccessToken()
 		return decorated(api, *args, **kwargs)
 	return wrapper
 
