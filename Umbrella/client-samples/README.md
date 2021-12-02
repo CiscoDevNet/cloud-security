@@ -1,6 +1,6 @@
-# Cisco Cloud Security Client Samples
+# Cisco Umbrella Client Samples
 
-With the Cloud Security client samples, you can programmatically create and manage access to the Umbrella Reporting v2 API through the OAuth 2.0 client credentials flow framework. Each code sample:
+The Umbrella client code samples enable you to programmatically send requests to the Umbrella Reporting v2 API and manage authorization through the OAuth 2.0 client credentials flow framework. Each code sample:
 
 - Initializes a standards-based HTTP client.
 - Initializes an OAuth 2.0 client credentials flow to create and refresh an access token.

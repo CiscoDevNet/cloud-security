@@ -41,7 +41,7 @@ class UmbrellaAPI():
 			return None
 		else:
 			clock_skew = 300
-			self.access_token_expiration = int(time.time()) + rsp.expires_in - clock_skew
+			self.access_token_expiration = int(time.time()) + rsp.json()['expires_in'] - clock_skew
 			return rsp.json()['access_token']
 
 	def __str__(self):
@@ -50,7 +50,7 @@ class UmbrellaAPI():
 def refreshToken(decorated):
 	def wrapper(api, *args, **kwargs):
 		if int(time.time()) > api.access_token_expiration:
-			api.getAccessToken()
+			api.access_token = api.getAccessToken()
 		return decorated(api, *args, **kwargs)
 	return wrapper
 
