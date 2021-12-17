@@ -1,5 +1,5 @@
 # EOL Notice
-Please note that the Reporting API v2 will reach its [end of life in March 2022](https://support.umbrella.com/hc/en-us/articles/360060970512-The-Umbrella-Reporting-APIv1-will-be-End-of-Life-on-March-31-2022). Please use [Reporting v2](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPI%20V2) instead.
+Please note that the Reporting API v1 will reach its [end of life in March 2022](https://support.umbrella.com/hc/en-us/articles/360060970512-The-Umbrella-Reporting-APIv1-will-be-End-of-Life-on-March-31-2022). Please use [Reporting v2](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPI%20V2) instead.
 
 # General
 [Postman is a REST API client](https://www.getpostman.com/) that has many uses however we will focus on using it to make simple API calls.

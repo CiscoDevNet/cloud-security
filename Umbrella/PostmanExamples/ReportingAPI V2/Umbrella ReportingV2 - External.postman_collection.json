@@ -51,28 +51,30 @@
 									}
 								],
 								"url": {
-									"raw": "https://reports.api.umbrella.com/v2/organizations/2573322/summary?from=-5days&to=now",
-									"protocol": "https",
+									"raw": "{{APIurl}}{{org_id}}/top-destinations/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"reports",
-										"api",
-										"umbrella",
-										"com"
+										"{{APIurl}}{{org_id}}"
 									],
 									"path": [
-										"v2",
-										"organizations",
-										"2573322",
-										"summary"
+										"top-destinations",
+										"dns"
 									],
 									"query": [
 										{
 											"key": "from",
-											"value": "-5days"
+											"value": "EnterTheFromDateInEpochMs"
 										},
 										{
 											"key": "to",
-											"value": "now"
+											"value": "EnterTheToDateInEpochMs"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "offset",
+											"value": "0"
 										}
 									]
 								}
