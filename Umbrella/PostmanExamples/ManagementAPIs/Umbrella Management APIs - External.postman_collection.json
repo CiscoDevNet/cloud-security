@@ -161,9 +161,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists"
@@ -191,9 +191,9 @@
 							"raw": "{\"access\": \"SeeDocForOptions\", \"isGlobal\": SeeDocForOptions, \"name\": \"SetTheDestListName\", \"destinations\":[{\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}, {\"destination\": \"SeeDocForOptions\", \"type\": \"SeeDocForOptions\", \"comment\": \"EnterAComment\"}]}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -222,9 +222,9 @@
 							"raw": "{\"name\":\"EnterTheNewNameForTheDestList\"}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -253,9 +253,9 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -276,9 +276,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -299,9 +299,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -331,9 +331,9 @@
 							"raw": "[{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"},{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"}]"
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -367,9 +367,9 @@
 							"raw": "[DestinationID1,DestinationID2]"
 						},
 						"url": {
-							"raw": "{{url}}EnterYourOrgID/destinationlists/EnterYourDestListID/destinations/remove",
+							"raw": "{{server}}/organizations/EnterYourOrgID/destinationlists/EnterYourDestListID/destinations/remove",
 							"host": [
-								"{{url}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"destinationlists",
@@ -585,241 +585,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "7. CDFW",
-			"item": [
-				{
-					"name": "CDFW Tunnels",
-					"item": [
-						{
-							"name": "List Organization Tunnels",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get a specific tunnel",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels/EnterTunnelLabelId",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels",
-										"EnterTunnelLabelId"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create Tunnel RSA",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"name\": \"mytunnel\", \"deviceType\": \"ASA\", \"transportProtocols\": [\"IPSec\"], \"authentication\": {\"type\": \"RSA\"}}"
-								},
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create Tunnel PSK",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"name\":\"MyPSKTunnel\",\"deviceType\":\"Viptela vEdge\",\"authentication\":{\"type\":\"PSK\",\"parameters\":{\"idPrefix\":\"prefix123\", \"secret\": \"Secret123\"}}}"
-								},
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update a Tunnels name",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"name\": \"EnterNewTunnelName\"}"
-								},
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels/EnterTunnelLabelId",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels",
-										"EnterTunnelLabelId"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete a Tunnel",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels/EnterTunnelLabelId",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels",
-										"EnterTunnelLabelId"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "CDFW Certificates",
-					"item": [
-						{
-							"name": "Get Tunnels Certificate info",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels/EnterTunnelLabelId/certificates/Entersha256Fingerprint",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels",
-										"EnterTunnelLabelId",
-										"certificates",
-										"Entersha256Fingerprint"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Tunnels Certificate Download URL",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Basic {{token}}"
-									}
-								],
-								"url": {
-									"raw": "{{server}}EnterYourOrgId/tunnels/EnterTunnelLabelId/certificates/Entersha256Fingerprint/download",
-									"host": [
-										"{{server}}EnterYourOrgId"
-									],
-									"path": [
-										"tunnels",
-										"EnterTunnelLabelId",
-										"certificates",
-										"Entersha256Fingerprint",
-										"download"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "8. Internal Domains",
+			"name": "7. Internal Domains",
 			"item": [
 				{
 					"name": "Get All internal domains",
@@ -832,9 +598,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/internaldomains",
+							"raw": "{{server}}/organizations/EnterYourOrgID/internaldomains",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"internaldomains"
@@ -862,9 +628,9 @@
 							"raw": "{\n  \"domain\": \"example.com\",\n  \"description\": \"Enter a description for this domain\",\n  \"includeAllVAs\": true,\n  \"includeAllMobileDevices\": true\n}"
 						},
 						"url": {
-							"raw": "{{server}}EnterYourOrgID/internaldomains/",
+							"raw": "{{server}}/organizations/EnterYourOrgID/internaldomains/",
 							"host": [
-								"{{server}}EnterYourOrgID"
+								"{{server}}/organizations/EnterYourOrgID"
 							],
 							"path": [
 								"internaldomains",
