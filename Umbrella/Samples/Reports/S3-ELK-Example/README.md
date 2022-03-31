@@ -1,7 +1,7 @@
 # General
 
 The following is a basic example of how one could use an ELK stack running in Docker containers to pull Umbrella logs from S3 and build reports/visualisations for this data:
-![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/umbrellaELK.png)
+![Example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/Reports/S3-ELK-Example/umbrellaELK.png)
 
 # *** Important ***
 
@@ -25,10 +25,10 @@ AWS_ACCESS_KEY_ID=EnterAccessKey AWS_SECRET_ACCESS_KEY=EnterSecretKey aws s3 ls 
 
 ## Getting Started
 
-Either clone a repo that has an ELK stack, build your own or download the [example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/example_stack.tar.gz) (please note that this is just an example - please see the `Important` section above for further information).
+Either clone a repo that has an ELK stack, build your own or download the [example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/Reports/S3-ELK-Example/example_stack.tar.gz) (please note that this is just an example - please see the `Important` section above for further information).
 
-* If you are using your own stack, update/replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/logstash.conf) or the s3 section below:
-* Otherwise, if you are using the [example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/example_stack.tar.gz):
+* If you are using your own stack, update/replace ../logstash/pipeline/logstash.conf with [this configuration file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/Reports/S3-ELK-Example/logstash.conf) or the s3 section below:
+* Otherwise, if you are using the [example](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/Reports/S3-ELK-Example/example_stack.tar.gz):
   * Extract the files in the folder of your choice (```tar -xzvf example_stack.tar.gz```)
   * Edit ../logstash/pipeline/logstash.conf and enter your AWS details under the S3 section (do not change the other settings):
 
@@ -53,4 +53,4 @@ docker-compose up -d (or to keep up: docker-compose up)
 ## Importing the example reports:
 * Kibana will be available at http://localhost:5601
 * Goto Management -> Saved Objects
-* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Reporting/S3%20ELK%20Example/VisConfig.json) in : Management -> Saved Objects -> Import
+* Import the [reporting example json file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/Reports/S3-ELK-Example/VisConfig.json) in : Management -> Saved Objects -> Import
