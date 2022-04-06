@@ -10,7 +10,7 @@ The Umbrella client code samples enable you to programmatically send requests to
 
 ## Code Examples
 
-* [**Go**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/client-samples/golang/README.md)
-* [**Java**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/client-samples/java/README.md)
-* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/client-samples/php/README.md)
-* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/client-samples/python/README.md)
+* [**Go**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/golang/README.md)
+* [**Java**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/java/README.md)
+* [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/php/README.md)
+* [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/python/README.md)
