@@ -1,22 +1,39 @@
-# General
-[Postman is a REST API client](https://www.getpostman.com/) that has many uses however we will focus on using it to make simple API calls.
+# Cisco Umbrella Management API Postman Collection
 
-# Disclaimer
-Please see the [official API documentation](https://docs.umbrella.com/umbrella-api/reference) to learn about:
-* [Authentication](https://docs.umbrella.com/umbrella-api/docs/rateauthentication-and-key-management-for-the-umbrella-api) (you will need to create an API token to use these examples).
-* Endpoint fields and filters.
-* Other endpoints and options (the collection herein contains only a number of examples).
+The Cisco Umbrella Management API Postman Collection includes a sample of the Umbrella Management API endpoints. You can import and run the Umbrella Management API Postman Collection in the Postman REST client. For information about Postman, see [What Is Postman](https://www.postman.com/product/what-is-postman).
 
-# Prerequisites
-* Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20API%20-%20External.postman_environment.json) and [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20APIs%20-%20External.postman_collection.json) json files.
-* Open `Manage Environments` (top right cogwheel button) and edit the `Umbrella Management API - External` environment. You will need to:
-  * Edit the token variable and add your token instead of `Your API Token`.
+## Before You Begin
 
-# Making an API call:
-* Select the `Umbrella Management API - External` environment from the drop down list.
-* Select the `Umbrella Management APIs - External` collection.
-* Open the `Customer` or `Network` folders.
-* Replace the `EnterYourOrgID`, (and if needed: `EnterYourCustomerID`/`EnterYourDestListID`/`EnterYourUserID`), placeholder/s with your orgs details. If you want to create a customer or destination list, replace the placeholders in the `body` content.
-* Choose an API call.
-* Hit the `Send` button.
+We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to create your Umbrella Management API key, and authorize requests to the Umbrella Management API. For more information, see [Cisco Umbrella Management API Getting Started](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview).
+
+## Prerequisites
+
+* Download and install [Postman](https://www.getpostman.com/apps).
+* Import the [Umbrella Management API Postman Environment JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20API%20-%20External.postman_environment.json) into your Postman client.
+* Import the [Umbrella Managemene API Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20APIs%20-%20External.postman_collection.json) into your Postman client.
+
+## Set Up Postman Environment Variables
+
+1. Navigate to your Postman Environments and choose the `Umbrella Management API - External` environment.
+1. Update `YourAPIToken` with your Umbrella Management API Base64 encoded key and secret pair.
+1. Click `Save` to apply the changes to the Postman environment.
+
+## Set Path Parameters
+
+The Umbrella Management API endpoints require that you set various path parameters.
+
+* Replace the `EnterYourOrgId` placeholder value with your organization ID.
+* Replace the `EnterYourCustomerID` placeholder value with your customer ID.
+* Replace the `EnterYourDestListID` placeholder value with your Destination List ID.
+* Replace the `EnterYourUserID` placeholder value with your User ID.
+
+## Set Request Body
+
+* The Umbrella Management API `POST` endpoints require a request body. Set the required fields in the request body.
+
+## Run an Umbrella Management API Request
+
+1. Choose the `Umbrella Management API - External` environment from the drop-down list.
+1. Choose the `Umbrella Management API - External` collection.
+1. Choose an Umbrella Management API endpoint.
+1. Click `Send`.

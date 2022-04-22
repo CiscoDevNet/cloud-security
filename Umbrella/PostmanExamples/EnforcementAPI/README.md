@@ -1,18 +1,27 @@
-# General
-[Postman is a REST API client](https://www.getpostman.com/) that has many uses however we will focus on using it to make simple API calls.
+# Cisco Umbrella Enforcement API Postman Collection
 
-# Disclaimer
-Please see the [official API documentation](https://docs.umbrella.com/enforcement-api/reference/) to learn about:
-* [Authentication](https://docs.umbrella.com/enforcement-api/reference/#authentication-and-versioning) (you will need to create a customer key to use these examples).
-* Endpoint fields and filters.
-* Other endpoints and options (the collection herein contains only a number of examples).
+The Cisco Umbrella Enforcement API Postman Collection includes a sample of the Umbrella Enforcement API endpoints. You can import and run the Cisco Umbrella Enforcement API Postman Collection in the Postman REST client. For information about Postman, see [What Is Postman](https://www.postman.com/product/what-is-postman).
 
-# Prerequisites
-* Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/EnforcementAPI/Enforce%20-%20External.postman_collection.json) json file.
+## Before You Begin
 
-# Making an API call:
-* Select the `Enforce - External` collection.
-* Choose an API call.
-* Update the customer key (`EnterYourCustomerKeyHere`) and if needed, the domain ID, (`EnterYourDomainIdHere` for the DELETE example), and request body (needed for the POST example).
-* Hit the `Send` button.
+We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to authenticate and authorize requests to the Umbrella Enforcement API. For more information, see [Cisco Umbrella Enforcement API Overview](https://developer.cisco.com/docs/cloud-security/#!enforcement-api-introduction-overview).
+
+## Prerequisites
+
+* Download and install [Postman](https://www.getpostman.com/apps).
+* Import the [Cisco Umbrella Enforcement Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/EnforcementAPI/Enforce%20-%20External.postman_collection.json) into your Postman client.
+
+## Set Path Parameters
+
+* The Umbrella Enforcement API `DELETE` endpoint requires the domain ID. Replace the (`EnterYourDomainIdHere`) placeholder value with a domain ID.
+
+## Set Request Body
+
+* The Umbrella Enforcement API `POST` endpoint requires a request body. Set the required event information fields in the request body.
+
+## Run an Umbrella Enforcement API Request
+
+1. Choose the `Enforce - External` collection.
+1. Choose an Umbrella Enforcement API endpoint.
+1. Update the customer key (`EnterYourCustomerKeyHere`) query parameter with your Umbrella Enforcement API customer key.
+1. Click `Send`.
