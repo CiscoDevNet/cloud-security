@@ -1,0 +1,6 @@
+tunnelname,devicetype,prefix,key
+tunnel01,ASA,APItest1,abcdef0123456789FEDCBA
+tunnel02,FTD,APItest2,abcdef0123456789FEDCBA
+tunnel03,ISR,APItest3,ABCDEF9876543210fedcba
+tunnel04,Meraki MX,APItest4,ABCDEF9876543210fedcba
+tunnel05,Viptela vEdge,APItest5,ABCDEF9876543210fedcba
