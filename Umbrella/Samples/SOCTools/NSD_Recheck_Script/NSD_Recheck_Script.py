@@ -1,24 +1,23 @@
-# BATCH Upload Domains to Destination List
-# SETUP - libraries and access
-import datetime, requests, json
+# Newly Seen Domains (NSD) Re-Check Script. Used to maintain an allow list only used for NSD temporary exemptions.
+
+# Library Imports
+import requests, json
 import base64
-import time
 import pandas as pd
 import os
-import urllib3
 
-## Variables Expected in .bash_profile
-mkey = os.environ['mgmtkey'] # management API key
-msec = os.environ['mgmtsec'] # management API secret
-ipass = os.environ['invpass'] # investigate API token
+## These variables are expected in the .bash_profile. How-To Guide in README.md
+mkey = os.environ['mgmtkey'] # Umbrella Management API key
+msec = os.environ['mgmtsec'] # Umbrella Management API secret
+ipass = os.environ['invpass'] # Umbrella Investigate API token
 orgid = os.environ['orgid'] # orgID
-destid = input('Please input your destinationlist ID for NSD recheck: ')
-gr = [] # get request
-dr = [] # delete request
+destid = input('Please input your destinationlist ID for NSD recheck: ') # Asks for DestinationlistID
+# destid = 12345678 # ( option for automation ) Destination list ID here instead of input in line 14.
+gr = [] # reset the get request
+dr = [] # reset the delete request
+domains = [] # reset the domains list.
 
-################################
-# Get Domains and Prep them for Re-Check
-
+# Generates URL for Management API, including orgid and destid
 def gen_murl(orgid, destid):
         '''Gen URL for Destlist on Management API'''
         murl = ( 'https://management.api.umbrella.com/v1/organizations/'
@@ -28,12 +27,15 @@ def gen_murl(orgid, destid):
                     '/destinations'
                     )
         return murl
+
+# Generates base64 encoded key and secret for passing credentials to the management api
 def gen_pass(mkey, msec):
     '''Gen Base64 API Token'''
     mkp = mkey + ':' + msec
     mpass = base64.b64encode(mkp.encode()).decode()
     return mpass
 
+# GET Request for all domains from the specified NSD Destination List
 def get_domains(mpass, murl):
     '''GET Request destinations from Umbrella API'''
     headers = {
@@ -45,7 +47,7 @@ def get_domains(mpass, murl):
     gr = requests.request("GET", murl, headers=headers, data=payload)
     return gr
 
-
+# Cleans up the Response from get_domains
 def gr_prep(gr):
     '''API Response into Dataframe'''
     gr = gr.json()
@@ -53,6 +55,7 @@ def gr_prep(gr):
     gr = pd.DataFrame.from_dict(gr)
     return gr
 
+# Creates a list of domains that should reviewed by Investigate API
 def domain_prep(gr):
     '''Sort Domains'''
     domains = []
@@ -60,6 +63,7 @@ def domain_prep(gr):
     domains = domains.tolist()
     return domains
 
+# Removes Domains from the Destination list which are checked by check_for_nsd and check_for_malware
 def rem_domains(domainid):
     '''Remove from Umbrella Destination List '''
     durl = murl + '/remove'
@@ -72,11 +76,7 @@ def rem_domains(domainid):
     dr = requests.request("DELETE", durl, headers=headers, data=payload)
     return dr.text
 
-
-
-################################
-# Check Domains for Malware and NSD Expiration
-
+# Check Categorization and Classification of Domains with the Investigate API
 def check_domains(domains):
     '''Bulk Check Domains on Investigate API'''
     icaturl = "https://investigate.api.umbrella.com/domains/categorization"
@@ -92,7 +92,7 @@ def check_domains(domains):
     checked = ir.json()
     return checked
     
-    
+# Checks Results from check_domains to see if Malware returning a list of domains to be removed.
 def check_for_malware(checked):
     '''Check if Domains are Malware'''
     blockeddomains = []
@@ -105,6 +105,7 @@ def check_for_malware(checked):
     mids = mids.tolist()
     return(mids)
 
+# Checks if any domains are no longer NSD, returning a list of expired NSD domains to be removed.
 def check_for_nsd(checked):
     '''Check if Domains are NSD'''
     expired = []
@@ -121,15 +122,18 @@ def check_for_nsd(checked):
     return(expiredids)
     
 ################################
-# Execute Domain Check and Sort
 
+# generate credentials and target Management API URL
 mpass = gen_pass(mkey,msec)
 murl = gen_murl(orgid, destid)
+
+# Gets the list of domains for checking from the destination list then prepares them. Stops script if list is empty.
 gr = get_domains(mpass, murl)
 gr = gr_prep(gr)
 if len(gr) == 0: # Stop Script if the list is empty
     print('No Domains on list. Stopping Script')
-    
+
+# If List has domains, prepare the list of domain IDs, check each with Investigate for Malware and NSD Expiration.
 elif len(gr) > 0:
     domains = domain_prep(gr)
     print(f'Prepping {len(domains)} Domains')
@@ -137,11 +141,12 @@ elif len(gr) > 0:
     mids = check_for_malware(checked)
     expiredids = check_for_nsd(checked)
 
+    # Remove Each Malware Domain ID from the destination List ( they are allowed! )
     print(f'Removing {len(mids)} Domains marked malware.')
     if len(mids) > 0:
         for eachmids in mids:
             rem_domains(mids)
-
+    # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
     print(f'Removing {len(expiredids)} Expired NSDs.')
     if len(expiredids) > 0:
         for eachid in expiredids:
