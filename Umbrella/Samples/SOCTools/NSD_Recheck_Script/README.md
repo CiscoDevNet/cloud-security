@@ -23,11 +23,33 @@ an allow list containing domains for any other exemption reasons.
 ---
 ### Prerequisites and Docs
 
-- [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list) that is **only** used for Newly Seen Domains exemptions.
-- Umbrella Management API `Key:Secret` stored in `.bash_profile`. [Getting Started with the Umbrella Management API.](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview) 
-- An Umbrella `Investigate API Token` stored in `.bash_profile` [Getting Started with the Umbrella Investigate API.](https://developer.cisco.com/docs/cloud-security/#!investigate-getting-started)
-- Investigate API usually requires a separate Investigate License which includes access to the Investigate API.
-- While other credential storage options will work, if you are new to using credentials in a .bash_profile here is a [how-to guide](https://medium.com/geekculture/how-to-protect-your-credentials-using-environment-variables-with-python-25e6cb4d135c)  to get you started.
-- Umbrella [Dashboard Org ID](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview/get-organization-information) number.
-- Umbrella NSD Allow List [Destination ID](https://developer.cisco.com/docs/cloud-security/#!destination-lists/get-destination-lists) number.
-- Python 3.9+
+- [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list) 
+that is **only** used for Newly Seen Domains exemptions.
+- [Org ID](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview/get-organization-information) 
+number placed in `.bash_profile`.
+- Umbrella Management API `Key` and `Secret` placed in `.bash_profile`. 
+[How to Generate Key and Secret.](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview) 
+- An Umbrella `Investigate API Token` placed in `.bash_profile`. 
+[How to Generate Token.](https://developer.cisco.com/docs/cloud-security/#!investigate-getting-started)
+- [Investigate API](https://umbrella.cisco.com/products/umbrella-investigate) 
+License. Separate from Umbrella Advantage or Essentials Packages.
+- If you are new to using credentials in a `.bash_profile` here is a 
+[guide](https://medium.com/geekculture/how-to-protect-your-credentials-using-environment-variables-with-python-25e6cb4d135c)
+to get you started.
+
+- Umbrella NSD Allow List 
+[Destination ID](https://developer.cisco.com/docs/cloud-security/#!destination-lists/get-destination-lists) number.
+- Tested on Python 3.9+
+
+### Output Example
+
+```commandline
+Starting Newly Seen Domains Re-Check Script.
+Please input your destinationlist ID for NSD recheck: 3174032
+Getting Domains from Destination List
+Checking 4 Domains
+Removing 0 Domains marked malware.
+Removing 0 Expired NSDs.
+4 domains remain for next run.
+Done.
+```
