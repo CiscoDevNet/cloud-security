@@ -43,8 +43,8 @@ Set up the environment variables for the `nsd_recheck.py` script in your `.bash_
 
 ```bash
 export ORG_ID="insert your Umbrella organization ID"
-export KEY="insert your Umbrella Management API key"
-export SECRET="insert your Umbrella Management API secret"
+export MANAGEMENT_KEY="insert your Umbrella Management API key"
+export MANAGEMENT_SECRET="insert your Umbrella Management API secret"
 export INVESTIGATE_TOKEN="insert your Umbrella Investigate API token"
 ```
 

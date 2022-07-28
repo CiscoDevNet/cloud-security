@@ -8,10 +8,11 @@ import os
 
 # These variables are expected in the .bash_profile. How-To Guide in README.md
 print("Starting Newly Seen Domains Re-Check Script.")
-mkey = os.environ["KEY"]  # Umbrella Management API key
-msec = os.environ["SECRET"]  # Umbrella Management API secret
+mkey = os.environ["MANAGEMENT_KEY"]  # Umbrella Management API key
+msec = os.environ["MANAGEMENT_SECRET"]  # Umbrella Management API secret
 ipass = os.environ["INVESTIGATE_TOKEN"]  # Umbrella Investigate API token
 orgid = os.environ["ORG_ID"]  # orgID
+
 destid = input(
     "Please input your destination list ID for NSD recheck: "
 )  # Asks for DestinationlistID
