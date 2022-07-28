@@ -8,10 +8,10 @@ import os
 
 # These variables are expected in the .bash_profile. How-To Guide in README.md
 print("Starting Newly Seen Domains Re-Check Script.")
-mkey = os.environ["mgmtkey"]  # Umbrella Management API key
-msec = os.environ["mgmtsec"]  # Umbrella Management API secret
-ipass = os.environ["invpass"]  # Umbrella Investigate API token
-orgid = os.environ["orgid"]  # orgID
+mkey = os.environ["KEY"]  # Umbrella Management API key
+msec = os.environ["SECRET"]  # Umbrella Management API secret
+ipass = os.environ["INVESTIGATE_TOKEN"]  # Umbrella Investigate API token
+orgid = os.environ["ORG_ID"]  # orgID
 destid = input(
     "Please input your destination list ID for NSD recheck: "
 )  # Asks for DestinationlistID
@@ -162,6 +162,6 @@ elif len(gr) > 0:
     if len(expiredids) > 0:
         for eachid in expiredids:
             rem_domains(expiredids)
-    print(f"{len(domains) - len(expiredids) - len(mids)} domains remain for next run.")
+    print(f"{len(domains) - len(expiredids) - len(mids)} NSD domains remain for next run.")
 
 print("Done.")
