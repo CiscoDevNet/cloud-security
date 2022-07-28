@@ -17,7 +17,7 @@ destid = input(
     "Please input your destination list ID for NSD recheck: "
 )  # Asks for DestinationlistID
 
-# destid = 12345678 # ( option for automation ) Destination list ID here instead of input in line 16-17.
+# destid = 12345678 # ( option for automation ) Destination list ID here instead of input in line 16-18.
 gr = []  # reset the get request
 dr = []  # reset the delete request
 domains = []  # reset the domains list.
