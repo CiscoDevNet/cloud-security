@@ -17,7 +17,7 @@ The NSDs Recheck script:
 
 We recommended that you run the `nsd_recheck.py` script regularly and automate maintenance of your NSD allow list.
 
-**Note:** You should only the `nsd_recheck.py` script on a custom allow list that contains only NSDs. Do not use this script on an allow list containing domains for any other exemption reasons.
+**Note:** You should only run the `nsd_recheck.py` script on a custom allow list that contains only NSDs. Do not use this script on an allow list containing domains for any other exemption reasons.
 
 ## Prerequisites
 
