@@ -25,8 +25,6 @@ import os
 import sys
 
 ''' Generates URL for Management API, including org_id and dest_id '''
-
-
 def gen_management_api_url(org_id, dest_id):
     management_api_url = (
             "https://management.api.umbrella.com/v1/organizations/"
@@ -39,34 +37,25 @@ def gen_management_api_url(org_id, dest_id):
 
 
 ''' Generates base64 encoded key and secret for passing credentials to the management api '''
-
-
 def gen_credentials(mkey, msec):
     """Gen Base64 API Token"""
     mkp = mkey + ":" + msec
     management_api_pass = base64.b64encode(mkp.encode()).decode()
     return management_api_pass
 
-
 '''GET Request destinations from Umbrella API'''
-
-
 def get_domains(management_api_pass, management_api_url):
     headers = {"Authorization": "Basic " + management_api_pass, "Content-Type": "application/json"}
     payload = None
     print("Getting Domains from Destination List")
     get_request = requests.request("GET", management_api_url, headers=headers, data=payload)
-
     if get_request:
         get_request = pd.DataFrame.from_dict(get_request.json()['data'])
-
     return get_request
 
 
 ''' Remove Domains from the Umbrella destination list.
     Domains are checked by check_for_nsd() and check_for_blocks() functions. '''
-
-
 def remove_domains(domain_id):
     deleteurl = management_api_url + "/remove"
     headers = {
@@ -83,7 +72,6 @@ def remove_domains(domain_id):
 def check_domains(domains):
     investigate_url = "https://investigate.api.umbrella.com/domains/categorization"
     payload = json.dumps(domains)
-
     investigate_headers = {
         "Authorization": "Bearer " + ipass,
         "Content-Type": "application/json",
@@ -95,12 +83,11 @@ def check_domains(domains):
 
 '''Use check_domains data to see if blocked and return a list of domain IDs to be removed.'''
 def check_for_blocks(checked):
-
-    blockeddomains = []
+    blocked_domains = []
     for d in checked:
         if checked.get(d)["status"] == -1:
-            blockeddomains.append(d)
-    block_df = get_request[get_request["destination"].isin(blockeddomains)]
+            blocked_domains.append(d)
+    block_df = get_request[get_request["destination"].isin(blocked_domains)]
     block_ids = []
     block_ids = block_df.id
     block_ids = block_ids.tolist()
@@ -110,7 +97,7 @@ def check_for_blocks(checked):
 '''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
 def check_for_nsd(checked):
     expired = []
-    nsd = "108"
+    nsd = "108" # 108 is the Newly Seen Domains Number returned from the API.
     for d in checked:
         if nsd not in checked.get(d)["security_categories"]:
             expired.append(d)
@@ -138,10 +125,7 @@ if __name__ == '__main__':
     orgid = os.environ["ORG_ID"]  # orgID
 
     # Enter destination list ID
-    dest_id = input(
-        "Enter your destination list ID for NSD recheck: "
-    )
-
+    dest_id = input("Enter your destination list ID for NSD recheck: ")
     print("Destination list ID: ", dest_id)
 
     # generate credentials and a Management API URL containing orgId and destination list ID
