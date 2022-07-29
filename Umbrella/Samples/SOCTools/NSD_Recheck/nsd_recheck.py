@@ -47,7 +47,6 @@ def gen_credentials(mkey, msec):
 def get_domains(management_api_pass, management_api_url):
     headers = {"Authorization": "Basic " + management_api_pass, "Content-Type": "application/json"}
     payload = None
-    print("Getting Domains from Destination List")
     destinations = requests.request("GET", management_api_url, headers=headers, data=payload)
     if destinations:
         destinations = pd.DataFrame.from_dict(destinations.json()['data'])
@@ -61,10 +60,11 @@ def remove_domains(domain_id):
     headers = {
         "Authorization": "Basic " + management_api_pass,
         "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
     }
     payload = json.dumps(domain_id)
-    requests.request("DELETE", deleteurl, headers=headers, data=payload)
+    removal_response = requests.request("DELETE", deleteurl, headers=headers, data=payload).json()
+    return removal_response
 
 '''Check Categorization and Classification of Domains with the Investigate API'''
 def check_domains(domains):
@@ -72,7 +72,7 @@ def check_domains(domains):
     payload = json.dumps(domains)
     investigate_headers = {
         "Authorization": "Bearer " + ipass,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
     }
     check_request = requests.request("POST", investigate_url, headers=investigate_headers, data=payload)
     checked = check_request.json()
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 140-143 )
+    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 126 )
     destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
@@ -148,13 +148,15 @@ if __name__ == '__main__':
         expired_ids = check_for_nsd(checked)
 
         # Remove Each Malware Domain ID from the destination List ( Malware was allowed )
-        print(f"Removing {len(block_ids)} Domains marked malware.")
+        print(f"Removing {len(block_ids)} domains that are blocked.")
         if len(block_ids) > 0:
-            remove_domains(block_ids)
+            removal_response = remove_domains(block_ids)
+            print('Result :' + str((removal_response['status'])))
         # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
-        print(f"Removing {len(expired_ids)} Expired NSDs.")
+        print(f"Removing {len(expired_ids)} expired NSDs.")
         if len(expired_ids) > 0:
-            remove_domains(expired_ids)
+            removal_response = remove_domains(expired_ids)
+            print('Result : ' + str((removal_response['status'])))
 
-    print(f"{len(domains) - len(expired_ids) - len(block_ids)} domains remain for next run.")
+    print("Domains remaining for next run : " + str(removal_response['data']['meta']['destinationCount']))
     print("Done.")

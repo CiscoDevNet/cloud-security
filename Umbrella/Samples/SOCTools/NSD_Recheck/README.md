@@ -62,11 +62,12 @@ The output is similar to:
 
 ```commandline
 Starting Newly Seen Domains Re-Check Script.
-Please input your destinationlist ID for NSD recheck: 3174032
-Getting Domains from Destination List
-Checking 4 Domains
-Removing 0 Domains marked malware.
-Removing 0 Expired NSDs.
-4 domains remain for next run.
+Enter your destination list ID for NSD recheck: 3174032
+Destination list ID:  3174032
+Checking 91 Domains
+Removing 0 domains that are blocked.
+Removing 30 expired NSDs.
+Result : {'code': 200, 'text': 'OK'}
+Domains remaining for next run : 61
 Done.
 ```
