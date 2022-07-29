@@ -48,10 +48,10 @@ def get_domains(management_api_pass, management_api_url):
     headers = {"Authorization": "Basic " + management_api_pass, "Content-Type": "application/json"}
     payload = None
     print("Getting Domains from Destination List")
-    get_request = requests.request("GET", management_api_url, headers=headers, data=payload)
-    if get_request:
-        get_request = pd.DataFrame.from_dict(get_request.json()['data'])
-    return get_request
+    destinations = requests.request("GET", management_api_url, headers=headers, data=payload)
+    if destinations:
+        destinations = pd.DataFrame.from_dict(destinations.json()['data'])
+    return destinations
 
 
 ''' Remove Domains from the Umbrella destination list.
@@ -64,9 +64,7 @@ def remove_domains(domain_id):
         "Content-Type": "application/json",
     }
     payload = json.dumps(domain_id)
-    delete_request = requests.request("DELETE", deleteurl, headers=headers, data=payload)
-    return delete_request.text
-
+    requests.request("DELETE", deleteurl, headers=headers, data=payload)
 
 '''Check Categorization and Classification of Domains with the Investigate API'''
 def check_domains(domains):
@@ -87,7 +85,7 @@ def check_for_blocks(checked):
     for d in checked:
         if checked.get(d)["status"] == -1:
             blocked_domains.append(d)
-    block_df = get_request[get_request["destination"].isin(blocked_domains)]
+    block_df = destinations[destinations["destination"].isin(blocked_domains)]
     block_ids = []
     block_ids = block_df.id
     block_ids = block_ids.tolist()
@@ -97,11 +95,11 @@ def check_for_blocks(checked):
 '''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
 def check_for_nsd(checked):
     expired = []
-    nsd = "108" # 108 is the Newly Seen Domains Number returned from the API.
+    nsd = "108" # Investigate API Identifies newly seen domains with classifier # 108.
     for d in checked:
         if nsd not in checked.get(d)["security_categories"]:
             expired.append(d)
-    expired_df = get_request[get_request["destination"].isin(expired)]
+    expired_df = destinations[destinations["destination"].isin(expired)]
     expired_ids = []
     expired_ids = expired_df.id
     expired_ids = expired_ids.tolist()
@@ -114,7 +112,7 @@ if __name__ == '__main__':
     print("Starting Newly Seen Domains Re-Check Script.")
 
     # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 140-143 )
-    get_request = []  # reset the get request
+    destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
 
@@ -135,14 +133,14 @@ if __name__ == '__main__':
     management_api_url = gen_management_api_url(orgid, dest_id)
 
     # Get the list of domains from the destination list then prepare them. Stops script if list of domains is empty.
-    get_request = get_domains(management_api_pass, management_api_url)
+    destinations = get_domains(management_api_pass, management_api_url)
 
-    if len(get_request) == 0:  # Stop Script if the list is empty
+    if len(destinations) == 0:  # Stop Script if the list is empty
         sys.exit("No Domains on list. Stopping Script")
-    elif len(get_request) > 0:
+    elif len(destinations) > 0:
         '''If the list has domains, prepare the list of domain IDs, check each domain ID with the
         Investigate API for malware and NSD expiration.'''
-        domains = get_request.destination
+        domains = destinations.destination
         domains = domains.tolist()
         print(f"Checking {len(domains)} Domains")
         checked = check_domains(domains)
