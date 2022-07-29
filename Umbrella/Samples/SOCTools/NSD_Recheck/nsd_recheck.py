@@ -61,7 +61,7 @@ def remove_domains(domain_id):
     headers = {
         "Authorization": "Basic " + management_api_pass,
         "Accept": "application/json",
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
     }
     payload = json.dumps(domain_id)
     requests.request("DELETE", deleteurl, headers=headers, data=payload)
@@ -72,7 +72,7 @@ def check_domains(domains):
     payload = json.dumps(domains)
     investigate_headers = {
         "Authorization": "Bearer " + ipass,
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
     }
     check_request = requests.request("POST", investigate_url, headers=investigate_headers, data=payload)
     checked = check_request.json()
