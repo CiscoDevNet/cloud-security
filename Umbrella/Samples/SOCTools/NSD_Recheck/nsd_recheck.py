@@ -48,32 +48,23 @@ def gen_credentials(mkey, msec):
     return management_api_pass
 
 
-# GET Request for all domains from the specified NSD Destination List
+'''GET Request destinations from Umbrella API'''
+
+
 def get_domains(management_api_pass, management_api_url):
-    """GET Request destinations from Umbrella API"""
     headers = {"Authorization": "Basic " + management_api_pass, "Content-Type": "application/json"}
     payload = None
     print("Getting Domains from Destination List")
-    # get request
-    gr = requests.request("GET", management_api_url, headers=headers, data=payload)
+    get_request = requests.request("GET", management_api_url, headers=headers, data=payload)
 
-    if gr:
-        gr = pd.DataFrame.from_dict(gr.json()['data'])
+    if get_request:
+        get_request = pd.DataFrame.from_dict(get_request.json()['data'])
 
-    return gr
-
-
-# Creates a list of domains that should reviewed by Investigate API
-def domain_prep(gr):
-    """Sort Domains"""
-    domains = []
-    domains = gr.destination
-    domains = domains.tolist()
-    return domains
+    return get_request
 
 
 ''' Remove Domains from the Umbrella destination list.
-    Domains were checked by check_for_nsd() and check_for_malware() functions. '''
+    Domains are checked by check_for_nsd() and check_for_blocks() functions. '''
 
 
 def remove_domains(domain_id):
@@ -84,59 +75,50 @@ def remove_domains(domain_id):
         "Content-Type": "application/json",
     }
     payload = json.dumps(domain_id)
-    # delete request
-    dr = requests.request("DELETE", deleteurl, headers=headers, data=payload)
-    return dr.text
+    delete_request = requests.request("DELETE", deleteurl, headers=headers, data=payload)
+    return delete_request.text
 
 
-# Check Categorization and Classification of Domains with the Investigate API
+'''Check Categorization and Classification of Domains with the Investigate API'''
 def check_domains(domains):
-    """Bulk Check Domains on Investigate API"""
-    investigateurl = "https://investigate.api.umbrella.com/domains/categorization"
+    investigate_url = "https://investigate.api.umbrella.com/domains/categorization"
     payload = json.dumps(domains)
 
-    ih = {
-        # 'Authorization': 'Bearer %s' % ipass,
+    investigate_headers = {
         "Authorization": "Bearer " + ipass,
         "Content-Type": "application/json",
     }
-    # investigate request for bulk domain list categorization
-    ir = requests.request("POST", investigateurl, headers=ih, data=payload)
-    checked = ir.json()
+    check_request = requests.request("POST", investigate_url, headers=investigate_headers, data=payload)
+    checked = check_request.json()
     return checked
 
 
-# Checks Results from check_domains to see if Malware returning a list of domains to be removed.
-def check_for_malware(checked):
-    """Check if Domains are Malware"""
+'''Use check_domains data to see if blocked and return a list of domain IDs to be removed.'''
+def check_for_blocks(checked):
+
     blockeddomains = []
     for d in checked:
         if checked.get(d)["status"] == -1:
             blockeddomains.append(d)
-    # use dataframe to filter gr to just blocked domains in mdf
-    mdf = gr[gr["destination"].isin(blockeddomains)]
-    mids = []
-    # filter just the id's for the domains that are blocked because domains are deleted by ID.
-    mids = mdf.id
-    mids = mids.tolist()
-    return mids
+    block_df = get_request[get_request["destination"].isin(blockeddomains)]
+    block_ids = []
+    block_ids = block_df.id
+    block_ids = block_ids.tolist()
+    return block_ids
 
 
-# Checks if any domains are no longer NSD, returning a list of expired NSD domains to be removed.
+'''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
 def check_for_nsd(checked):
-    """Check if Domains are NSD"""
     expired = []
     nsd = "108"
-    # check each domain in api response is NOT NSD
     for d in checked:
         if nsd not in checked.get(d)["security_categories"]:
             expired.append(d)
-    # compare expired to main list, store just ids
-    expireddf = gr[gr["destination"].isin(expired)]
-    expiredids = []
-    expiredids = expireddf.id
-    expiredids = expiredids.tolist()
-    return expiredids
+    expired_df = get_request[get_request["destination"].isin(expired)]
+    expired_ids = []
+    expired_ids = expired_df.id
+    expired_ids = expired_ids.tolist()
+    return expired_ids
 
 
 # main
@@ -144,9 +126,9 @@ if __name__ == '__main__':
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( option for automation ) Destination list ID
-    gr = []  # reset the get request
-    dr = []  # reset the delete request
+    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 140-143 )
+    get_request = []  # reset the get request
+    delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
 
     # Set these variables in your environment or .bash_profile. Check the README for more information.
@@ -169,28 +151,28 @@ if __name__ == '__main__':
     management_api_url = gen_management_api_url(orgid, dest_id)
 
     # Get the list of domains from the destination list then prepare them. Stops script if list of domains is empty.
-    gr = get_domains(management_api_pass, management_api_url)
-    # gr = gr_prep(gr)
+    get_request = get_domains(management_api_pass, management_api_url)
 
-    if len(gr) == 0:  # Stop Script if the list is empty
+    if len(get_request) == 0:  # Stop Script if the list is empty
         sys.exit("No Domains on list. Stopping Script")
-    elif len(gr) > 0:
-        # If list of domains, prepare the list of domain IDs, check each domain ID with the
-        # Investigate API for malware and NSD expiration.
-        domains = domain_prep(gr)
+    elif len(get_request) > 0:
+        '''If the list has domains, prepare the list of domain IDs, check each domain ID with the
+        Investigate API for malware and NSD expiration.'''
+        domains = get_request.destination
+        domains = domains.tolist()
         print(f"Checking {len(domains)} Domains")
         checked = check_domains(domains)
-        mids = check_for_malware(checked)
+        block_ids = check_for_blocks(checked)
         expired_ids = check_for_nsd(checked)
 
         # Remove Each Malware Domain ID from the destination List ( Malware was allowed )
-        print(f"Removing {len(mids)} Domains marked malware.")
-        if len(mids) > 0:
-            remove_domains(mids)
+        print(f"Removing {len(block_ids)} Domains marked malware.")
+        if len(block_ids) > 0:
+            remove_domains(block_ids)
         # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
         print(f"Removing {len(expired_ids)} Expired NSDs.")
         if len(expired_ids) > 0:
             remove_domains(expired_ids)
 
-    print(f"{len(domains) - len(expired_ids) - len(mids)} domains remain for next run.")
+    print(f"{len(domains) - len(expired_ids) - len(block_ids)} domains remain for next run.")
     print("Done.")

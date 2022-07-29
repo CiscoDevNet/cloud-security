@@ -52,12 +52,6 @@ export INVESTIGATE_TOKEN="insert your Umbrella Investigate API token"
 
 * You must create an Umbrella destination list with the `access` type of `allow` and `dns`. Add NSDs that you do not want blocked to your allow destination list. For more information, see [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list).
 
-
-<!--
-* Umbrella NSD Allow List 
-[Destination ID](https://developer.cisco.com/docs/cloud-security/#!destination-lists/get-destination-lists)
--->
-
 ## Step 4: Run the NSDs Recheck Script
 
 ```shell
