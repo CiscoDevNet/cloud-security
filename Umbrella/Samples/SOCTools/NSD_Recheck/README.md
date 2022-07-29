@@ -35,8 +35,8 @@ The Umbrella Investigate API license is an add-on package and is not included in
 In your system, export the environment variables used by the **NSDs Recheck** script.
 
 * `ORG_ID`—Your organization ID. For more information, see [Find Your Organization ID](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview/get-organization-information).
-* `KEY`—Your Umbrella Management API key.
-* `SECRET`—Your Umbrella Management API secret.
+* `MANAGEMENT_KEY`—Your Umbrella Management API key.
+* `MANAGEMENT_SECRET`—Your Umbrella Management API secret.
 * `INVESTIGATE_TOKEN`—Your Umbrella Investigate API token.
 
 Set up the environment variables for the `nsd_recheck.py` script in your `.bash_profile`:
