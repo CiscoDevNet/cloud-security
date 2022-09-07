@@ -23,10 +23,11 @@ from oauthlib.oauth2 import TokenExpiredError
 from requests_oauthlib import OAuth2Session
 from requests.auth import HTTPBasicAuth
 
-token_url = os.environ.get('TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
+token_url = os.environ.get('TOKEN_URL') or 'https://management.api.umbrella.com/auth/v2/oauth2/token'
 #Export/Set the environment variables
 client_id = os.environ.get('API_KEY')
 client_secret = os.environ.get('API_SECRET')
+org_id = os.environ.get('ORG_ID')
 
 class UmbrellaAPI:
     def __init__(self, url, ident, secret):
@@ -50,7 +51,7 @@ class UmbrellaAPI:
         while not success:
             try:
                 api_headers = {'Authorization': "Bearer " + self.token['access_token']}
-                req = requests.get('https://api.umbrella.com/reports/v2/{}'.format(end_point), headers=api_headers)
+                req = requests.get('https://reports.api.umbrella.com/v2/{}'.format(end_point), headers=api_headers)
                 req.raise_for_status()
                 success = True
             except TokenExpiredError:
@@ -59,14 +60,14 @@ class UmbrellaAPI:
                 raise(e)
         return req
 
-# Exit out if the required client_id or client_secret is not set
-for var in ['API_SECRET', 'API_KEY']:
+# Exit out if the require client_id, client_secret and org_id are not set
+for var in ['API_SECRET', 'API_KEY', 'ORG_ID']:
     if os.environ.get(var) == None:
         print("Required environment variable: {} not set".format(var))
         exit()
 
 # Get token and make an API request
-end_point = 'summary?from=-5days&to=now'
+end_point = 'organizations/{}/summary?from=-5days&to=now'.format(org_id)
 api = UmbrellaAPI(token_url, client_id, client_secret)
 print("Token: " + str(api.GetToken()))
 for count in range(5):

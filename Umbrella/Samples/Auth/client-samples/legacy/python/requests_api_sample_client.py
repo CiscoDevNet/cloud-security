@@ -59,27 +59,28 @@ def callUmbrellaApi(api, path):
 	try:
 		api_headers = {}
 		api_headers['Authorization'] = 'Bearer ' + api.access_token
-		r = requests.get('https://api.umbrella.com/reports/v2' + path, headers=api_headers)
+		r = requests.get('https://reports.api.umbrella.com/v2/' + path, headers=api_headers)
 		r.raise_for_status()
 	except Exception as e:
 		print("Report API call failed for {}: {}", path, e)
 	else:
 		print(json.dumps(r.json(), indent=4))
 
-def lookupOrgSummary():
+def lookupOrgSummary(org_id):
     api = UmbrellaAPI(token_url, client_id, client_secret)
     for count in range(5):
-        callUmbrellaApi(api, '/summary?from=-5days&to=now')
+        callUmbrellaApi(api, '/organizations/{}/summary?from=-5days&to=now'.format(org_id))
 
-token_url = os.environ.get('TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
+token_url = os.environ.get('TOKEN_URL') or 'https://management.api.umbrella.com/auth/v2/oauth2/token'
 #Export/Set the environment variables
 client_id = os.environ.get('API_KEY')
 client_secret = os.environ.get('API_SECRET')
+org_id = os.environ.get('ORG_ID')
 
-# Exit out if the client_id or client_secret is not set
-for var in ['API_SECRET', 'API_KEY']:
+# Exit out if the client_id, client_secret and org_id are not set
+for var in ['API_SECRET', 'API_KEY', 'ORG_ID']:
     if os.environ.get(var) == None:
         print("Required environment variable: {} not set".format(var))
         exit()
 
-lookupOrgSummary()
+lookupOrgSummary(org_id)

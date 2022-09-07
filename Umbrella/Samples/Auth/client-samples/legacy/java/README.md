@@ -12,6 +12,7 @@ To get started, set up the required environment variables:
 
 * `API_KEY`: Umbrella API Reporting v2 key
 * `API_SECRET`: Umbrella API Reporting v2 secret
+* `ORG_ID`: Umbrella organization ID
 
 ### Maven Project Dependencies
 
@@ -50,7 +51,7 @@ The HTTP client is an OAuth 2.0 client credentials flow object that automaticall
 ClientCredentialsResourceDetails clientCredConfig = new ClientCredentialsResourceDetails();
 clientCredConfig.setClientId(<Umbrella API_KEY>);
 clientCredConfig.setClientSecret(<Umbrella API_SECRET>);
-clientCredConfig.setAccessTokenUri(https://api.umbrella.com/auth/v2/token);
+clientCredConfig.setAccessTokenUri(https://api.umbrella.com/auth/v2/oauth2/token);
 
 // Create an OAuth2 REST template with OAuth 2.0 client credentials access-token-provider
 OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(clientCredConfig, new DefaultOAuth2ClientContext());
@@ -61,22 +62,23 @@ restTemplate.setAccessTokenProvider(new ClientCredentialsAccessTokenProvider());
 
 ### Create HTTP Request
 
-Once initialized, the HTTP client acquires the Bearer token and creates a request to the Umbrella Reporting API.
+Once initialized, the HTTP client acquires the Bearer token and creates a request to the Umbrella Reporting v2 API.
 
 ```java
 . . .
-final String requestUrl = "https://api.umbrella.com/reports/v2/summary?from=-5days&to=now"
+final String requestUrl = "https://reports.api.umbrella.com/v2/organizations/<ORG_ID>/summary?from=-5days&to=now"
 final String response = restTemplate.getForObject(requestUrl, String.class);
 . . .
 ```
 
 ## Run the Java Spring Security Client
 
-1. Set the Umbrella Reporting API key and secret as environment variables.
+1. Set the Umbrella Reporting v2 API key, Umbrella Reporting v2 API secret, and Umbrella organization ID as environment variables.
 
    ```shell
    export API_KEY=<...>
    export API_SECRET=<...>
+   export ORG_ID=<...>
    ```
 
 1. Build the application as a single jar with dependencies using Maven. For more information, see [Apache Maven Project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
@@ -97,15 +99,15 @@ When you run the application, the client logs each request and provides the foll
 * Request string
 * Response body
 
-Since the first request to the Umbrella Reporting API acquires the access token, you can expect a higher response time. All other requests in the sample application reuse the access token.
+Since the first request to the Reporting v2 API acquires the access token, you can expect a higher response time. All other requests in the sample application reuse the access token.
 
 Sample output:
 
 ```java
-call#1: RspTime: 980(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+call#1: RspTime: 980(ms): https://reports.api.umbrella.com/v2/organizations/2423463/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
-call#2: RspTime: 333(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+call#2: RspTime: 333(ms): https://reports.api.umbrella.com/v2/organizations/2423463/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
-call#3: RspTime: 392(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+call#3: RspTime: 392(ms): https://reports.api.umbrella.com/v2/organizations/2423463/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
 ```
