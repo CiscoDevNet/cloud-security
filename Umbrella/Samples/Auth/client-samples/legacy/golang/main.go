@@ -21,6 +21,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"golang.org/x/net/context"
@@ -30,23 +31,25 @@ import (
 const (
 	envKey_ApiKey    = "API_KEY"
 	envKey_ApiSecret = "API_SECRET"
+	envKey_OrgId     = "ORG_ID"
 
-	tokenUri          = "https://api.umbrella.com/auth/v2/token"
-	reportingUri      = "https://api.umbrella.com/reports/v2/summary?from=-5days&to=now"
+	tokenUri          = "https://management.api.umbrella.com/auth/v2/oauth2/token"
+	reportingUri      = "https://reports.api.umbrella.com/v2/organizations/{orgId}/summary?from=-5days&to=now"
 	apiReqCallWaitSec = 1
 	apiRepeatCount    = 3
 )
 
-func umbrellaReports(httpClient *http.Client) {
+func umbrellaReports(httpClient *http.Client, orgId string) {
 	startTime := time.Now()
-	res, err := httpClient.Get(reportingUri)
+	apiPath := strings.ReplaceAll(reportingUri, "{orgId}", orgId)
+	res, err := httpClient.Get(apiPath)
 	if err != nil {
-		fmt.Printf("Error calling API %s, %s\n", reportingUri, err.Error())
+		fmt.Printf("Error calling API %s, %s\n", apiPath, err.Error())
 	} else {
 		defer res.Body.Close()
 		b, _ := ioutil.ReadAll(res.Body)
 		latency := (time.Since(startTime).Nanoseconds()) / 1000000
-		fmt.Printf("Code: %d: RspTime: %v(ms): %s\n%s\n", res.StatusCode, latency, reportingUri, b)
+		fmt.Printf("Code: %d: RspTime: %v(ms): %s\n%s\n", res.StatusCode, latency, apiPath, b)
 	}
 }
 
@@ -60,6 +63,11 @@ func main() {
 	clientSecret, clientSecretFound := os.LookupEnv(envKey_ApiSecret)
 	if !clientSecretFound {
 		fmt.Printf("Mandatory environment variable %s not set, ", envKey_ApiSecret)
+		os.Exit(1)
+	}
+	orgId, orgIdFound := os.LookupEnv(envKey_OrgId)
+	if !orgIdFound {
+		fmt.Printf("Mandatory environment variable %s not set, ", envKey_OrgId)
 		os.Exit(1)
 	}
 
@@ -79,7 +87,7 @@ func main() {
 	// The access token is acquired and refreshed upon expiry automatically.
 	for i := 0; i < apiRepeatCount; i++ {
 		// Call reporting api
-		umbrellaReports(httpClient)
+		umbrellaReports(httpClient, orgId)
 
 		// Sleep for some time
 		time.Sleep(apiReqCallWaitSec * time.Second)

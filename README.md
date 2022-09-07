@@ -22,6 +22,7 @@ The Cisco Cloud Security development client samples, scripts, applications, Post
   * [**Java**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/java/)
   * [**PHP**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/php/)
   * [**Python**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/python/)
+* [**Legacy Client Code Samples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/legacy/)
 
 [**Cloudlock**](https://github.com/CiscoDevNet/cloud-security/tree/master/Cloudlock)
 

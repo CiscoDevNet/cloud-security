@@ -8,6 +8,7 @@ To get started, set up the required environment variables:
 
 * `API_KEY`: Umbrella API Reporting v2 key
 * `API_SECRET`: Umbrella API Reporting v2 secret
+* `ORG_ID`: Umbrella organization ID
 
 ### Download and Install
 
@@ -71,11 +72,12 @@ $stack->push($oauth);
 
 ### Run the Guzzle Client
 
-1. Set the Umbrella Reporting v2 API key and secret as environment variables.
+1. Set the Umbrella Reporting v2 API key, Umbrella Reporting v2 API secret, and Umbrella organization ID as environment variables.
 
    ```shell
    export API_KEY=<...>
    export API_SECRET=<...>
+   export ORG_ID=<...>
    ```
 
 1. Initialize the Guzzle HTTP client and OAuth 2.0 middleware. Create a request to the Umbrella Reporting v2 API.
@@ -87,7 +89,7 @@ $stack->push($oauth);
     'auth'    => 'oauth',
    ]);
 
-   $response = $client->get("https://api.umbrella.com/reports/v2/summary?from=-5days&to=now");
+   $response = $client->get("https://reports.api.umbrella.com/v2/organizations/$org_id/summary?from=-5days&to=now");
 
    echo "Status: ".$response->getStatusCode()."\n";
    ```

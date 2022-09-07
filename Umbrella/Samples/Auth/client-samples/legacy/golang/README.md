@@ -1,6 +1,6 @@
 # Go Client Example for Umbrella API OAuth2.0 Authorization
 
-The Go example client application shows how to create an Umbrella Reporting API request protected by the OAuth2.0 authorization framework.
+The Go example client application shows how to create an Umbrella Reporting v2 API request protected by the OAuth2.0 authorization framework.
 
 ## Prerequisites
 
@@ -14,6 +14,7 @@ To get started, set up the required environment variables:
 
 * `API_KEY`: Umbrella API Reporting v2 key
 * `API_SECRET`: Umbrella API Reporting v2 secret
+* `ORG_ID`: Umbrella organization ID
 
 ### Import Go Libraries
 
@@ -35,7 +36,7 @@ The HTTP client is an OAuth 2.0 client credentials flow object that automaticall
 
 ```go
 config := &clientcredentials.Config{
-    TokenURL:     https://api.umbrella.com/auth/v2/token,
+    TokenURL:     https://management.api.umbrella.com/auth/v2/oauth2/token,
     ClientID:     <Umbrella API_KEY>,
     ClientSecret: <Umbrella API_SECRET>,
 }
@@ -48,10 +49,10 @@ if httpClient == nil {
 
 ### Create HTTP Request
 
-Once initialized, the HTTP client acquires the Bearer token and creates a request to the Umbrella Reporting API.
+Once initialized, the HTTP client acquires the Bearer token and creates a request to the Umbrella Reporting v2 API.
 
 ```go
-res, err := httpClient.Get("https://api.umbrella.com/reports/v2/summary?from=-5days&to=now")
+res, err := httpClient.Get("https://reports.api.umbrella.com/v2/organizations/<ORG_ID>/summary?from=-5days&to=now")
 if err != nil {
     fmt.Printf("Error calling API, %s\n", err.Error())
     return
@@ -60,11 +61,12 @@ if err != nil {
 
 ## Run the Go Client
 
-1. Set the Umbrella Reporting API key and secret as environment variables.
+1. Set the Umbrella Reporting v2 API key, Umbrella Reporting v2 API secret, and Umbrella organization ID as environment variables.
 
    ```shell
    export API_KEY=<...>
    export API_SECRET=<...>
+   export ORG_ID=<...>
    ```
 
 1. Fetch the Go packages required by the client application.
@@ -87,15 +89,15 @@ When you run the application, the client logs each request and provides the foll
 * Request string
 * Response body
 
-Since the first request to the Reporting API acquires the access token, you can expect a higher response time. All other requests in the sample application reuse the access token.
+Since the first request to the Reporting v2 API acquires the access token, you can expect a higher response time. All other requests in the sample application reuse the access token.
 
 Sample output:
 
 ```go
-Code: 200: RspTime: 746(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+Code: 200: RspTime: 746(ms): https://reports.api.umbrella.com/v2/organizations/xxxxxxx/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
-Code: 200: RspTime: 286(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+Code: 200: RspTime: 286(ms): https://reports.api.umbrella.com/v2/organizations/xxxxxxx/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
-Code: 200: RspTime: 204(ms): https://api.umbrella.com/reports/v2/summary?from=-5days&to=now
+Code: 200: RspTime: 204(ms): https://reports.api.umbrella.com/v2/organizations/xxxxxxx/summary?from=-5days&to=now
 {"meta":{},"data":{"applications":0,"domains":0,"requestsblocked":0,"filetypes":0,"requests":0,"policycategories":0,"requestsallowed":0,"categories":0,"identitytypes":0,"applicationsblocked":0,"files":0,"identities":0,"policyrequests":0,"applicationsallowed":0}}
 ```

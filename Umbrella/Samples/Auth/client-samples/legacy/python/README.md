@@ -1,6 +1,6 @@
 # Python Client Examples for Umbrella API OAuth2.0 Authorization
 
-We provide two Python client example applications. Each client application shows how to create an Umbrella Reporting API request protected by the OAuth2.0 authorization framework.
+We provide two Python client example applications. Each client application shows how to create an Umbrella Reporting v2 API request protected by the OAuth2.0 authorization framework.
 
 ## Prerequisites
 
@@ -12,8 +12,9 @@ Download and install a version of Python for your system. For more information, 
 
 To get started, set up the required environment variables:
 
-* `API_KEY`: Umbrella API Reporting key
-* `API_SECRET`: Umbrella API Reporting secret
+* `API_KEY`: Umbrella API Reporting v2 key
+* `API_SECRET`: Umbrella API Reporting v2 secret
+* `ORG_ID`: Umbrella organization ID
 
 The following Python libraries provide the OAuth 2.0 authorization framework:
 
@@ -62,7 +63,7 @@ The HTTP client object is an OAuth 2.0 client credentials flow object that autom
 ```python
 try:
     api_headers = {'Authorization': "Bearer " + self.token['access_token']}
-    req = requests.get('https://api.umbrella.com/reports/v2/{}'.format(end_point), headers=api_headers)
+    req = requests.get('https://reports.api.umbrella.com/v2/{}'.format(end_point), headers=api_headers)
     req.raise_for_status()
     success = True
 except TokenExpiredError:
@@ -73,11 +74,12 @@ except Exception as e:
 
 ### Run `oauthlib` Python Client
 
-1. Set the Umbrella Reporting API key and secret as environment variables.
+1. Set the Umbrella Reporting v2 API key, Umbrella Reporting v2 API secret, and Umbrella organization ID as environment variables.
 
    ```shell
    export API_KEY=<...>
    export API_SECRET=<...>
+   export ORG_ID=<...>
    ```
 
 1. Run the `oauthlib` Python client application.
@@ -86,7 +88,7 @@ except Exception as e:
    python3 oauthlib_api_sample_client.py
    ```
 
-When you run the application, the client logs the response for each request. In the sample output, the first request to the Umbrella Reporting API acquires the access token. The remaining requests reuse the access token until the token expires. When the token expires, the client automatically refreshes the token.
+When you run the application, the client logs the response for each request. In the sample output, the first request to the Reporting v2 API acquires the access token. The remaining requests reuse the access token until the token expires. When the token expires, the client automatically refreshes the token.
 
 Sample output:
 
@@ -118,7 +120,7 @@ class UmbrellaAPI():
 
 ### Create Access Token
 
-Create an access token through the Umbrella Token Authorization API.
+Create an access token through the Umbrella Management API authorization service.
 
 ```python
     def getAccessToken(self):
@@ -148,7 +150,7 @@ def refreshToken(decorated):
 
 ### Umbrella API Request
 
-Before the application sends a request to the Umbrella Reporting API, the client acquires an access token.
+Before the application sends a request to the Umbrella Reporting v2 API, the client acquires an access token.
 
 ```python
 @refreshToken
@@ -156,7 +158,7 @@ def callUmbrellaApi(api, path):
     try:
         api_headers = {}
         api_headers['Authorization'] = 'Bearer ' + api.access_token
-        r = requests.get('https://api.umbrella.com/reports/v2/' + path, headers=api_headers)
+        r = requests.get('https://reports.api.umbrella.com/v2/' + path, headers=api_headers)
         r.raise_for_status()
     except Exception as e:
         print("Report API call failed for {}: {}", path, e)
@@ -166,11 +168,12 @@ def callUmbrellaApi(api, path):
 
 ### Run `requests` Python Client
 
-1. Set the Umbrella Reporting API key and secret as environment variables.
+1. Set the Umbrella Reporting v2 API key, Umbrella Reporting v2 API secret, and Umbrella organization ID as environment variables.
 
    ```shell
    export API_KEY=<...>
    export API_SECRET=<...>
+   export ORG_ID=<...>
    ```
 
 1. Run the `requests` Python client application.
@@ -179,7 +182,7 @@ def callUmbrellaApi(api, path):
    python3 requests_api_sample_client.py
    ```
 
-When you run the application, the client logs the response for each request. In the sample output, the first request to the Umbrella Reporting API acquires the access token. The remaining requests reuse the access token until the token expires. When the token expires, the client automatically refreshes the token.
+When you run the application, the client logs the response for each request. In the sample output, the first request to the Reporting v2 API acquires the access token. The remaining requests reuse the access token until the token expires. When the token expires, the client automatically refreshes the token.
 
 Sample output:
 

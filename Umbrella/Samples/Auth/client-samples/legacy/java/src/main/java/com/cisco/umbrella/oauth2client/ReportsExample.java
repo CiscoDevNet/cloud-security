@@ -33,14 +33,14 @@ public class ReportsExample {
     private static final int API_REPEAT_COUNT = 3;
     private static final int API_REPEAT_DELAY_IN_SEC = 1;
 
-    private static final String UMBRELLA_OAUTH2_TOKEN_URI = "https://api.umbrella.com/auth/v2/token";
-    private static final String UMBRELLA_REPORTS_SUMMARY_URI = "https://api.umbrella.com/reports/v2/summary?from=-5days&to=now";
+    private static final String UMBRELLA_OAUTH2_TOKEN_URI = "https://api.umbrella.com/auth/v2/oauth2/token";
+    private static final String UMBRELLA_REPORTS_SUMMARY_URI = "https://reports.api.umbrella.com/v2/organizations/{ORG_ID}/summary?from=-5days&to=now";
 
     public static void main(String... args) throws IOException, InterruptedException, ExecutionException {
         // Timestamps to compute response time
         long startTime, rspTime;
-    
-        // Get clientID, clientSecret from the envars
+
+        // Get clientID, clientSecret, orgId from the envars
         final String clientId = System.getenv("API_KEY");
         if (clientId == null) {
             System.out.println("Mandatory environment variable API_KEY not set");
@@ -49,6 +49,11 @@ public class ReportsExample {
         final String clientSecret = System.getenv("API_SECRET");
         if (clientSecret == null) {
             System.out.println("Mandatory environment variable API_SECRET not set");
+            System.exit(1);
+        }
+        final String orgId = System.getenv("ORG_ID");
+        if (orgId == null) {
+            System.out.println("Mandatory environment variable ORG_ID not set");
             System.exit(1);
         }
 
@@ -65,6 +70,7 @@ public class ReportsExample {
 
         // Use the REST template to call Umbrella Reports API calls.
         // The access-token is re-used and re-freshed automatically, as per RFC-6749.
+        final String requestUrl = UMBRELLA_REPORTS_SUMMARY_URI.replace("{ORG_ID}", orgId);
         for (int i = 0; i < API_REPEAT_COUNT; i++) {
             startTime = System.currentTimeMillis();
             final String response = restTemplate.getForObject(requestUrl, String.class);
