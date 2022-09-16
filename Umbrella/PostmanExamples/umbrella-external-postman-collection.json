@@ -43,7 +43,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/networks"
+								"url": "{{server}}/deployments/v2/networks"
 							},
 							"response": []
 						},
@@ -57,7 +57,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/internalnetworks"
+								"url": "{{server}}/deployments/v2/internalnetworks"
 							},
 							"response": []
 						},
@@ -71,7 +71,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/sites"
+								"url": "{{server}}/deployments/v2/sites"
 							},
 							"response": []
 						}
@@ -90,7 +90,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/virtualappliances"
+								"url": "{{server}}/deployments/v2/virtualappliances"
 							},
 							"response": []
 						}
@@ -109,7 +109,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/roamingcomputers"
+								"url": "{{server}}/deployments/v2/roamingcomputers"
 							},
 							"response": []
 						}
@@ -128,7 +128,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/internaldomains"
+								"url": "{{server}}/deployments/v2/internaldomains"
 							},
 							"response": []
 						},
@@ -150,7 +150,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"domain\": \"youtube.com\",\n  \"description\": \"Enter a description for this domain\",\n  \"includeAllVAs\": true,\n  \"includeAllMobileDevices\": true\n}"
 								},
-								"url": "{{server}}deployments/v2/internaldomains"
+								"url": "{{server}}/deployments/v2/internaldomains"
 							},
 							"response": []
 						},
@@ -172,7 +172,7 @@
 									"mode": "raw",
 									"raw": ""
 								},
-								"url": "{{server}}deployments/v2/internaldomains/1034405"
+								"url": "{{server}}/deployments/v2/internaldomains/1034405"
 							},
 							"response": []
 						}
@@ -191,7 +191,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/sites"
+								"url": "{{server}}/deployments/v2/sites"
 							},
 							"response": []
 						},
@@ -205,7 +205,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}deployments/v2/tunnels"
+								"url": "{{server}}/deployments/v2/tunnels"
 							},
 							"response": []
 						},
@@ -227,7 +227,7 @@
 									"mode": "raw",
 									"raw": "{\"name\":\"TunnelName\",\"deviceType\":\"other\",\"authentication\":{\"type\":\"PSK\",\"parameters\":{\"secret\":\"enterSecret\",\"idPrefix\":\"EnterPrefix\"}},\"serviceType\":\"SIG\",\"siteOriginId\":EnterSiteID}\n"
 								},
-								"url": "{{server}}deployments/v2/tunnels"
+								"url": "{{server}}/deployments/v2/tunnels"
 							},
 							"response": []
 						},
@@ -249,7 +249,43 @@
 									"mode": "raw",
 									"raw": ""
 								},
-								"url": "{{server}}deployments/v2/tunnels/enterTunnelID"
+								"url": "{{server}}/deployments/v2/tunnels/enterTunnelID"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Policies",
+					"item": [
+						{
+							"name": "Get Policies",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://api.umbrella.com/deployments/v2/policies",
+									"protocol": "https",
+									"host": [
+										"api",
+										"umbrella",
+										"com"
+									],
+									"path": [
+										"deployments",
+										"v2",
+										"policies"
+									]
+								}
 							},
 							"response": []
 						}
@@ -273,7 +309,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}admin/v2/roles"
+								"url": "{{server}}/admin/v2/roles"
 							},
 							"response": []
 						}
@@ -292,7 +328,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}admin/v2/users"
+								"url": "{{server}}/admin/v2/users"
 							},
 							"response": []
 						},
@@ -306,7 +342,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}admin/v2/users/EnterYourUserID"
+								"url": "{{server}}/admin/v2/users/EnterYourUserID"
 							},
 							"response": []
 						},
@@ -328,7 +364,7 @@
 									"mode": "raw",
 									"raw": "{\"firstname\":\"EnterFirstName\",\"lastname\":\"EnterLastName\",\"email\":\"EnterEmail\",\"password\":\"EnterAPassword\",\"roleId\":\"EnterRoleID\",\"timezone\":\"EnterTimeZone\"}"
 								},
-								"url": "{{server}}admin/v2/users"
+								"url": "{{server}}/admin/v2/users"
 							},
 							"response": []
 						},
@@ -346,7 +382,7 @@
 									"mode": "raw",
 									"raw": ""
 								},
-								"url": "{{server}}admin/v2/users/EnterYourUserID"
+								"url": "{{server}}/admin/v2/users/EnterYourUserID"
 							},
 							"response": []
 						}
@@ -367,7 +403,7 @@
 								"value": "Bearer {{AccessToken}}"
 							}
 						],
-						"url": "{{server}}policies/v2/destinationlists"
+						"url": "{{server}}/policies/v2/destinationlists"
 					},
 					"response": []
 				},
@@ -381,7 +417,7 @@
 								"value": "Bearer {{AccessToken}}"
 							}
 						],
-						"url": "{{server}}policies/v2/destinationlists/EnterADestinationListId/destinations"
+						"url": "{{server}}/policies/v2/destinationlists/EnterADestinationListId/destinations"
 					},
 					"response": []
 				},
@@ -403,7 +439,7 @@
 							"mode": "raw",
 							"raw": "[{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"},{\"destination\":\"EnterADestination\",\"comment\":\"EnterAComment\"}]"
 						},
-						"url": "{{server}}policies/v2/destinationlists/EnterADestinationListId/destinations"
+						"url": "{{server}}/policies/v2/destinationlists/EnterADestinationListId/destinations"
 					},
 					"response": []
 				},
@@ -425,7 +461,7 @@
 							"mode": "raw",
 							"raw": "[DestinationID1,DestinationID2]"
 						},
-						"url": "{{server}}policies/v2/destinationlists/EnterADestinationListId/destinations/remove"
+						"url": "{{server}}/policies/v2/destinationlists/EnterADestinationListId/destinations/remove"
 					},
 					"response": []
 				}
@@ -448,9 +484,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/top-destinations/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/top-destinations/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -490,9 +526,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/top-destinations/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/top-destinations/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -532,9 +568,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/top-destinations/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/top-destinations/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -579,9 +615,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -620,9 +656,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/total-requests/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/total-requests/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -662,9 +698,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/total-requests/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/total-requests/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -704,9 +740,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/total-requests/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/total-requests/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -751,9 +787,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/top-categories?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/top-categories?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -797,9 +833,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/activity?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/activity?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -838,9 +874,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/activity/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/activity/dns?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -880,9 +916,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/activity/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/activity/proxy?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -922,9 +958,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/activity/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+									"raw": "{{server}}/reports/v2/activity/firewall?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -969,9 +1005,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/identities?limit=100&offset=0&identitytypes=roaming",
+									"raw": "{{server}}/reports/v2/identities?limit=100&offset=0&identitytypes=roaming",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -1006,9 +1042,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/identities?limit=100&offset=0&identitytypes=network",
+									"raw": "{{server}}/reports/v2/identities?limit=100&offset=0&identitytypes=network",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -1043,9 +1079,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/identities?limit=100&offset=0&identitytypes=mobile_device,android",
+									"raw": "{{server}}/reports/v2/identities?limit=100&offset=0&identitytypes=mobile_device,android",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -1080,9 +1116,9 @@
 									}
 								],
 								"url": {
-									"raw": "{{server}}reports/v2/identities?limit=100&offset=0&identitytypes=directory_user",
+									"raw": "{{server}}/reports/v2/identities?limit=100&offset=0&identitytypes=directory_user",
 									"host": [
-										"{{server}}reports"
+										"{{server}}/reports"
 									],
 									"path": [
 										"v2",
@@ -1121,7 +1157,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}reports/v2/appDiscovery/applications"
+								"url": "{{server}}/reports/v2/appDiscovery/applications"
 							},
 							"response": []
 						},
@@ -1135,7 +1171,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}reports/v2/appDiscovery/applications/<enterAppID>/risk"
+								"url": "{{server}}/reports/v2/appDiscovery/applications/<enterAppID>/risk"
 							},
 							"response": []
 						},
@@ -1149,7 +1185,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}reports/v2/appDiscovery/applications/<enterAppID>/identities"
+								"url": "{{server}}/reports/v2/appDiscovery/applications/<enterAppID>/identities"
 							},
 							"response": []
 						},
@@ -1163,7 +1199,7 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}reports/v2/appDiscovery/applications/<enterAppID>/risk"
+								"url": "{{server}}/reports/v2/appDiscovery/applications/<enterAppID>/risk"
 							},
 							"response": []
 						},
@@ -1186,7 +1222,7 @@
 										}
 									}
 								},
-								"url": "{{server}}reports/v2/appDiscovery/applications/<enterAppID>"
+								"url": "{{server}}/reports/v2/appDiscovery/applications/<enterAppID>"
 							},
 							"response": []
 						}
@@ -1203,9 +1239,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}reports/v2/top-ips/internal?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+							"raw": "{{server}}/reports/v2/top-ips/internal?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 							"host": [
-								"{{server}}reports"
+								"{{server}}/reports"
 							],
 							"path": [
 								"v2",
@@ -1245,9 +1281,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{server}}reports/v2/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+							"raw": "{{server}}/reports/v2/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
 							"host": [
-								"{{server}}reports"
+								"{{server}}/reports"
 							],
 							"path": [
 								"v2",
