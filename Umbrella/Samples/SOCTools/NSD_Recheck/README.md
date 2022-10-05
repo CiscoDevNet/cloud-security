@@ -2,22 +2,26 @@
 
 Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DNS resolvers. You can set an Umbrella DNS Policy to block the Newly Seen Domains classification. Blocking NSDs improves the security of your networks.
 
+## Updates ( Oct 5, 2022)
+
+This script is now updated for the new Umbrella OpenAPI! If you are using the Legacy Umbrella Management API for your Destination Lists click [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/LegacyAPI_README.md) for the Legacy API Version. 
+
 ## Maintain an NSD Exemption List
 
-When you choose to block a NSD, you may occasionally need to temporarily allow a domain. Allowed domains are no longer checked for future security classification. Because NSD categorization expires after a few days, you must not leave domains on your NSD allow list. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate the maintenance of an Umbrella destination list that contains NSDs.
+When you choose to block an NSD, you may occasionally need to temporarily allow a domain. Allowed domains are no longer checked for future security classification. Because NSD categorization expires after a few days, you must not leave domains on your NSD allow list. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate the maintenance of an Umbrella destination list that contains NSDs.
 
-You can use the NSDs Recheck script to maintain an NSD exemption list. The NSD Recheck script integrates with the Umbrella Investigate API and Management API to manage the NSDs in your destination list. 
+You can use the NSDs Recheck script to maintain an NSD exemption list. The NSD Recheck script integrates with the Umbrella Investigate API and Open API to manage the NSDs in your destination list. 
 
 The NSDs Recheck script:
 
-* Uses the Umbrella Management API to query all domains on a specific destination list.
+* Uses the Umbrella Open API to query all domains on a specific destination list.
 * Uses the Umbrella Investigate API to check all domains on the destination list.
 * Removes any domains blocked by Cisco Umbrella with a security classification of: malware, phishing, command and control.
-* Removes all domains except those still classified as NSD.
+* Removes all domains except for those still classified as NSD.
 
 We recommended that you run the `nsd_recheck.py` script regularly and automate maintenance of your NSD allow list.
 
-**Note:** You should only run the `nsd_recheck.py` script on a custom allow list that contains only NSDs. Do not use this script on an allow list containing domains for any other exemption reasons.
+**Note:** You should only run the `nsd_recheck.py` script on a custom allow list that contains only newly seen domains. Do not use this script on an allow list containing domains for any other exemption reasons.
 
 ## Prerequisites
 
@@ -28,7 +32,8 @@ The Umbrella Investigate API license is an add-on package and is not included in
 ## Step 1: Create Umbrella API Keys
 
 * Create an Umbrella Investigate API token. For more information, see [Create Umbrella Investigate API Token.](https://developer.cisco.com/docs/cloud-security/#!investigate-getting-started)
-* Create an Umbrella Management API key and secret. For more information, see [Create Umbrella Generate Key and Secret](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview).
+* Create an Umbrella Open API key and secret. For more information, see [Create Umbrella Generate Key and Secret](https://developer.cisco.com/docs/cloud-security/#!authentication/create-an-api-key).
+* Assign this Umbrella Open API key the permission `policies:read,write`.
 
 ## Step 2: Set Environment Variables
 
@@ -43,14 +48,14 @@ Set up the environment variables for the `nsd_recheck.py` script in your `.bash_
 
 ```bash
 export ORG_ID="insert your Umbrella organization ID"
-export MANAGEMENT_KEY="insert your Umbrella Management API key"
-export MANAGEMENT_SECRET="insert your Umbrella Management API secret"
+export OPENAPI_KEY="insert your Umbrella Open API key"
+export OPENAPI_SECRET="insert your Umbrella Open API secret"
 export INVESTIGATE_TOKEN="insert your Umbrella Investigate API token"
 ```
 
 ## Step 3: Create an Umbrella Destination List
 
-* You must create an Umbrella destination list with the `access` type of `allow` and `dns`. Add NSDs that you do not want blocked to your allow destination list. For more information, see [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list).
+* You must create an Umbrella destination list with the `access` type of `allow` and `dns`. Add NSDs that you do not want blocked to this allow destination list. For more information, see [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list).
 
 ## Step 4: Run the NSDs Recheck Script
 
