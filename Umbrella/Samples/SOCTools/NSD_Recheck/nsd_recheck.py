@@ -35,7 +35,6 @@ def gen_open_api_url(dest_id):
         + dest_id
         + "/destinations"
     )
-    print(open_api_url)
     return open_api_url
 
 
