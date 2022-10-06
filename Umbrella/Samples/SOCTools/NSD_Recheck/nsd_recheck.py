@@ -41,7 +41,7 @@ def gen_open_api_url(dest_id):
 
 def gen_token(o_key, o_sec):
     okp = o_key + ":" + o_sec
-    base64pass = base64.b64encode(mkp.encode()).decode()
+    base64pass = base64.b64encode(okp.encode()).decode()
     url = "https://api.umbrella.com/auth/v2/token"
     h = {"Authorization": "Basic" + base64pass}
     r = requests.request("GET", url, headers=h).json()
