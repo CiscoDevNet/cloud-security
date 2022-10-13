@@ -44,8 +44,9 @@ class UmbrellaAPI():
             
     def getAccessToken(self):
         try:
-            p={}
-            rsp = requests.post(self.token_url, data=p, auth=(self.client_id, self.client_secret))
+            p={'grant_type': 'client_credentials'}
+            api_headers['Content-Type'] = 'application/x-www-form-urlencoded'
+            rsp = requests.post(self.token_url, data=p, headers=api_headers, auth=(self.client_id, self.client_secret))
             rsp.raise_for_status()
         except Exception as e:
             print(e)

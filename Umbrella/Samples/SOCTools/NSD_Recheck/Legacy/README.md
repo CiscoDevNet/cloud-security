@@ -4,7 +4,9 @@ Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DN
 
 ## Updates ( Oct 5, 2022)
 
-If you're looking to move away from the soon to be EOL Umbrella Management API, please click [here](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/SOCTools/NSD_Recheck#readme) for the OpenAPI version of this script!
+Cisco Umbrella announced general availability of the Umbrella API on August 29, 2022. For more information, see [Introducing the new Cisco Umbrella Open API](https://support.umbrella.com/hc/en-us/articles/8989122216340-Introducing-the-new-Cisco-Umbrella-Open-API).
+
+The Umbrella API updates include: intuitive API paths, granular API key scopes, OAuth 2.0 client credential flows, and API key management. We adapted the NSDs Recheck script to integrate with the Umbrella API. For information about the Umbrella API and the NSDs Recheck script, see [NSDs Recheck README](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/SOCTools/NSD_Recheck#readme).
 
 ## Maintain an NSD Exemption List
 

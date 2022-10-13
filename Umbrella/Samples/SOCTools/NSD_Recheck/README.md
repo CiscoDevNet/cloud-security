@@ -10,7 +10,7 @@ This script is now updated for the new Umbrella OpenAPI! If you are using the Le
 
 ## Maintain a Newly Seen Domain Exemption List
 
-When you choose to block Newly Seen Domains, you are blocking domains simply because they are new to Umbrella. The benefit of blocking the unknown is worth the management overhead, as you will likely need to temporarily allow domains while the NSD Categorization still applies. Because allowed domains are no longer checked for future security classification, it is important that exemptions are removed so regular Umbrella protection can apply if the domain ever changes. Because NSD categorization typically expires after a few days, we recommend keeping your NSD exemption list trimmed. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate that maintenance for an Umbrella destination list that contains NSDs. The NSD Recheck script integrates with the Umbrella Investigate API and Open API to manage the NSDs in your destination list. 
+You may need to temporarily allow domains that are categorized as an NSD. Umbrella does not check allowed domains for future security classification. It is important that exemptions are removed so regular Umbrella protection can apply if the domain ever changes. Because NSD categorization typically expires after a few days, we recommend keeping your NSD exemption list trimmed. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate that maintenance for an Umbrella destination list that contains NSDs. The NSD Recheck script integrates with the Umbrella Investigate API and Open API to manage the NSDs in your destination list. 
 
 
 The NSDs Recheck script:
