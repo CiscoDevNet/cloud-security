@@ -23,10 +23,41 @@ or implied.
 
 import requests
 import json
-import base64
 import pandas as pd
 import os
 import sys
+import time
+
+
+class UmbrellaAPI():
+    def __init__(self, token_url, client_id, client_secret):
+        self.token_url = token_url
+        self.client_id = client_id
+        self.client_secret = client_secret
+
+        try:
+            self.access_token = self.getAccessToken()
+            if self.access_token is None:
+                    raise Exception("Request for access token failed")
+        except Exception as e:
+            print(e)
+            
+    def getAccessToken(self):
+        try:
+            p={}
+            rsp = requests.post(self.token_url, data=p, auth=(self.client_id, self.client_secret))
+            rsp.raise_for_status()
+        except Exception as e:
+            print(e)
+            return None
+        else:
+            clock_skew = 300
+            self.access_token_expiration = int(time.time()) + rsp.json()['expires_in'] - clock_skew
+            return rsp.json()['access_token']
+
+    def __str__(self):
+        return self.access_token
+
 
 def gen_open_api_url(dest_id):
     ''' Generates URL for Open API, including dest_id '''
@@ -36,15 +67,6 @@ def gen_open_api_url(dest_id):
         + "/destinations"
     )
     return open_api_url
-
-
-def gen_token(o_key, o_sec):
-    okp = o_key + ":" + o_sec
-    base64pass = base64.b64encode(okp.encode()).decode()
-    url = "https://api.umbrella.com/auth/v2/token"
-    h = {"Authorization": "Basic" + base64pass}
-    r = requests.request("GET", url, headers=h).json()
-    return r["access_token"]
 
 
 def get_domains(open_api_token, open_api_url):
@@ -113,23 +135,32 @@ if __name__ == '__main__':
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 126 )
+    # dest_id = 12345678 # Option to Hardset Destination List ID for automation, comment out line 156 )
     destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
 
     # Set these variables in your environment or .bash_profile. Check the README for more information.
-    o_key = os.environ["OPENAPI_KEY"]  # Umbrella Open API key
-    o_sec = os.environ["OPENAPI_SECRET"]  # Umbrella Open API secret
     i_pass = os.environ["INVESTIGATE_TOKEN"]  # Umbrella Investigate API token
-    orgid = os.environ["ORG_ID"]  # orgID
+    token_url = os.environ.get('TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
+    client_id = os.environ.get('API_KEY')  # Umbrella Open API key
+    client_secret = os.environ.get('API_SECRET')  # Umbrella Open API secret
+    
+    # Exit out if the client_id or client_secret is not set
+    for var in ['API_SECRET', 'API_KEY', 'INVESTIGATE_TOKEN']:
+        if os.environ.get(var) == None:
+            print("Required environment variable: {} not set".format(var))
+            sys.exit(1)
 
     # Enter destination list ID
     dest_id = input("Enter your NSD Allow Destination List ID (1234567) for NSD recheck: ")
     print("Destination list ID: ", dest_id)
+    
+    # Retrieve Open API Token
+    token = UmbrellaAPI(token_url, client_id, client_secret)
+    open_api_token = token.access_token
 
-    # generate credentials and a Open API URL containing destination list ID
-    open_api_token = gen_token(o_key, o_sec)
+    # Generate Open API URL containing destination list ID
     open_api_url = gen_open_api_url(dest_id)
 
     # Get the list of domains from the destination list then prepare them. Stops script if list of domains is empty.
@@ -148,13 +179,13 @@ if __name__ == '__main__':
         expired_ids = check_for_nsd(checked)
 
         # Remove Each Blocked Domain ID from the destination list, because the block would be allowed.
-        print(f"Removing {len(block_ids)} domains that are blocked.")
         if len(block_ids) > 0:
+            print(f"Removing {len(block_ids)} domains that are blocked.")
             removal_response = remove_domains(block_ids, open_api_token)
             print('Result :' + str((removal_response['status'])))
         # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
-        print(f"Removing {len(expired_ids)} expired NSDs.")
         if len(expired_ids) > 0:
+            print(f"Removing {len(expired_ids)} expired NSDs.")
             removal_response = remove_domains(expired_ids, open_api_token)
             print('Result : ' + str((removal_response['status'])))
 

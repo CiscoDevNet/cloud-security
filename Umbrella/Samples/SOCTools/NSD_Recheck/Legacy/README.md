@@ -1,4 +1,4 @@
-# Newly Seen Domains Recheck Script
+# Legacy Newly Seen Domains Recheck Script
 
 Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DNS resolvers. You can set an Umbrella DNS Policy to block the Newly Seen Domains classification. Blocking NSDs improves the security of your networks.
 
