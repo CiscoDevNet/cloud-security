@@ -10,8 +10,8 @@
 ## Prerequisites
 
 * Download and install the [Postman Client](https://www.getpostman.com/apps).
-* Import the [Umbrella Postman Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/umbrella-external-postman-environment.json) JSON file. The Umbrella Postman environment is a JSON file. Copy the Umbrella Postman environment file to your local system.
-* Import the [Umbrella Postman Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/umbrella-external-postman-collection.json) JSON file. The Umbrella Postman collection is a JSON file. Copy the Umbrella Postman collection file to your local system.
+* Import the [Umbrella Postman Environment](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/umbrella-external-postman-environment.json) JSON file. Copy the Umbrella Postman environment file to your local system.
+* Import the [Umbrella Postman Collection](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/umbrella-external-postman-collection.json) JSON file. Copy the Umbrella Postman collection file to your local system.
 * Select the `Umbrella NextGen APIs - External` collection.
 * Select the `Umbrella NextGen API - External` environment from the drop down list.
 * Locate the `Auth` folder in the Postman collection.

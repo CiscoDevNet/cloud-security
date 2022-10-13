@@ -27,7 +27,7 @@ We recommended that you run the `nsd_recheck.py` script regularly and automate m
 
 ## Prerequisites
 
-* You must have a subscription to the Cisco Umbrella that includes use of the Umbrella Investigate API.
+* You must have a subscription to the Cisco Umbrella that includes use of Umbrella Investigate API.
 The Umbrella Investigate API license is an add-on package and is not included in the Umbrella Advantage or Essentials Packages. For more information, see [Umbrella Investigate](https://umbrella.cisco.com/products/umbrella-investigate).
 * Python 3.x
 
