@@ -20,7 +20,6 @@ or implied.
 
 import requests, json
 import base64
-import pandas as pd
 import os
 import sys
 
@@ -45,12 +44,12 @@ def gen_credentials(mkey, msec):
 
 '''GET Request destinations from Umbrella API'''
 def get_domains(management_api_pass, management_api_url):
-    headers = {"Authorization": "Basic " + management_api_pass, "Content-Type": "application/json"}
-    payload = None
-    destinations = requests.request("GET", management_api_url, headers=headers, data=payload)
-    if destinations:
-        destinations = pd.DataFrame.from_dict(destinations.json()['data'])
-    return destinations
+    h = {"Authorization": "Basic " + management_api_pass, 
+         "Content-Type": "application/json"
+        }
+    p = {}
+    r = requests.request("GET", management_api_url, headers=h, data=p).json()
+    return r["data"]
 
 
 ''' Remove Domains from the Umbrella destination list.
@@ -66,43 +65,35 @@ def remove_domains(management_api_url, management_api_pass, domain_id):
     removal_response = requests.request("DELETE", deleteurl, headers=headers, data=payload).json()
     return removal_response
 
-'''Check Categorization and Classification of Domains with the Investigate API'''
-def check_domains(domains):
-    investigate_url = "https://investigate.api.umbrella.com/domains/categorization"
-    payload = json.dumps(domains)
-    investigate_headers = {
+def check_domains(ipass, destinations):
+    '''Check Categorization and Classification of Domains with the Investigate API'''
+    domains = [i['destination'] for i in destinations]
+    url = "https://investigate.api.umbrella.com/domains/categorization"
+    p = json.dumps(domains)
+    h = {
         "Authorization": "Bearer " + ipass,
         "Content-Type": "application/json",
     }
-    check_request = requests.request("POST", investigate_url, headers=investigate_headers, data=payload)
-    checked = check_request.json()
+    checked = requests.request("POST", url, headers=h, data=p).json()
     return checked
 
 
-'''Use check_domains data to see if blocked and return a list of domain IDs to be removed.'''
-def check_for_blocks(checked):
+def check_for_blocks(checked, destinations):
+    '''Use check_domains data to see if blocked and return a list of domain IDs to be removed.'''
+    blocked_ids = []
     blocked_domains = []
-    for d in checked:
-        if checked.get(d)["status"] == -1:
-            blocked_domains.append(d)
-    block_df = destinations[destinations["destination"].isin(blocked_domains)]
-    block_ids = []
-    block_ids = block_df.id
-    block_ids = block_ids.tolist()
-    return block_ids
+    blocked_domains = [i for i in checked if checked[i]["status"] == -1]
+    blocked_ids = [i['id'] for i in destinations if i['destination'] in blocked_domains]
+    return blocked_ids
 
 
-'''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
-def check_for_nsd(checked):
-    expired = []
-    nsd = "108" # Investigate API Identifies newly seen domains with classifier # 108.
-    for d in checked:
-        if nsd not in checked.get(d)["security_categories"]:
-            expired.append(d)
-    expired_df = destinations[destinations["destination"].isin(expired)]
+def check_for_nsd(checked, destinations):
+    '''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
     expired_ids = []
-    expired_ids = expired_df.id
-    expired_ids = expired_ids.tolist()
+    expired_domains = []
+    nsd = "108"  # Investigate API identifies NSD as "108".
+    expired_domains = [i for i in checked if nsd not in checked[i]["security_categories"]]
+    expired_ids = [i['id'] for i in destinations if i['destination'] in expired_domains]
     return expired_ids
 
 def combine(block_ids, expired_ids):
@@ -116,7 +107,7 @@ if __name__ == '__main__':
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 126 )
+    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 122 )
     destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
@@ -145,12 +136,10 @@ if __name__ == '__main__':
     elif len(destinations) > 0:
         '''If the list has domains, prepare the list of domain IDs, check each domain ID with the
         Investigate API for malware and NSD expiration.'''
-        domains = destinations.destination
-        domains = domains.tolist()
-        print(f"Checking {len(domains)} Domains")
-        checked = check_domains(domains)
-        block_ids = check_for_blocks(checked)
-        expired_ids = check_for_nsd(checked)
+        print(f"Checking {len(destinations)} Domains")
+        checked = check_domains(ipass, destinations)
+        block_ids = check_for_blocks(checked, destinations)
+        expired_ids = check_for_nsd(checked, destinations)
         combined_ids = combine(block_ids, expired_ids)
         # Remove Each Blocked Domain ID from the destination list, because the block would be allowed.
         if len(block_ids) > 0:
