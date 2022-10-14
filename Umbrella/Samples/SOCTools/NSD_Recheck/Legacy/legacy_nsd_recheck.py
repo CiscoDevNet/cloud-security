@@ -55,7 +55,7 @@ def get_domains(management_api_pass, management_api_url):
 
 ''' Remove Domains from the Umbrella destination list.
     Domains are checked by check_for_nsd() and check_for_blocks() functions. '''
-def remove_domains(domain_id):
+def remove_domains(management_api_url, management_api_pass, domain_id):
     deleteurl = management_api_url + "/remove"
     headers = {
         "Authorization": "Basic " + management_api_pass,
@@ -105,6 +105,11 @@ def check_for_nsd(checked):
     expired_ids = expired_ids.tolist()
     return expired_ids
 
+def combine(block_ids, expired_ids):
+    '''Combines list of IDs for removal'''
+    combined = []
+    combined = list(set(block_ids + expired_ids))
+    return combined
 
 # main
 if __name__ == '__main__':
@@ -146,17 +151,18 @@ if __name__ == '__main__':
         checked = check_domains(domains)
         block_ids = check_for_blocks(checked)
         expired_ids = check_for_nsd(checked)
-
-        # Remove Each Malware Domain ID from the destination List ( Malware was allowed )
-        print(f"Removing {len(block_ids)} domains that are blocked.")
+        combined_ids = combine(block_ids, expired_ids)
+        # Remove Each Blocked Domain ID from the destination list, because the block would be allowed.
         if len(block_ids) > 0:
-            removal_response = remove_domains(block_ids)
-            print('Result :' + str((removal_response['status'])))
+            print(f"{len(block_ids)} domains are blocked.")
         # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
-        print(f"Removing {len(expired_ids)} expired NSDs.")
         if len(expired_ids) > 0:
-            removal_response = remove_domains(expired_ids)
+            print(f"{len(expired_ids)} domains are expired NSDs.")
+        if len(combined_ids) > 0:
+            print(f"{len(combined_ids)} total domains for removal.")
+            removal_response = remove_domains(management_api_url, management_api_pass, combined_ids)
             print('Result : ' + str((removal_response['status'])))
-
-    print("Domains remaining for next run : " + str(removal_response['data']['meta']['destinationCount']))
+            print("Domains remaining for next run : " + str(removal_response['data']['meta']['destinationCount']))
+        else:
+            print("No domains to remove.")
     print("Done.")
