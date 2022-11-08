@@ -9,12 +9,13 @@ The Cisco Cloud Security development client samples, scripts, applications, Post
 ## Code Samples, Postman Collections, and Guides
 
 [**Umbrella**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella)
-
-* [**Enforcement API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/EnforcementAPI)
-* [**Investigate API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/InvestigateAPI)
-* [**Management API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ManagementAPIs)
-* [**Reporting API v2 Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/ReportingAPIv2)
-* [**Tunnel API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/TunnelAPI)
+* [Umbrella Postman Examples](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/README.md)
+* [Legacy Umbrella Postman Examples](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/legacy)
+  * [**Enforcement API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/legacy/EnforcementAPI)
+  * [**Management API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/legacy/ManagementAPIs)
+  * [**Reporting API v2 Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/legacy/ReportingAPIv2)
+  * [**Tunnel API Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/legacy/TunnelAPI)
+* [**Investigate API Postman Examples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/PostmanExamples/InvestigateAPI)
 * [**Umbrella S3 -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Reports/S3-ELK-Example)
 * [**Umbrella Reporting API and Umbrella Investigate API -> ELK Example**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Reports/Reporting-and-Investigate-APIs-ELK)
 * [**Client Code Samples**](https://github.com/CiscoDevNet/cloud-security/tree/master/Umbrella/Samples/Auth/client-samples/README.md)

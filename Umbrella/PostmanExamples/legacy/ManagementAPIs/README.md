@@ -4,13 +4,13 @@ The Cisco Umbrella Management API Postman Collection includes a sample of the Um
 
 ## Before You Begin
 
-We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to create your Umbrella Management API key, and authorize requests to the Umbrella Management API. For more information, see [Cisco Umbrella Management API Getting Started](https://developer.cisco.com/docs/cloud-security/#!getting-started-overview).
+We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to create your Umbrella Management API key, and authorize requests to the Umbrella Management API. For more information, see [Cisco Cloud Security API](https://developer.cisco.com/docs/cloud-security/).
 
 ## Prerequisites
 
 * Download and install [Postman](https://www.getpostman.com/apps).
-* Import the [Umbrella Management API Postman Environment JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20API%20-%20External.postman_environment.json) into your Postman client.
-* Import the [Umbrella Managemene API Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ManagementAPIs/Umbrella%20Management%20APIs%20-%20External.postman_collection.json) into your Postman client.
+* Import the [Umbrella Management API Postman Environment JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/legacy/ManagementAPIs/Umbrella%20Management%20API%20-%20External.postman_environment.json) into your Postman client.
+* Import the [Umbrella Managemene API Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/legacy/ManagementAPIs/Umbrella%20Management%20APIs%20-%20External.postman_collection.json) into your Postman client.
 
 ## Set Up Postman Environment Variables
 
