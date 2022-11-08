@@ -4,13 +4,13 @@ The Cisco Umbrella Reporting v2 API Postman Collection includes a sample of the 
 
 ## Before You Begin
 
-We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to create your Umbrella Reporting API key, generate a *Bearer* token, and authorize requests to the Umbrella Reporting v2 API. For more information, see [Cisco Umbrella Reporting v2 API Getting Started](https://developer.cisco.com/docs/cloud-security/#!reporting-v2-getting-started).
+We recommend that you review the Cisco Cloud Security API documentation. The Cloud Security API documentation describes how to create your Umbrella Reporting API key, generate a *Bearer* token, and authorize requests to the Umbrella Reporting v2 API. For more information, see [Cisco Cloud Security API](https://developer.cisco.com/docs/cloud-security/).
 
 ## Prerequisites
 
 * Download and install [Postman](https://www.getpostman.com/apps).
-* Import the [Umbrella Reporting v2 API Postman Environment JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI%20V2/Umbrella%20Reporting%20V2%20-%20External.postman_environment.json) into your Postman client.
-* Import the [Umbrella Reporting v2 API Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/ReportingAPI%20V2/Umbrella%20ReportingV2%20-%20External.postman_collection.json) into your Postman client.
+* Import the [Umbrella Reporting v2 API Postman Environment JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/legacy/ReportingAPIv2/Umbrella-Reportingv2-External-postman-environment.json) into your Postman client.
+* Import the [Umbrella Reporting v2 API Postman Collection JSON file](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/PostmanExamples/legacy/ReportingAPIv2/Umbrella-Reportingv2-External-postman-collection.json) into your Postman client.
 
 ## Authentication
 
