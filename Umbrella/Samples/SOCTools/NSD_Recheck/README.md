@@ -5,7 +5,7 @@ Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DN
 
 ## Updates ( Oct 5, 2022)
 
-This script is now updated for the new Umbrella OpenAPI! If you are using the Legacy Umbrella Management API for your Destination Lists, click [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/LegacyAPI_README.md) for the Legacy API Version. 
+This script is now updated for the new Umbrella OpenAPI! If you are using the Legacy Umbrella Management API for your Destination Lists, click [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/Legacy/README.md) for the Legacy API Version. 
 
 
 ## Maintain a Newly Seen Domain Exemption List
