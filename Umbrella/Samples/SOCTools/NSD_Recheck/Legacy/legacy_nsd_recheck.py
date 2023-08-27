@@ -115,7 +115,7 @@ if __name__ == "__main__":
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 122 )
+    # dest_id = '12345678' # ( Optionally hard-set the Destination List ID for automation, comment out 122 )
     destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
