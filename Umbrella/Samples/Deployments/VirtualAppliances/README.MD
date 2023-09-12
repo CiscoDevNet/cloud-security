@@ -7,27 +7,27 @@ This is achieved by sending a GET request to https://api.umbrella.com/deployment
 
 ## Prerequisites
 
-- Python 3.x.x
-- Cisco Umbrella
-- Email account with rights to send emails from applications
+- Python 3.x.x.
+- Cisco Umbrella.
+- Email account with rights to send emails from applications (an application password is required).
 
 ## Before You Begin
 
-- Create an Umbrella Management API Key.
-- Create an APP password from your prefered email solution.
-- Install Python libraries. For more information, see Requirements.txt
+- Create an Umbrella API Key with a at least "read-only" scope to either all Deployments or just the Virtual-Appliances API.
+- Create an APP (application) password from your prefered email solution.
+- Install Python libraries. For more information, see Requirements.txt.
 
 ```bash
 pip install -r Requirements.txt
 ```
 
-- Create the following environment variables (in the PASS variable use the APP password created):
+- Create the following environment variables (in the PASSWD variable use the APP password created):
 
 ```bash
 export API_KEY=VALUE
 export API_SECRET=VALUE
 export EMAIL_ADDRESS=VALUE
-export PASS=VALUE
+export PASSWD=VALUE
 ```
 
 ## Usage
@@ -45,7 +45,3 @@ Mac:
 ```
 python3 ADConnectorMonitor.py
 ```
-
-## Run the script automatically:
-
-Multiple tools can be used to automate the script execution, however, this is up to the user as we don't recommend any specific ways to achieve automation.

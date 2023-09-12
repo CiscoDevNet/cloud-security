@@ -18,7 +18,7 @@ or implied.
 
 
 # Export/Set the environment variables
-from umbrella.UmbrellaAPI import UmbrellaAPI
+from UmbrellaAPI import UmbrellaAPI
 from email.message import EmailMessage
 import smtplib
 import datetime
@@ -26,7 +26,7 @@ import os
 client_id = os.environ.get('API_KEY')
 client_secret = os.environ.get('API_SECRET')
 email_address = os.environ.get('EMAIL_ADDRESS')
-passw = os.environ.get('PASS')
+passw = os.environ.get('PASSWD')
 recipients = os.environ.get('RECIPIENTS')
 token_url = os.environ.get(
     'TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
