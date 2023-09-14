@@ -13,7 +13,7 @@ This is achieved by sending a GET request to https://api.umbrella.com/deployment
 
 ## Before You Begin
 
-- Create an Umbrella API Key with a at least "read-only" scope to either all Deployments or just the Virtual-Appliances API.
+- Create an Umbrella API key that includes the Deployments > Virtual Appliances scope with the Read Only permission (deployments.virtualappliances:read).
 - Create an APP (application) password from your prefered email solution.
 - Install Python libraries. For more information, see Requirements.txt.
 
@@ -29,6 +29,10 @@ export API_SECRET=VALUE
 export EMAIL_ADDRESS=VALUE
 export PASSWD=VALUE
 ```
+
+- Modify the `recipients` variable and add the desired recipients with each string separated by ','
+
+- Note: The script does not paginate the response from the server. The default number of virtual appliances returned by Umbrella in a response is 100.
 
 ## Usage
 
