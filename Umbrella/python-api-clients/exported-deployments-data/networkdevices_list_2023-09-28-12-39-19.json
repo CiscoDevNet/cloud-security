@@ -1,0 +1,47 @@
+[
+    {
+        "deviceId": "f338b0d0979d18a7",
+        "deviceKey": "umbrella-apix-4000-001233445566",
+        "name": "apix9000",
+        "createdAt": "2022-07-19T01:22:54.000Z",
+        "originId": 589047473,
+        "organizationId": 5721878,
+        "serialNumber": "123498123"
+    },
+    {
+        "deviceId": "f338fd9b819865e1",
+        "deviceKey": "apix10000-2233445566aa",
+        "name": "apix10000",
+        "createdAt": "2022-07-25T16:39:58.000Z",
+        "originId": 589351659,
+        "organizationId": 5721878,
+        "serialNumber": "123485"
+    },
+    {
+        "deviceId": "f338c2cdfa1f6110",
+        "deviceKey": "apix5500a-22cc119966aa",
+        "name": "apix5500",
+        "createdAt": "2022-07-25T16:58:24.000Z",
+        "originId": 589352869,
+        "organizationId": 5721878,
+        "serialNumber": "678543"
+    },
+    {
+        "deviceId": "f3386f5cdd917a01",
+        "deviceKey": "AWC123-001232323230",
+        "name": "testdevice1",
+        "createdAt": "2022-10-24T19:03:16.000Z",
+        "originId": 594545465,
+        "organizationId": 5721878,
+        "serialNumber": "12345"
+    },
+    {
+        "deviceId": "f3386178ab3ed1b1",
+        "deviceKey": "844Test-0123456789ab",
+        "name": "A name for the device.",
+        "createdAt": "2022-10-26T17:24:00.000Z",
+        "originId": 594670068,
+        "organizationId": 5721878,
+        "serialNumber": "12345a"
+    }
+]

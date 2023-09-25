@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1033170,
+        "domain": "testdomain.com",
+        "description": "",
+        "createdAt": "2022-04-14T20:58:16.000Z",
+        "modifiedAt": "2022-04-14T20:58:16.000Z",
+        "includeAllVAs": true,
+        "includeAllMobileDevices": true,
+        "siteIds": []
+    }
+]

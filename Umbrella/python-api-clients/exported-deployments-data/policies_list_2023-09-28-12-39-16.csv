@@ -1,0 +1,3 @@
+policyId,organizationId,name,priority,createdAt,isDefault
+13817728,5721878,New Policy,5,2023-01-04T06:45:45.000Z,False
+8831331,5721878,Default Policy,11,2021-07-26T20:20:30.000Z,True
