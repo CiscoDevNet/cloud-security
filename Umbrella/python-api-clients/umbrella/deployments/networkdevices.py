@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class NetworkDevices(Deployment):
     def __init__(self, session, export_sub_dir):
         super(NetworkDevices, self).__init__(session, 'deployments/v2/networkdevices', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/networkdevices'
 
     def getNetworkDevices(self, params):
         """

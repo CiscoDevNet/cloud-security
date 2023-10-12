@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class Sites(Deployment):
     def __init__(self, session, export_sub_dir):
         super(Sites, self).__init__(session, 'deployments/v2/sites', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/sites'
 
     def listSites(self, params):
         """

@@ -19,9 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class InternalNetworks(Deployment):
     def __init__(self, session, export_sub_dir):
         super(InternalNetworks, self).__init__(session, 'deployments/v2/internalnetworks', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/internalnetworks'
-        self._export_dir = export_sub_dir
 
     def listInternalNetworks(self, params):
         """

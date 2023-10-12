@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class InternalDomains(Deployment):
     def __init__(self, session, export_sub_dir):
         super(InternalDomains, self).__init__(session, 'deployments/v2/internaldomains', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/internaldomains'
 
     def getInternalDomains(self, params):
         """

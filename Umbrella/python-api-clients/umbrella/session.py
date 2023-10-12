@@ -47,7 +47,6 @@ class UmbrellaAPI:
                     "Authorization": bearer_token,
                     "Content-Type": "application/json"
                 }
-                print(f"params: {parameters}")
                 resp = requests.get('https://api.umbrella.com/{}'.format(end_point), headers=api_headers, params=parameters)
                 resp.raise_for_status()
                 success = True
@@ -87,6 +86,26 @@ class UmbrellaAPI:
                 bearer_token = "Bearer " + self.token['access_token']
                 api_headers = { 'Authorization': bearer_token }
                 resp = requests.put('https://api.umbrella.com/{}'.format(end_point), json=data, headers=api_headers)
+                resp.raise_for_status()
+                success = True
+            except TokenExpiredError:
+                token = self.GetToken()
+            except Exception as e:
+                raise(e)
+        return resp
+
+
+    ''' PATCH API request to an Umbrella endpoint '''
+    def ReqPatch(self, end_point, data):
+        success = False
+        resp = None
+        if self.token == None:
+            self.GetToken()
+        while not success:
+            try:
+                bearer_token = "Bearer " + self.token['access_token']
+                api_headers = { 'Authorization': bearer_token }
+                resp = requests.patch('https://api.umbrella.com/{}'.format(end_point), json=data, headers=api_headers)
                 resp.raise_for_status()
                 success = True
             except TokenExpiredError:

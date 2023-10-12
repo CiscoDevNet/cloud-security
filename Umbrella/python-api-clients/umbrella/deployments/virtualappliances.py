@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class VirtualAppliances(Deployment):
     def __init__(self, session, export_sub_dir):
         super(VirtualAppliances, self).__init__(session, 'deployments/v2/virtualappliances', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/virtualappliances'
 
     def listVirtualAppliances(self, params):
         """

@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class NetworkTunnels(Deployment):
     def __init__(self, session, export_sub_dir):
         super(NetworkTunnels, self).__init__(session, 'deployments/v2/tunnels', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/tunnels'
 
     def getTunnels(self, params):
         """

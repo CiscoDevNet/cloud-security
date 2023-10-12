@@ -38,9 +38,7 @@ def write_data_to_csv(data, d_filename):
 
     try:
         with open(d_filename,'w',encoding='utf-8') as f:
-
             fieldnames = data[0].keys()
-            print(f"keys: {fieldnames}")
 
             # Write CSV header
             writer = csv.DictWriter(f, fieldnames=fieldnames)

@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class RoamingComputers(Deployment):
     def __init__(self, session, export_sub_dir):
         super(RoamingComputers, self).__init__(session, 'deployments/v2/roamingcomputers', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/roamingcomputers'
 
     def listRoamingComputers(self, params):
         """

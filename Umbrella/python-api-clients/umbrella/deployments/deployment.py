@@ -33,12 +33,10 @@ class Deployment(object):
         umbrella_endpoint = self._uri
 
         try:
-            rsp = self._session.GetToken()
             rsp = self._session.ReqGet(umbrella_endpoint, params)
 
             if rsp.status_code == 200 or rsp.status_code == 202 or rsp.status_code == 204:
                 print(f"response status is OK")
-                #print(json.dumps(rsp.json(), indent=4))
 
                 if len(rsp.json()) == 0:
                     print(f"No data in response")
@@ -72,7 +70,6 @@ class Deployment(object):
                 rsp = self._session.ReqGet(umbrella_endpoint, params)
                 if rsp.status_code == 200 or rsp.status_code == 202 or rsp.status_code == 204:
                     print(f"response status is OK")
-                    #print(json.dumps(rsp.json(), indent=4))
 
                     if len(rsp.json()) == 0:
                         hasMoreData = False
@@ -81,8 +78,6 @@ class Deployment(object):
                         if 'page' in params:
                             params['page'] += 1
                             data.extend(rsp.json())
-                            #print(f"records read: {len(data)}")
-                            #print(f"next page: {params['page']}")
                 else:
                     print(f"Error condition: {rsp.status_code}")
                     hasMoreData = False

@@ -19,8 +19,6 @@ from umbrella.deployments.deployment import Deployment
 class Policies(Deployment):
     def __init__(self, session, export_sub_dir):
         super(Policies, self).__init__(session, 'deployments/v2/policies', export_sub_dir)
-        self._session = session
-        self._uri = 'deployments/v2/policies'
 
     def listPolicies(self, params):
         """
