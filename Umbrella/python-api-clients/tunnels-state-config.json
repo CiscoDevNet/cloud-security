@@ -1,0 +1,12 @@
+{
+    "sender": "",
+    "receiver": "",
+    "smtp_username": "",
+    "smtp_password": "",
+    "smtp_server": "",
+    "email_alert": false,
+    "monitor_interval": 120,
+    "max_inactive_interval": 300,
+    "email_subject": "Alert from Umbrella Tunnel Monitoring Script",
+    "logfile": "tunnel_state_output"
+}

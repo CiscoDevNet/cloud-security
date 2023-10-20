@@ -21,7 +21,7 @@ from umbrella.deployments.networks import Networks
 from umbrella.deployments.internalnetworks import InternalNetworks
 from umbrella.deployments.roamingcomputers import RoamingComputers
 from umbrella.deployments.virtualappliances import VirtualAppliances
-from umbrella.deployments.networktunnels import NetworkTunnels
+from umbrella.deployments.networktunnels import NetworkTunnels, NetworkTunnelsState
 from umbrella.deployments.datacenters import DataCenters
 from umbrella.deployments.internaldomains import InternalDomains
 from umbrella.deployments.networkdevices import NetworkDevices
@@ -70,6 +70,12 @@ def get_network_tunnels(umbrella_api):
     params['limit'] = 50
     tunnels = NetworkTunnels(umbrella_api, export_sub_dir)
     tunnels.writeDeployment(tunnels.getTunnels(params), 'json')
+
+def get_network_tunnel_state(umbrella_api):
+    '''Get Umbrella Network Tunnels state information'''
+    params = {}
+    tState = NetworkTunnelsState(umbrella_api, export_sub_dir)
+    tState.writeDeployment(tState.getTunnelsState(params), 'json')
 
 def get_network_tunnel_datacenters(umbrella_api):
     '''Get Umbrella Data Centers associated with Network Tunnels'''

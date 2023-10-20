@@ -27,3 +27,17 @@ class NetworkTunnels(Deployment):
 
         print(f"List Network Tunnels")
         return self.getDeployment(params)
+
+
+class NetworkTunnelsState(Deployment):
+    def __init__(self, session, export_sub_dir):
+        super(NetworkTunnelsState, self).__init__(session, 'deployments/v2/tunnelsState', export_sub_dir)
+
+    def getTunnelsState(self, params):
+        """
+        Return the network tunnels state information for tunnels in the organization
+        No query parameters
+        """
+
+        print(f"List Network Tunnels state information")
+        return self.getDeployment(params)

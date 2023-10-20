@@ -17,10 +17,15 @@ or implied.
 import csv
 import json
 import os
+from datetime import datetime
+
+from smtplib import SMTP_SSL as SMTP
+from smtplib import SMTPException
+from email.mime.text import MIMEText
+
 
 def get_directory(data_dir):
     ''' Make a directory from the current working directory for the exported data '''
-
     cwd = os.getcwd() or os.environ.get('CISCO_SAMPLES_DIR')
     print(f"current dir: {cwd}")
     exported_files_dir = cwd + '/' + data_dir
@@ -61,3 +66,30 @@ def write_data_to_json(data, d_filename):
             f.close()
     except Exception as e:
         raise(e)
+
+def send_email(server, sender, receiver, subject, content, username="", password="", sub_type="plain"):
+    ''' Send email notification '''
+    text_subtype = sub_type
+    content = json.dumps(content, indent=4, sort_keys=True)
+    try:
+        msg = MIMEText(content, text_subtype)
+        msg['Subject'] = subject
+        msg['From'] = sender # some SMTP servers automatically set up the From field, but not all
+
+        print(f"Try connection to mail server.")
+        conn = SMTP(server)
+        conn.set_debuglevel(False)
+        conn.login(username, password)
+        try:
+            conn.sendmail(sender, [receiver], msg.as_string())
+        except Exception as e:
+            print(f"Error sending email notification str(e)")
+        finally:
+            conn.quit()
+    except SMTPException as e:
+        print(f"Error connecting to email server str(e)")
+
+def create_log_file(output_logfile, output_sub_dir):
+    d_filename = get_directory(output_sub_dir)
+    logfile = d_filename + '/' + output_logfile + str(datetime.now().strftime('_%Y_%m_%d_%H_%M_%S')) + '.log'
+    return logfile
