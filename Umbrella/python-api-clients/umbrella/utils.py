@@ -91,5 +91,10 @@ def send_email(server, sender, receiver, subject, content, username="", password
 
 def create_log_file(output_logfile, output_sub_dir):
     d_filename = get_directory(output_sub_dir)
+    logfile = d_filename + '/' + output_logfile + '.log'
+    return logfile
+
+def create_log_file_with_date(output_logfile, output_sub_dir):
+    d_filename = get_directory(output_sub_dir)
     logfile = d_filename + '/' + output_logfile + str(datetime.now().strftime('_%Y_%m_%d_%H_%M_%S')) + '.log'
     return logfile
