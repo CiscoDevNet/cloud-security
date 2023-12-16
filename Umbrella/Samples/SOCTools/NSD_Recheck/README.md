@@ -3,9 +3,10 @@
 Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DNS resolvers. You can set an Umbrella DNS Policy to block the Newly Seen Domains classification. Blocking NSDs improves the security of your networks.
 
 
-## Updates ( Oct 5, 2022)
+## Updates ( Dec 16, 2023)
 
-This script is now updated for the new Umbrella OpenAPI! If you are using the Legacy Umbrella Management API for your Destination Lists, click [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/Legacy/README.md) for the Legacy API Version. 
+This script was updated to make it more readable.
+The legacy version is still available, but no longer maintained [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/Legacy/README.md).
 
 
 ## Maintain a Newly Seen Domain Exemption List
