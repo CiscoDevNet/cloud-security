@@ -110,12 +110,10 @@ def combine(block_ids, expired_ids):
 
 # main
 if __name__ == "__main__":
-
     """Download an NSD Destination Allow List, if any of the domains are expired or blocked, remove them from the list."""
 
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    # dest_id = 12345678 # ( Optionally hard-set the Destination List ID for automation, comment out 122 )
     destinations = []  # reset the get request
     delete_request = []  # reset the delete request
     domains = []  # reset the domains list.
@@ -127,6 +125,7 @@ if __name__ == "__main__":
     orgid = os.environ["ORG_ID"]  # orgID
 
     # Enter destination list ID
+    dest_id = ""  # If you would like to hard-set the destination list ID, set it as a string here and comment out the next line.
     dest_id = input("Enter your destination list ID for NSD recheck: ")
     print("Destination list ID: ", dest_id)
 
