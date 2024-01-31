@@ -5,7 +5,7 @@
 ## Disclaimer
 
 * The Cisco Secure Access APIs require authentication and authorization of all endpoints.
-* The `Cisco Secure Access APIs -External` Postman collection and environment are provided only as examples.
+* The `Cisco Secure Access APIs` Postman collection and environment are provided only as examples.
 
 ## Prerequisites
 
