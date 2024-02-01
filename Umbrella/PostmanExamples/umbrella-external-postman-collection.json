@@ -255,6 +255,94 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "6. Tagging",
+					"item": [
+						{
+							"name": "Get tags",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}deployments/v2/tags"
+							},
+							"response": []
+						},
+						{
+							"name": "Add a Tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"name\": \"test-tag-name\" }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}deployments/v2/tags"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Tags to Devices",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"addOrigins\": [originId1,originId2]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}deployments/v2/tags/tagId/devices"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Tags from Devices",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"removeOrigins\": [originId1,originId2]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}deployments/v2/tags/tagId/devices"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -371,8 +459,11 @@
 							"response": []
 						},
 						{
-							"name": "Create Key",
+							"name": "Create API Key",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -386,9 +477,9 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"firstname\":\"EnterFirstName\",\"lastname\":\"EnterLastName\",\"email\":\"EnterEmail\",\"password\":\"EnterAPassword\",\"roleId\":\"EnterRoleID\",\"timezone\":\"EnterTimeZone\"}"
+									"raw": "{\"name\": \"DevNet WorkShop Key\",\"scopes\": [ \"admin.users:read\",\"reports.utilities:read\",\"reports.granularevents:read\",\"reports.aggregations:read\",\"policies.destinationlists:write\",\"policies.destinationlists:read\",\"policies.destinations:write\",\"policies.destinations:read\" ]}"
 								},
-								"url": "{{server}}admin/v2/users"
+								"url": "{{server}}admin/v2/apiKeys"
 							},
 							"response": []
 						}
@@ -1235,87 +1326,145 @@
 					]
 				},
 				{
-					"name": "Top Internal IPs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AccessToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{server}}reports/v2/top-ips/internal?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
-							"host": [
-								"{{server}}reports"
-							],
-							"path": [
-								"v2",
-								"top-ips",
-								"internal"
-							],
-							"query": [
-								{
-									"key": "from",
-									"value": "EnterTheFromDateInEpochMs"
-								},
-								{
-									"key": "to",
-									"value": "EnterTheToDateInEpochMs"
-								},
-								{
-									"key": "limit",
-									"value": "1"
-								},
-								{
-									"key": "offset",
-									"value": "0"
+					"name": "API Usage",
+					"item": [
+						{
+							"name": "API Summary",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{server}}reports/v2/apiUsage/summary?from=YYYY-MM-DD&to=YYYY-MM-DD",
+									"host": [
+										"{{server}}reports"
+									],
+									"path": [
+										"v2",
+										"apiUsage",
+										"summary"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "YYYY-MM-DD"
+										},
+										{
+											"key": "to",
+											"value": "YYYY-MM-DD"
+										}
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Total Requests",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AccessToken}}"
-							}
-						],
-						"url": {
-							"raw": "{{server}}reports/v2/total-requests?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
-							"host": [
-								"{{server}}reports"
-							],
-							"path": [
-								"v2",
-								"total-requests"
-							],
-							"query": [
-								{
-									"key": "from",
-									"value": "EnterTheFromDateInEpochMs"
-								},
-								{
-									"key": "to",
-									"value": "EnterTheToDateInEpochMs"
-								},
-								{
-									"key": "limit",
-									"value": "1"
-								},
-								{
-									"key": "offset",
-									"value": "0"
+							},
+							"response": []
+						},
+						{
+							"name": "API Requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{server}}reports/v2/apiUsage/requests?from=YYYY-MM-DD&to=YYYY-MM-DD",
+									"host": [
+										"{{server}}reports"
+									],
+									"path": [
+										"v2",
+										"apiUsage",
+										"requests"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "YYYY-MM-DD"
+										},
+										{
+											"key": "to",
+											"value": "YYYY-MM-DD"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "API Responses",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{server}}reports/v2/apiUsage/responses?from=YYYY-MM-DD&to=YYYY-MM-DD",
+									"host": [
+										"{{server}}reports"
+									],
+									"path": [
+										"v2",
+										"apiUsage",
+										"responses"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "YYYY-MM-DD"
+										},
+										{
+											"key": "to",
+											"value": "YYYY-MM-DD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "API Keys",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{server}}reports/v2/apiUsage/keys?from=YYYY-MM-DD&to=YYYY-MM-DD",
+									"host": [
+										"{{server}}reports"
+									],
+									"path": [
+										"v2",
+										"apiUsage",
+										"keys"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "YYYY-MM-DD"
+										},
+										{
+											"key": "to",
+											"value": "YYYY-MM-DD"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			],
 			"description": "First get your access token"
