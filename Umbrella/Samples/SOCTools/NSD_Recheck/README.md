@@ -2,16 +2,9 @@
 
 Newly Seen Domains (NSDs) are domains that are new or unknown to the Umbrella DNS resolvers. You can set an Umbrella DNS Policy to block the Newly Seen Domains classification. Blocking NSDs improves the security of your networks.
 
-
-## Updates ( Oct 5, 2022)
-
-This script is now updated for the new Umbrella OpenAPI! If you are using the Legacy Umbrella Management API for your Destination Lists, click [here](https://github.com/CiscoDevNet/cloud-security/blob/master/Umbrella/Samples/SOCTools/NSD_Recheck/Legacy/README.md) for the Legacy API Version. 
-
-
 ## Maintain a Newly Seen Domain Exemption List
 
-You may need to temporarily allow domains that are categorized as an NSD. Umbrella does not check allowed domains for future security classification. It is important that exemptions are removed so regular Umbrella protection can apply if the domain ever changes. Because NSD categorization typically expires after a few days, we recommend keeping your NSD exemption list trimmed. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate that maintenance for an Umbrella destination list that contains NSDs. The NSD Recheck script integrates with the Umbrella Investigate API and Open API to manage the NSDs in your destination list. 
-
+You may need to temporarily allow domains that are categorized as an NSD. Umbrella does not check allowed domains for future security classification. It is important that exemptions are removed so regular Umbrella protection can apply if the domain ever changes. Because NSD categorization typically expires after a few days, we recommend keeping your NSD exemption list trimmed. The NSDs Recheck (`nsd_recheck.py`) script helps you to automate that maintenance for an Umbrella destination list that contains NSDs. The NSD Recheck script integrates with the Umbrella Investigate API and Open API to manage the NSDs in your destination list.
 
 The NSDs Recheck script:
 
@@ -24,20 +17,17 @@ We recommended that you run the `nsd_recheck.py` script regularly and automate m
 
 **Note:** You should run the `nsd_recheck.py` script on a custom allow list that contains **only** newly seen domains. Do not use this script on an allow list containing domains for any other exemption reasons.
 
-
 ## Prerequisites
 
 * You must have a subscription to the Cisco Umbrella that includes use of Umbrella Investigate API.
 The Umbrella Investigate API license is an add-on package and is not included in the Umbrella Advantage or Essentials Packages. For more information, see [Umbrella Investigate](https://umbrella.cisco.com/products/umbrella-investigate).
 * Python 3.x
 
-
 ## Step 1: Create Umbrella API Keys
 
 * Create an Umbrella Investigate API token. For more information, see [Create Umbrella Investigate API Token.](https://developer.cisco.com/docs/cloud-security/#!investigate-getting-started)
 * Create an Umbrella Open API key and secret. For more information, see [Create Umbrella Generate Key and Secret](https://developer.cisco.com/docs/cloud-security/#!authentication/create-an-api-key).
 * Assign this Umbrella Open API key the permission `policies:read,write`.
-
 
 ## Step 2: Set Environment Variables
 
@@ -55,11 +45,9 @@ export API_SECRET="insert your Umbrella Open API secret"
 export INVESTIGATE_TOKEN="insert your Umbrella Investigate API token"
 ```
 
-
 ## Step 3: Create an Umbrella Destination List
 
 * You must create an Umbrella destination list with the `access` type of `allow` and `dns`. Add NSDs that you do not want blocked to this allow destination list. For more information, see [Create an Allow list](https://docs.umbrella.com/deployment-umbrella/docs/add-a-new-destination-list).
-
 
 ## Step 4: Run the NSDs Recheck Script
 

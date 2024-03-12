@@ -28,9 +28,9 @@ import time
 
 class UmbrellaAPI:
     def __init__(self, token_url, client_id, client_secret):
-        self.token_url = token_url
-        self.client_id = client_id
-        self.client_secret = client_secret
+        self.token_url      = token_url
+        self.client_id      = client_id
+        self.client_secret  = client_secret
 
         try:
             self.access_token = self.getAccessToken()
@@ -82,32 +82,32 @@ def check_domains(destinations):
     """Check Categorization and Classification of Domains with the Investigate API"""
     domains = [i["destination"] for i in destinations]
     url = "https://investigate.api.umbrella.com/domains/categorization"
-    p = json.dumps(domains)
-    h = {
-        "Authorization": "Bearer " + i_pass,
-        "Content-Type": "application/json",
-    }
-    check_request = requests.request("POST", url, headers=h, data=p)
-    checked = check_request.json()
+    p   = json.dumps(domains)
+    h   = {
+            "Authorization": "Bearer " + i_pass,
+            "Content-Type": "application/json",
+        }
+    check_request   = requests.request("POST", url, headers=h, data=p)
+    checked         = check_request.json()
     return checked
 
 
 def check_for_blocks(checked, destinations):
-    """Use check_domains data to see if blocked and return a list of domain IDs to be removed."""
-    blocked_ids = []
+    '''Use check_domains data to see if blocked and return a list of domain IDs to be removed.'''
+    blocked_ids     = []
     blocked_domains = []
     blocked_domains = [i for i in checked if checked[i]["status"] == -1]
-    blocked_ids = [i["id"] for i in destinations if i["destination"] in blocked_domains]
+    blocked_ids     = [i['id'] for i in destinations if i['destination'] in blocked_domains]
     return blocked_ids
 
 
 def check_for_nsd(checked, destinations):
-    """Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed."""
-    expired_ids = []
+    '''Checks if any domains are no longer NSD, returning a list of expired NSD domain IDs to be removed.'''
+    expired_ids     = []
     expired_domains = []
-    nsd = "108"  # Investigate API identifies NSD as "108".
-    expired_domains = [ i for i in checked if nsd not in checked[i]["security_categories"] ]
-    expired_ids = [i["id"] for i in destinations if i["destination"] in expired_domains]
+    nsd             = "108"  # Investigate API identifies NSD as "108".
+    expired_domains = [i for i in checked if nsd not in checked[i]["security_categories"]]
+    expired_ids     = [i['id'] for i in destinations if i['destination'] in expired_domains]
     return expired_ids
 
 
@@ -135,15 +135,16 @@ def remove_domains(open_api_url, combined_ids, open_api_token):
 if __name__ == "__main__":
     print("Starting Newly Seen Domains Re-Check Script.")
 
-    destinations = []  # reset the get request
-    delete_request = []  # reset the delete request
-    domains = []  # reset the domains list.
+    # dest_id = 12345678 # Option to Hardset Destination List ID for automation, comment out line 153 )
+    destinations    = []  # reset the get request
+    delete_request  = []  # reset the delete request
+    domains         = []  # reset the domains list.
 
     # Set these variables in your environment or .bash_profile. Check the README for more information.
-    i_pass = os.environ["INVESTIGATE_TOKEN"]  # Umbrella Investigate API token
-    token_url = os.environ.get("TOKEN_URL") or "https://api.umbrella.com/auth/v2/token"
-    client_id = os.environ.get("API_KEY")  # Umbrella Open API key
-    client_secret = os.environ.get("API_SECRET")  # Umbrella Open API secret
+    i_pass          = os.environ["INVESTIGATE_TOKEN"]  # Umbrella Investigate API token
+    token_url       = os.environ.get('TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
+    client_id       = os.environ.get('API_KEY')  # Umbrella Open API key
+    client_secret   = os.environ.get('API_SECRET')  # Umbrella Open API secret
 
     # Exit out if the client_id or client_secret is not set
     for var in ["API_SECRET", "API_KEY", "INVESTIGATE_TOKEN"]:
@@ -171,13 +172,15 @@ if __name__ == "__main__":
         """If the list has domains, prepare the list of domain IDs, check each domain ID with the
         Investigate API for security blocks and NSD expiration."""
         print(f"Checking {len(destinations)} Domains")
-        checked = check_domains(destinations)
-        block_ids = check_for_blocks(checked, destinations)
-        expired_ids = check_for_nsd(checked, destinations)
-        combined_ids = combine(block_ids, expired_ids)
+        checked         = check_domains(destinations)
+        block_ids       = check_for_blocks(checked, destinations)
+        expired_ids     = check_for_nsd(checked, destinations)
+        combined_ids    = combine(block_ids, expired_ids)
+
         # Remove Each Blocked Domain ID from the destination list, because the block would be allowed.
         if len(block_ids) > 0:
             print(f"{len(block_ids)} domains are blocked.")
+            
         # Remove Domains Not Marked NSD from the Destination List because NSD classification has expired.
         if len(expired_ids) > 0:
             print(f"{len(expired_ids)} domains are expired NSDs.")
