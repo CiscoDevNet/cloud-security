@@ -1,6 +1,6 @@
 certifi==2023.7.22
 charset-normalizer==2.0.12
-idna==3.3
+idna==3.7
 prettytable==3.1.1
 requests==2.31.0
 urllib3==1.26.18
