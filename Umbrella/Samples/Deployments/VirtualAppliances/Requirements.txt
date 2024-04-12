@@ -1,6 +1,6 @@
 certifi==2023.7.22
 charset-normalizer==3.2.0
-idna==3.4
+idna==3.7
 oauthlib==3.2.2
 pip==23.3
 requests==2.31.0
