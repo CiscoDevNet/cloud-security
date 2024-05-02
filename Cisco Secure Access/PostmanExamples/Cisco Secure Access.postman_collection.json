@@ -356,7 +356,7 @@
 									"response": []
 								},
 								{
-									"name": "Get All Connector Groups Copy",
+									"name": "Create a Connector Group",
 									"request": {
 										"method": "POST",
 										"header": [
@@ -393,7 +393,7 @@
 									"response": []
 								},
 								{
-									"name": "Get a Specific Connector Group Copy",
+									"name": "Update a Connector Group",
 									"request": {
 										"method": "PATCH",
 										"header": [
