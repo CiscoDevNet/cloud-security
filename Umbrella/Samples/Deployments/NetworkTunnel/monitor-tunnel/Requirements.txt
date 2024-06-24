@@ -3,5 +3,5 @@ charset-normalizer==2.0.12
 idna==3.7
 prettytable==3.1.1
 requests==2.31.0
-urllib3==1.26.18
+urllib3==1.26.19
 wcwidth==0.2.5
