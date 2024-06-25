@@ -1,4 +1,4 @@
-# Python Client Examples for Umbrella API OAuth2.0 Authorization
+# Python Client Examples for Secure Access API OAuth2.0 Authorization
 
 We provide two Python client example applications. Each client application shows how to create a Cisco Secure Access Reporting API request protected by the OAuth2.0 authorization framework.
 
@@ -12,8 +12,8 @@ Download and install a version of Python for your system. For more information, 
 
 To get started, set up the required environment variables:
 
-* `API_KEY`: Umbrella API Reporting key
-* `API_SECRET`: Umbrella API Reporting secret
+* `API_KEY`: Secure Access API key
+* `API_SECRET`: Secure Access API secret
 
 The following Python libraries provide the OAuth 2.0 authorization framework:
 
