@@ -439,10 +439,10 @@
 			"name": "Admin",
 			"item": [
 				{
-					"name": "Users",
+					"name": "VPN Sessions",
 					"item": [
 						{
-							"name": "List all Users",
+							"name": "List VPN Sessions",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -451,28 +451,14 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}admin/v2/users"
+								"url": "{{server}}admin/v2/vpn/userConnections"
 							},
 							"response": []
 						},
 						{
-							"name": "Get a Specific User",
+							"name": "Remove a VPN Session",
 							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{AccessToken}}"
-									}
-								],
-								"url": "{{server}}admin/v2/users/EnterYourUserID"
-							},
-							"response": []
-						},
-						{
-							"name": "Create User",
-							"request": {
-								"method": "POST",
+								"method": "PUT",
 								"header": [
 									{
 										"key": "Authorization",
@@ -485,37 +471,78 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"firstname\":\"EnterFirstName\",\"lastname\":\"EnterLastName\",\"email\":\"EnterEmail\",\"password\":\"EnterAPassword\",\"roleId\":\"EnterRoleID\",\"timezone\":\"EnterTimeZone\"}"
+									"raw": "{\"action\": \"disconnect\", \"usernames\": [\"name@domain.com\"], \"sessions\": [\"sessionId\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								"url": "{{server}}admin/v2/users"
+								"url": "{{server}}admin/v2/vpn/userConnections"
 							},
 							"response": []
 						},
 						{
-							"name": "Delete User",
+							"name": "Remove a Users VPN Sessions",
 							"request": {
-								"method": "DELETE",
+								"method": "PUT",
 								"header": [
 									{
 										"key": "Authorization",
 										"value": "Bearer {{AccessToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\"action\": \"disconnect\", \"usernames\": [\"name@domain.com\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								"url": "{{server}}admin/v2/users/EnterYourUserID"
+								"url": "{{server}}admin/v2/vpn/userConnections"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Multiple Users VPN Sessions Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"action\": \"disconnect\", \"usernames\": [\"name1@domain.com\", \"name2@domain.com\"]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}admin/v2/vpn/userConnections"
 							},
 							"response": []
 						}
 					]
 				},
 				{
-					"name": "Roles",
+					"name": "ZTNA",
 					"item": [
 						{
-							"name": "List all Roles",
+							"name": "List a Users Device Certificates",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -524,7 +551,37 @@
 										"value": "Bearer {{AccessToken}}"
 									}
 								],
-								"url": "{{server}}admin/v2/roles"
+								"url": "{{server}}admin/v2/ztna/users/userID/deviceCertificates"
+							},
+							"response": []
+						},
+						{
+							"name": "Provide User Summaries",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": {
+									"raw": "{{server}}admin/v2/ztna/userSummaries?userIds=userId",
+									"host": [
+										"{{server}}admin"
+									],
+									"path": [
+										"v2",
+										"ztna",
+										"userSummaries"
+									],
+									"query": [
+										{
+											"key": "userIds",
+											"value": "userId"
+										}
+									]
+								}
 							},
 							"response": []
 						}
@@ -680,7 +737,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"resourceName009\",\n    \"description\": \"\",\n    \"dnsServerId\": 12345,\n    \"certificateId\": 12345,\n    \"accessTypes\": [\n        {\n            \"type\": \"browser\",\n            \"externalFQDNPrefix\": \"appPrefix\",\n            \"protocol\": \"HTTPS\",\n            \"sni\": \"xyz123.TLD.com\",\n            \"sslVerificationEnabled\": true\n        },\n        { \"type\": \"network\" },\n        {\n            \"type\": \"client\",\n            \"reachableAddresses\": [\n                \"192.168.0.1\",\n                \"example.com\"\n            ]\n        }\n    ],\n    \"resourceAddresses\": [\n        {\n            \"destinationAddr\": [\n                \"example.com\",\n                \"172.6.0.0/32\"\n            ],\n            \"protocolPorts\": [\n                {\n                    \"protocol\": \"HTTP/HTTPS\",\n                    \"ports\": \"443\"\n                }\n            ]\n        }\n    ],\n    \"resourceGroupIds\": [5]\n}",
+											"raw": "{\n    \"name\": \"resourceName\",\n    \"description\": \"\",\n    \"dnsServerId\": enterAnId,\n    \"certificateId\": enterAnId,\n    \"accessTypes\": [\n        {\n            \"type\": \"browser\",\n            \"externalFQDNPrefix\": \"appPrefix\",\n            \"protocol\": \"HTTPS\",\n            \"sni\": \"example.TLD.com\",\n            \"sslVerificationEnabled\": true\n        },\n        { \"type\": \"network\" },\n        {\n            \"type\": \"client\",\n            \"reachableAddresses\": [\n                \"IPaddress\",\n                \"example.com\"\n            ]\n        }\n    ],\n    \"resourceAddresses\": [\n        {\n            \"destinationAddr\": [\n                \"example.com\",\n                \"address/32\"\n            ],\n            \"protocolPorts\": [\n                {\n                    \"protocol\": \"HTTP/HTTPS\",\n                    \"ports\": \"443\"\n                }\n            ]\n        }\n    ],\n    \"resourceGroupIds\": [5]\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -703,14 +760,14 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"resourceName009\",\n    \"description\": \"\",\n    \"accessTypes\": [\n        {\n            \"type\": \"browser\",\n            \"externalFQDNPrefix\": \"appPrefix\",\n            \"protocol\": \"HTTPS\",\n            \"sni\": \"xyz123.TLD.com\",\n            \"sslVerificationEnabled\": true\n        },\n        { \"type\": \"network\" },\n        {\n            \"type\": \"client\",\n            \"reachableAddresses\": [\n                \"192.168.0.1\",\n                \"example.com\"\n            ]\n        }\n    ],\n    \"resourceAddresses\": [\n        {\n            \"destinationAddr\": [\n                \"example.com\",\n                \"172.6.0.0/32\"\n            ],\n            \"protocolPorts\": [\n                {\n                    \"protocol\": \"HTTP/HTTPS\",\n                    \"ports\": \"443\"\n                }\n            ]\n        }\n    ],\n    \"resourceGroupIds\": [5]\n}",
+											"raw": "{\n    \"name\": \"resourceName\",\n    \"description\": \"\",\n    \"accessTypes\": [\n        {\n            \"type\": \"browser\",\n            \"externalFQDNPrefix\": \"appPrefix\",\n            \"protocol\": \"HTTPS\",\n            \"sni\": \"example.TLD.com\",\n            \"sslVerificationEnabled\": true\n        },\n        { \"type\": \"network\" },\n        {\n            \"type\": \"client\",\n            \"reachableAddresses\": [\n                \"IPaddress\",\n                \"example.com\"\n            ]\n        }\n    ],\n    \"resourceAddresses\": [\n        {\n            \"destinationAddr\": [\n                \"example.com\",\n                \"IPaddress/32\"\n            ],\n            \"protocolPorts\": [\n                {\n                    \"protocol\": \"HTTP/HTTPS\",\n                    \"ports\": \"443\"\n                }\n            ]\n        }\n    ],\n    \"resourceGroupIds\": [5]\n}",
 											"options": {
 												"raw": {
 													"language": "json"
 												}
 											}
 										},
-										"url": "{{server}}policies/v2/privateResources/47544"
+										"url": "{{server}}policies/v2/privateResources/enterResourceID"
 									},
 									"response": []
 								},
@@ -724,7 +781,7 @@
 												"value": "Bearer {{AccessToken}}"
 											}
 										],
-										"url": "{{server}}policies/v2/privateResources/47544"
+										"url": "{{server}}policies/v2/privateResources/enterResourceID"
 									},
 									"response": []
 								}
