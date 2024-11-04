@@ -29,7 +29,7 @@ email_address = os.environ.get('EMAIL')
 passw = os.environ.get('PASSWD')
 recipients = ['REPLACE_THIS_VALUE_WITH_YOUR_EMAIL_ADDRESS']
 token_url = os.environ.get(
-    'TOKEN_URL') or 'https://api.umbrella.com/auth/v2/token'
+    'TOKEN_URL') or 'https://api.sse.cisco.com/auth/v2/token'
 
 def send_email(tunnelInfo):
     """This function will send an alert to the desired recipients"""
