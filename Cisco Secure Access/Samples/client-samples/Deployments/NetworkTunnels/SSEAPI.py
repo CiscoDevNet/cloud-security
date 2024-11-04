@@ -61,7 +61,7 @@ class SSEAPI:
                 raise(e)
         return resp
 
-    ''' POST API request to an Umbrella endpoint '''
+    ''' POST API request to an SSE endpoint '''
     def ReqPost(self, end_point, data):
         success = False
         resp = None
@@ -80,7 +80,7 @@ class SSEAPI:
                 raise(e)
         return resp
 
-    ''' DELETE API request to an Umbrella endpoint '''
+    ''' DELETE API request to an SSE endpoint '''
     def ReqDelete(self, end_point, data):
         success = False
         resp = None
