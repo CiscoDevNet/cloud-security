@@ -890,6 +890,518 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Rules",
+					"item": [
+						{
+							"name": "Example: Destination Lists and Roaming Computers",
+							"item": [
+								{
+									"name": "Find a Rule",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": {
+											"raw": "{{server}}policies/v2/rules?ruleName=EnterRuleName",
+											"host": [
+												"{{server}}policies"
+											],
+											"path": [
+												"v2",
+												"rules"
+											],
+											"query": [
+												{
+													"key": "ruleName",
+													"value": "EnterRuleName"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get the Rule Details",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+									},
+									"response": []
+								},
+								{
+									"name": "List Roaming Computers",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}deployments/v2/roamingcomputers"
+									},
+									"response": []
+								},
+								{
+									"name": "List all Destination Lists",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}policies/v2/destinationlists"
+									},
+									"response": []
+								},
+								{
+									"name": "Update a Rule",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ruleName\": \"EnterYourRuleName\",\n    \"ruleDescription\": \"\",\n    \"ruleAction\": \"allow\",\n    \"rulePriority\": 114,\n    \"ruleIsDefault\": false,\n    \"ruleIsEnabled\": true,\n    \"ruleConditions\": [\n        {\n            \"attributeId\": 2,\n            \"attributeValue\": [\n                EnterRoamingComputerID1,\n                EnterRoamingComputerID2\n            ],\n            \"attributeName\": \"umbrella.source.identity_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        },\n        {\n            \"attributeId\": 4,\n            \"attributeValue\": [\n              EnterDestinationListID\n            ],\n            \"attributeName\": \"umbrella.destination.destination_list_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        }\n    ],\n    \"ruleSettings\": [\n        {\n            \"settingName\": \"umbrella.logLevel\",\n            \"settingValue\": \"LOG_ALL\",\n            \"settingId\": 5\n        },\n        {\n            \"settingName\": \"umbrella.default.traffic\",\n            \"settingValue\": \"PUBLIC_INTERNET\",\n            \"settingId\": 9\n        }\n    ],\n    \"ruleAccess\": \"public_internet\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+									},
+									"response": []
+								}
+							],
+							"description": "First get your access token"
+						},
+						{
+							"name": "Example: Tunnels and Public Applications",
+							"item": [
+								{
+									"name": "Find a Rule",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": {
+											"raw": "{{server}}policies/v2/rules?ruleName=EnterRuleName",
+											"host": [
+												"{{server}}policies"
+											],
+											"path": [
+												"v2",
+												"rules"
+											],
+											"query": [
+												{
+													"key": "ruleName",
+													"value": "EnterRuleName"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get the Rule Details",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+									},
+									"response": []
+								},
+								{
+									"name": "List Tunnel Groups",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}deployments/v2/networktunnelgroups"
+									},
+									"response": []
+								},
+								{
+									"name": "Get a specific Tunnel Group",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}deployments/v2/networktunnelgroups/enterTunnelGroupID"
+									},
+									"response": []
+								},
+								{
+									"name": "List all Application Lists",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}policies/v2/applicationLists"
+									},
+									"response": []
+								},
+								{
+									"name": "Get a specific Application List",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"url": "{{server}}policies/v2/applicationLists/EnterApplicationListID"
+									},
+									"response": []
+								},
+								{
+									"name": "Update a Rule",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{AccessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ruleName\": \"EnterYourRuleName\",\n    \"ruleDescription\": \"\",\n    \"ruleAction\": \"block\",\n    \"rulePriority\": 114,\n    \"ruleIsDefault\": false,\n    \"ruleIsEnabled\": true,\n    \"ruleConditions\": [\n        {\n            \"attributeId\": 2,\n            \"attributeValue\": [\n                EnterTunnelGroupID\n            ],\n            \"attributeName\": \"umbrella.source.identity_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        },\n        {\n            \"attributeId\": 4,\n            \"attributeValue\": [\n              EnterApplicationListID\n            ],\n            \"attributeName\": \"umbrella.destination.application_list_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        }\n    ],\n    \"ruleSettings\": [\n        {\n            \"settingName\": \"umbrella.logLevel\",\n            \"settingValue\": \"LOG_ALL\",\n            \"settingId\": 5\n        },\n        {\n            \"settingName\": \"umbrella.default.traffic\",\n            \"settingValue\": \"PUBLIC_INTERNET\",\n            \"settingId\": 9\n        }\n    ],\n    \"ruleAccess\": \"public_internet\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+									},
+									"response": []
+								}
+							],
+							"description": "First get your access token"
+						},
+						{
+							"name": "List all Rules",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/rules"
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Rule",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ruleName\": \"Test Rule Name\",\n    \"ruleDescription\": \"A description for the rule.\",\n    \"ruleAction\": \"allow\",\n    \"ruleConditions\": [\n        {\n            \"attributeId\": 2,\n            \"attributeValue\": [\n                12345\n            ],\n            \"attributeName\": \"umbrella.source.identity_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        },\n        {\n            \"attributeId\": 15,\n            \"attributeValue\": true,\n            \"attributeName\": \"umbrella.destination.all\",\n            \"attributeOperator\": \"=\"\n        }\n    ],\n    \"ruleSettings\": [\n        {\n            \"settingId\": 5,\n            \"settingValue\": \"LOG_ALL\",\n            \"settingName\": \"umbrella.logLevel\"\n        },\n        {\n            \"settingId\": 9,\n            \"settingValue\": \"PUBLIC_INTERNET\",\n            \"settingName\": \"umbrella.default.traffic\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/rules"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Specific Rule",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Rule",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ruleName\": \"Test Rule Name\",\n    \"ruleDescription\": \"A description for the rule.\",\n    \"ruleAction\": \"allow\",\n    \"rulePriority\": 100,\n    \"ruleConditions\": [\n        {\n            \"attributeId\": 2,\n            \"attributeValue\": [\n                12345\n            ],\n            \"attributeName\": \"umbrella.source.identity_ids\",\n            \"attributeOperator\": \"INTERSECT\"\n        },\n        {\n            \"attributeId\": 15,\n            \"attributeValue\": true,\n            \"attributeName\": \"umbrella.destination.all\",\n            \"attributeOperator\": \"=\"\n        }\n    ],\n    \"ruleSettings\": [\n        {\n            \"settingId\": 5,\n            \"settingValue\": \"LOG_ALL\",\n            \"settingName\": \"umbrella.logLevel\"\n        },\n        {\n            \"settingId\": 9,\n            \"settingValue\": \"PUBLIC_INTERNET\",\n            \"settingName\": \"umbrella.default.traffic\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+							},
+							"response": []
+						},
+						{
+							"name": "Bulk Enable Rules",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ruleIds\": [ ruleId1, ruleId2 ],\n    \"properties\": [\n        { \"ruleIsEnabled\": false }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/rules"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Rule",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/rules/EnterYourRuleID"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Geolocations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/geolocations"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Application Lists",
+					"item": [
+						{
+							"name": "List all Application Lists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/applicationLists"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Application List",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applicationCategoryIds\": [],\n    \"applicationIds\": [],\n    \"applicationListName\": \"New Application List Name\",\n    \"isDefault\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/applicationLists"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a specific Application List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/applicationLists/EnterYourListId"
+							},
+							"response": []
+						},
+						{
+							"name": "Update an Application List",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applicationCategoryIds\": [],\n    \"applicationIds\": [],\n    \"applicationListName\": \"New Application List Name\",\n    \"isDefault\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/applicationLists/EnterApplicationListID"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete an Application List",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/applicationLists/EnterApplicationListID"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "List all Policy Settings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/settings"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Specific Setting",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/settings/EnterSettingName"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Policy Setting Types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/settingTypes"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Specific Setting Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/settingTypes/EnterSettingType"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
