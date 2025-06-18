@@ -5,4 +5,4 @@ oauthlib==3.2.2
 python-dotenv==1.0.1
 requests==2.32.3
 requests-oauthlib==2.0.0
-urllib3==2.2.3
+urllib3==2.5.0
