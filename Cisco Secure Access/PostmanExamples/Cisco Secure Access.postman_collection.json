@@ -21,7 +21,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{Authurl}}"
+						"url": "https://api.sse.cisco.com/auth/v2/token"
 					},
 					"response": []
 				}
@@ -586,6 +586,24 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Rotate S3 creds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "{{server}}admin/v2/iam/rotateKey"
+					},
+					"response": []
 				}
 			]
 		},
@@ -625,7 +643,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"bundleTypeId\": \"2\",\"access\": \"none\",\"isGlobal\": false,\"name\": \"New Destination List\"}"
+									"raw": "{\"bundleTypeId\": 2,\"access\": \"none\",\"isGlobal\": false,\"name\": \"New Destination List\"}"
 								},
 								"url": "{{server}}policies/v2/destinationlists"
 							},
@@ -1402,6 +1420,260 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Network and Service Objects",
+					"item": [
+						{
+							"name": "List all Network Objects",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/networkObjects"
+							},
+							"response": []
+						},
+						{
+							"name": "List all References for Network Objects",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/networkObjects/references"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Network Object Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/networkObjectGroups"
+							},
+							"response": []
+						},
+						{
+							"name": "List all References for Network Object Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/networkObjectGroups/references"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Service Objects",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/serviceObjects"
+							},
+							"response": []
+						},
+						{
+							"name": "List all References for Service Objects",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/serviceObjects/references"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Service Object Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/serviceObjectGroups"
+							},
+							"response": []
+						},
+						{
+							"name": "List all References for Service Object Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/serviceObjectGroups/references"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Network Objects and Network Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/unifiedNetworkObjects"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Service Objects and Service Groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}policies/v2/objects/unifiedServiceObjects"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List all Feeds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": "{{server}}policies/v2/feeds"
+					},
+					"response": []
+				},
+				{
+					"name": "List all Security Profiles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": "{{server}}policies/v2/securityProfiles"
+					},
+					"response": []
+				},
+				{
+					"name": "List all Application Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": "{{server}}policies/v2/applicationCategories"
+					},
+					"response": []
+				},
+				{
+					"name": "List all Applications",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": "{{server}}policies/v2/applications"
+					},
+					"response": []
+				},
+				{
+					"name": "List Categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": "{{server}}policies/v2/categories"
+					},
+					"response": []
 				}
 			]
 		},
@@ -2381,6 +2653,47 @@
 							"path": [
 								"v2",
 								"total-requests"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "EnterTheFromDateInEpochMs"
+								},
+								{
+									"key": "to",
+									"value": "EnterTheToDateInEpochMs"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RAVPN Events",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{server}}reports/v2/remote-access-events?from=EnterTheFromDateInEpochMs&to=EnterTheToDateInEpochMs&limit=1&offset=0",
+							"host": [
+								"{{server}}reports"
+							],
+							"path": [
+								"v2",
+								"remote-access-events"
 							],
 							"query": [
 								{
