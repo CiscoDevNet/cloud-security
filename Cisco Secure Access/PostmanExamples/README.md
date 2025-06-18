@@ -20,7 +20,7 @@
 ![image](https://user-images.githubusercontent.com/11685750/163173840-a9c399ae-929f-4891-b298-b9321a12f023.png)
 * Now generate an API access token:
   1. Hit `Send` to generate a Cisco Secure Access API access token.
-  1. Add your new access token token to the `AccessToken` variable in the `Cisco Secure Access` Postman environment.
+  1. Your new access token should be automatically set in the `AccessToken` variable in the `Cisco Secure Access` Postman environment.
 
 **Note:** Cloud Security API access tokens are valid for up to one hour. Once a token expires, you can go back an generate a new access token and plug it into the environment as demonstrated above.
 
