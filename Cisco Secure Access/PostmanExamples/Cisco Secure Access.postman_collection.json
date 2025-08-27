@@ -15,8 +15,8 @@
 						"auth": {
 							"type": "basic",
 							"basic": {
-								"password": "API Secret",
-								"username": "API Key"
+								"username": "API Key",
+								"password": "API Secret"
 							}
 						},
 						"method": "GET",
@@ -588,22 +588,144 @@
 					]
 				},
 				{
-					"name": "Rotate S3 creds",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{AccessToken}}"
+					"name": "3d Party Integrations",
+					"item": [
+						{
+							"name": "Get Integrations",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}admin/v2/integrations"
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"url": "{{server}}admin/v2/iam/rotateKey"
-					},
-					"response": []
+							"response": []
+						},
+						{
+							"name": "Create Integration",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"webhook.v1\",\n  \"name\": \"yourAlertName\",\n  \"webhookConfig\": {\n        \"url\": \"https://yourTargetURL\",\n        \"queryParams\": {\n            \"p1\": \"pa1\",\n            \"p2\": \"pa2\"\n         }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}admin/v2/integrations"
+							},
+							"response": []
+						},
+						{
+							"name": "Add credentials to webhook",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"credentialName\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"type\": \"basic-auth\",\n  \"value\": {\n    \"password\": \"yourPassword\",\n    \"username\": \"yourUsername\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}admin/v2/integrations/webhook.v1:83b9d5f0-b706-469b-a1b6-250d07ad9011/credentials"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Webhook",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n  \"name\": \"SplunkHEC\",\n  \"webhook_config\": {\n    \"headers\": {\n      \"Authorization\": \"Splunk 25f06617-a484-4111-9583-c3fdf25088a2\"\n    },\n    \"query_params\": {\n    \"key\": \"value\"\n    },\n    \"url\": \"https://http-inputs-scde-go9e9ddgxwlksz8ty.splunkcloud.com:443/services/collector/raw\"\n  }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}admin/v2/integrations/webhook.v1:b42a8778-e5dc-4497-bb24-985e9fe3a2ec"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete an Integration",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"url": "{{server}}admin/v2/integrations/integrationID"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "IAM",
+					"item": [
+						{
+							"name": "Rotate S3 creds",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": "{{server}}admin/v2/iam/rotateKey"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -1416,6 +1538,32 @@
 									}
 								],
 								"url": "{{server}}policies/v2/settingTypes/EnterSettingType"
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Policies Settings",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{AccessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"settingName\": \"global.setting.disableDecryptionSource\",\n        \"settingValue\": [\n            \"4.4.4.1\"\n        ]\n    },\n    {\n        \"settingName\": \"sse.decryption.logInternet\",\n        \"settingValue\": true\n    },\n    {\n        \"settingName\": \"sse.decryption.logPrivate\",\n        \"settingValue\": true\n    },\n    {\n        \"settingName\": \"sse.globalIPSEnabled\",\n        \"settingValue\": true\n    },\n    {\n        \"settingName\": \"sse.tenantControlProfileId\",\n        \"settingValue\": 22270\n    },\n    {\n        \"settingName\": \"sse.ztaAuthnTimeoutEnabled\",\n        \"settingValue\": false\n    },\n    {\n        \"settingName\": \"sse.ztaAuthnTimeoutMinutes\",\n        \"settingValue\": 4320\n    },\n    {\n        \"settingName\": \"umbrella.ipSurrogatesEnabled\",\n        \"settingValue\": true\n    },\n    {\n        \"settingName\": \"umbrella.logHttpsQuery\",\n        \"settingValue\": true\n    },\n    {\n        \"settingName\": \"umbrella.m365Compatibility\",\n        \"settingValue\": false\n    },\n    {\n        \"settingName\": \"umbrella.posture.ipsProfileId\",\n        \"settingValue\": 24\n    },\n    {\n        \"settingName\": \"umbrella.posture.privateSecurityProfileId\",\n        \"settingValue\": 14710186\n    },\n    {\n        \"settingName\": \"umbrella.posture.profileIdClientbased\",\n        \"settingValue\": 295237\n    },\n    {\n        \"settingName\": \"umbrella.posture.profileIdClientless\",\n        \"settingValue\": 297523\n    },\n    {\n        \"settingName\": \"umbrella.posture.webProfileId\",\n        \"settingValue\": 13958530\n    },\n    {\n        \"settingName\": \"sse.ztnaSessionTimeoutMinutes\",\n        \"settingValue\": 60\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}policies/v2/settings"
 							},
 							"response": []
 						}
