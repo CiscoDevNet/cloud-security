@@ -1,0 +1,12 @@
+[project]
+name = "sgt-sync"
+version = "0.1.0"
+description = "A simple proof-of-concept sync tool to bring Security Group Tags from ISE to Secure Access"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "argparse>=1.4.0",
+    "dotenv>=0.9.9",
+    "httpx>=0.28.1",
+    "requests-auth>=8.0.0",
+]
