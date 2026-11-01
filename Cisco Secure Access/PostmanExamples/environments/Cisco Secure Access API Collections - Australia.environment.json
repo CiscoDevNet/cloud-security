@@ -1,0 +1,37 @@
+{
+  "id": "187d6f2a-ef34-4094-a8c4-d3d911c8a5ed",
+  "name": "SecureAccess-Australia",
+  "values": [
+    {
+      "key": "server",
+      "value": "https://api.au.sse.cisco.com/",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "Authurl",
+      "value": "https://api.au.sse.cisco.com/auth/v2/token",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "APIKey",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "APISecret",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "AccessToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}
