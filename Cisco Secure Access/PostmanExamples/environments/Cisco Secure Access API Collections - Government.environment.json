@@ -1,0 +1,37 @@
+{
+  "id": "4f14b2b7-4762-4e64-a73c-0d6d0f6ba644",
+  "name": "SecureAccess-Government",
+  "values": [
+    {
+      "key": "server",
+      "value": "https://api.secureaccessfed.cisco/",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "Authurl",
+      "value": "https://api.secureaccessfed.cisco/auth/v2/token",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "APIKey",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "APISecret",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "AccessToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

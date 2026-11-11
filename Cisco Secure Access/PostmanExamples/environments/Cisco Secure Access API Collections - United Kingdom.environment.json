@@ -1,0 +1,37 @@
+{
+  "id": "3dcf3faf-a3dc-49c1-a0a8-8a549dcfb983",
+  "name": "SecureAccess-United-Kingdom",
+  "values": [
+    {
+      "key": "server",
+      "value": "https://api.uk.sse.cisco.com/",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "Authurl",
+      "value": "https://api.uk.sse.cisco.com/auth/v2/token",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "APIKey",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "APISecret",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "AccessToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

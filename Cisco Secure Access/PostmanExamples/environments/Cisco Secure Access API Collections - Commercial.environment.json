@@ -1,0 +1,37 @@
+{
+  "id": "636a3ac2-a3f0-4c0f-a7d9-9ac0b7708dcc",
+  "name": "SecureAccess-Commercial",
+  "values": [
+    {
+      "key": "server",
+      "value": "https://api.sse.cisco.com/",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "Authurl",
+      "value": "https://api.sse.cisco.com/auth/v2/token",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "APIKey",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "APISecret",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    },
+    {
+      "key": "AccessToken",
+      "value": "",
+      "type": "secret",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}
